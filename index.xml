@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="page.xsl"?>
-<page>
-  <short value="Tecq Mate"/>
-  <long value="Desktop and Web Application Developer plus Programming Language Trainer"/>
-  <datetime value="2012-07-23T06:17:17"/>
-  <head/>
+<html>
+  <head>
+	  <short value="Tecq Mate Free Services"/>
+	  <long value="Desktop and Web Application Developer plus Programming Language Trainer"/>
+	  <datetime value="2012-07-23T06:17:17"/>
+  </head>
   <body>
-    <a class="bg-text" href="shop">SHOP</a>
+        <main>
+			<div class="col-lg-6">
+				<div class="card mb-4">
+					<div class="card-body">
+						<div class="small text-muted">January 1, 2012</div>
+						<h2 class="card-title h4">Tiny URL</h2>
+						<p class="card-text">Shorthen long url, make it easier to type and remember urls.</p>
+						<a class="btn btn-primary" href="tiny">Try It →</a>
+					</div>
+				</div>
+				<div class="card mb-4">
+					<div class="card-body">
+						<div class="small text-muted">Month Day, Year</div>
+						<h2 class="card-title h4">Some service</h2>
+						<p class="card-text">Short description of the service. Call to action.</p>
+						<a class="btn btn-primary" href="#!">Try It →</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="card mb-4">
+					<div class="card-body">
+						<div class="small text-muted">Month Day, Year</div>
+						<h2 class="card-title h4">Some service</h2>
+						<p class="card-text">Short description of the service. Call to action.</p>
+						<a class="btn btn-primary" href="#!">Try It →</a>
+					</div>
+				</div>
+				<div class="card mb-4">
+					<div class="card-body">
+						<div class="small text-muted">Month Day, Year</div>
+						<h2 class="card-title h4">Some service</h2>
+						<p class="card-text">Short description of the service. Call to action.</p>
+						<a class="btn btn-primary" href="#!">Try It →</a>
+					</div>
+				</div>
+			</div>
+        </main>
+		<template/>
   </body>
-</page>
+</html>
