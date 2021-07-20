@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<html>
+  <head>
+	  <short value="Tecq Mate Free Services"/>
+	  <long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com"/>
+	  <datetime value="2012-01-23T06:17:17"/>
+  </head>
+  <body>
+        <main>
+			<article>
+				<header class="mb-4">
+					<h1 class="fw-bolder mb-1">Tiny URL</h1>
+					<div class="text-muted fst-italic mb-2">Posted on January 1, 2012 by Tecq Mate</div>
+					<span class="badge bg-secondary text-decoration-none link-light">Short URL</span>
+					<span class="badge bg-secondary text-decoration-none link-light">tinyurl.com</span>
+				</header>
+				<section class="mb-5">
+					<p class="fs-5 mb-4">Bulk URL service comming soon. Tiny URL service is powered by tinyurl.com</p>
+				</section>
+			</article>
+			<section class="mb-5">
+				<div class="card bg-light">
+					<div class="card-body">
+						<input class="form-control mb-4 fs-2" placeholder="Paste URL here ..." id="url" type="url"/>
+						<div class="d-flex">
+							<div class="ms-3">
+								<button class="btn btn-secondary">Short</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+        </main>
+		<template>
+			<script>
+				$(function(){
+					$('#url').on('input',function(e){
+						console.log(this.value);
+					});
+				});
+			</script>
+		</template>
+  </body>
+</html>

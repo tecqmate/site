@@ -108,6 +108,7 @@
 			<footer class="py-4 bg-dark">
 				<div class="container my-4"><p class="m-0 text-center text-white">Copyright &#x000A9; Tecq Mate 2012</p></div>
 			</footer>
+			<script src="jquery-3.5.0.min.js"></script>
 			<xsl:copy-of select="./body/template/*"/>
         </body>
     </xsl:template>
