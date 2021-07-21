@@ -42,7 +42,7 @@
                 <link rel="icon" href="favicon.ico" sizes="75x75"/>
                 <meta property="article:author" content="Tecq Mate"/>
                 <meta property="og:type" content="website"/>
-				<link href="styles.css" rel="stylesheet" />
+				<link href="bootstrap.min.css" rel="stylesheet" />
             </head>
         </html>
         <body>
@@ -102,13 +102,40 @@
 							<div class="card-header">Ads</div>
 							<div class="card-body">Ads will appear here</div>
 						</div>
+						<div class="card mb-4">
+							<div class="card-header">Donations</div>
+							<div class="card-body">Top 10 frequent donations</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<footer class="py-4 bg-dark">
-				<div class="container my-4"><p class="m-0 text-center text-white">Copyright &#x000A9; Tecq Mate 2012</p></div>
+			<footer class="py-2 bg-dark">
+				<div class="container my-2"><p class="m-0 text-center text-white">Copyright &#x000A9; Tecq Mate 2012</p></div>
 			</footer>
 			<script src="jquery-3.5.0.min.js"></script>
+			<script src="bootstrap.min.js"></script>
+			<script src="bootbox.min.js"></script>
+			<script>
+				$.extend({'alert':function(msg){
+					bootbox.dialog({
+						closeButton: false,
+						animate: false,
+						size: 'sm',
+						message: msg,
+						onEscape: true,
+						backdrop: true,
+						centerVertical: true
+					});
+				}});
+
+				$.ajaxSetup({
+					cache: true,
+					error: function(xhr,status,error){
+						console.log(arguments);
+						$.alert(error||'Something went wrong!');
+					}
+				});
+			</script>
 			<xsl:copy-of select="./body/template/*"/>
         </body>
     </xsl:template>
