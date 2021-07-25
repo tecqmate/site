@@ -39,7 +39,7 @@
                 <meta http-equiv="x-ua-compatible" content="ie=edge"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="dns-prefetch" href="//s.w.org" />
-                <link rel="icon" href="favicon.ico" sizes="75x75"/>
+                <link rel="icon" href="https://tecqmate.github.io/site/favicon.ico" sizes="75x75"/>
                 <meta property="article:author" content="Tecq Mate"/>
                 <meta property="og:type" content="website"/>
 				<link href="bootstrap.min.css" rel="stylesheet" />
@@ -80,13 +80,13 @@
 									<div class="col-sm-6">
 										<ul class="list-unstyled mb-0">
 											<li><a href="tiny">Tiny URL</a></li>
-											<li><a href="#!">HTML</a></li>
+											<li><a href="vcard">VCard</a></li>
 											<li><a href="#!">Freebies</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-6">
 										<ul class="list-unstyled mb-0">
-											<li><a href="#!">JavaScript</a></li>
+											<li><a href="#!">QR Code</a></li>
 											<li><a href="#!">CSS</a></li>
 											<li><a href="#!">Tutorials</a></li>
 										</ul>
@@ -109,7 +109,7 @@
 					</div>
 				</div>
 			</div>
-			<footer class="py-2 bg-dark">
+			<footer class="footer mt-auto py-3 bg-dark">
 				<div class="container my-2"><p class="m-0 text-center text-white">Copyright &#x000A9; Tecq Mate 2012</p></div>
 			</footer>
 			<script src="jquery-3.5.0.min.js"></script>
