@@ -10,19 +10,15 @@
         <main>
 			<article>
 				<header class="mb-4">
-					<h1 class="fw-bolder mb-1">Tiny URL</h1>
-					<div class="text-muted fst-italic mb-2">Posted on January 1, 2012 by Tecq Mate</div>
-					<span class="badge bg-secondary text-decoration-none link-light">Short URL</span>
-					<span class="badge bg-secondary text-decoration-none link-light">tinyurl.com</span>
+					<h1 class="fw-bolder mb-1">QR Code</h1>
+					<div class="text-muted fst-italic mb-2">Posted on July 26, 2012 by Tecq Mate</div>
+					<span class="badge bg-secondary text-decoration-none link-light">QR Code</span>
 				</header>
-				<section class="mb-5">
-					<p class="fs-5 mb-4">Bulk URL service comming soon. Tiny URL service is powered by tinyurl.com</p>
-				</section>
 			</article>
-			<section class="mb-5">
+			<section class="mb-3">
 				<div class="row">
 					<div class="col-sm-10">
-						<input placeholder="Type or Paste here ..." id="url" type="url" class="form-control" autofocus=""/>
+						<input placeholder="Type or Paste here ..." id="txt" type="text" class="form-control col-sm-10" autofocus=""/>
 					</div>
 					<div class="col-sm-2">
 						<button class="btn btn-outline-secondary" type="button" id="btn">
@@ -33,28 +29,22 @@
 					</div>
 				</div>
 			</section>
+			<section class="mb-3 text-center">
+				<img id="qrc" alt="QR Code" class="d-none" width="150" />
+			</section>
         </main>
 		<template>
 			<script>
 				$(function(){
 					$('#btn').on('click',function(e){
-						var url = $.trim($('#url').val());
-						if(!url){
-							$.alert('URL is mandate!');
+						var txt = $.trim($('#txt').val());
+						if(!txt){
+							$.alert('Input is mandate!');
 							return;
 						}
-
-						$.getJSON('https://unconcealing-gage.000webhostapp.com/short', {'url':url}, function(resp){
-							if('tiny' in resp){
-								$('#url').val(resp.tiny);
-								return;
-							}
-							if('error' in resp){
-								$.alert(resp.error);
-							}
-						}).fail(function(xhr, status, error){
-							$.alert(error || 'Something went wrong!');
-						});
+						var url = 'https://api.qrserver.com/v1/create-qr-code?';
+						url += $.param({'size':'150x150','data':txt});
+						$('#qrc').removeClass('d-none').attr('src',url);
 					});
 				});
 			</script>

@@ -3,7 +3,7 @@
 <html>
   <head>
 	  <short value="Tecq Mate Free Services"/>
-	  <long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com"/>
+	  <long value="Free VCard Services from Tecq Mate."/>
 	  <datetime value="2012-01-23T06:17:17"/>
   </head>
   <body>
@@ -16,7 +16,7 @@
 					<span class="badge bg-secondary text-decoration-none link-light">contact</span>
 				</header>
 				<section class="mb-5">
-					<p class="fs-5 mb-4">Dynamic VCard and Contact QRCode builder.</p>
+					<p class="fs-5 mb-4">Dynamic VCard / Contact builder.</p>
 				</section>
 			</article>
 			<section class="mb-3">
