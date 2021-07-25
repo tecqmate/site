@@ -124,7 +124,13 @@
 						message: msg,
 						onEscape: true,
 						backdrop: true,
-						centerVertical: true
+						centerVertical: true,
+						buttons:{
+							ok:{
+								label: 'Okay',
+								className: 'btn btn-sm btn-secondary'
+							}
+						}
 					});
 				}});
 

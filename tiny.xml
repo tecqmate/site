@@ -54,7 +54,9 @@
 							if('error' in resp){
 								$.alert(resp.error);
 							}
-						})
+						}).fail(function(xhr, status, error){
+							$.alert(error || 'Something went wrong!');
+						});
 					});
 				});
 			</script>
