@@ -46,7 +46,7 @@
 							return;
 						}
 
-						$.getJSON('https://pingme.pythonanywhere.com/tiny', {'url':url}, function(resp){
+						$.getJSON('https://unconcealing-gage.000webhostapp.com/short', {'url':url}, function(resp){
 							if('tiny' in resp){
 								$('#url').val(resp.tiny);
 								return;
