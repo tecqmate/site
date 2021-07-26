@@ -147,7 +147,7 @@
 						buttons:{
 							ok:{
 								label: 'Okay',
-								className: 'btn btn-sm btn-secondary'
+								className: 'btn btn-sm btn-primary'
 							}
 						}
 					});
