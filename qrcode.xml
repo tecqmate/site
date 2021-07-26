@@ -4,7 +4,7 @@
   <head>
 	  <short value="Tecq Mate Free Services"/>
 	  <long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com"/>
-	  <datetime value="2012-01-23T06:17:17"/>
+	  <datetime value="2012-07-26T06:17:17"/>
   </head>
   <body>
         <main>
@@ -16,18 +16,7 @@
 				</header>
 			</article>
 			<section class="mb-3">
-				<div class="row">
-					<div class="col-sm-10">
-						<input placeholder="Type or Paste here ..." id="txt" type="text" class="form-control col-sm-10" autofocus=""/>
-					</div>
-					<div class="col-sm-2">
-						<button class="btn btn-outline-secondary" type="button" id="btn">
-							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-							  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-							</svg>
-						</button>
-					</div>
-				</div>
+				<input placeholder="Type or Paste here ..." id="txt" type="text" class="form-control" autofocus=""/>
 			</section>
 			<section class="mb-3 text-center">
 				<img id="qrc" alt="QR Code" class="d-none" width="150" />
@@ -36,12 +25,8 @@
 		<template>
 			<script>
 				$(function(){
-					$('#btn').on('click',function(e){
-						var txt = $.trim($('#txt').val());
-						if(!txt){
-							$.alert('Input is mandate!');
-							return;
-						}
+					$('#txt').on('input',function(e){
+						var txt = $.trim(this.value) || '#tecqmate';
 						var url = 'https://api.qrserver.com/v1/create-qr-code?';
 						url += $.param({'size':'150x150','data':txt});
 						$('#qrc').removeClass('d-none').attr('src',url);

@@ -19,20 +19,20 @@
 				</div>
 				<div class="card mb-4">
 					<div class="card-body">
-						<div class="small text-muted">Month Day, Year</div>
-						<h2 class="card-title h4">Some service</h2>
-						<p class="card-text">Short description of the service. Call to action.</p>
-						<a class="btn btn-primary" href="#!">Try It →</a>
+						<div class="small text-muted">July 25, 2012</div>
+						<h2 class="card-title h4">VCard</h2>
+						<p class="card-text">Generate VCard or Contact .vcf file with our page.</p>
+						<a class="btn btn-primary" href="vcard">Try It →</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="card mb-4">
 					<div class="card-body">
-						<div class="small text-muted">Month Day, Year</div>
-						<h2 class="card-title h4">Some service</h2>
-						<p class="card-text">Short description of the service. Call to action.</p>
-						<a class="btn btn-primary" href="#!">Try It →</a>
+						<div class="small text-muted">July 26, 2012</div>
+						<h2 class="card-title h4">QR Code</h2>
+						<p class="card-text">Generate your own QR Code at instant. QR Code for all.</p>
+						<a class="btn btn-primary" href="qrcode">Try It →</a>
 					</div>
 				</div>
 				<div class="card mb-4">
