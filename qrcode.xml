@@ -18,18 +18,21 @@
 			<section class="mb-3">
 				<input placeholder="Type or Paste here ..." id="txt" type="text" class="form-control" autofocus=""/>
 			</section>
-			<section class="mb-3 text-center">
-				<img id="qrc" alt="QR Code" class="d-none" width="150" />
-			</section>
+			<section class="mb-3" id="qrc"></section>
         </main>
 		<template>
+			<style>
+				#qrc img{margin:auto;}
+			</style>
+			<script src="qrcode.min.js"></script>
 			<script>
 				$(function(){
+					var qrc = new QRCode(document.getElementById("qrc"), {width : 150,	height : 150});
 					$('#txt').on('input',function(e){
 						var txt = $.trim(this.value) || '#tecqmate';
-						var url = 'https://api.qrserver.com/v1/create-qr-code?';
-						url += $.param({'size':'150x150','data':txt});
-						$('#qrc').removeClass('d-none').attr('src',url);
+						this.value = txt;
+						qrc.clear();
+						qrc.makeCode(txt);
 					});
 				});
 			</script>

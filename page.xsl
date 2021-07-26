@@ -81,12 +81,12 @@
 										<ul class="list-unstyled mb-0">
 											<li><a href="tiny">Tiny URL</a></li>
 											<li><a href="vcard">VCard</a></li>
-											<li><a href="#!">Freebies</a></li>
+											<li><a href="qrcode">QR Code</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-6">
 										<ul class="list-unstyled mb-0">
-											<li><a href="qrcode">QR Code</a></li>
+											<li><a href="#!">Freebies</a></li>
 											<li><a href="#!">CSS</a></li>
 											<li><a href="#!">Tutorials</a></li>
 										</ul>
