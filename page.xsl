@@ -42,7 +42,7 @@
                 <link rel="icon" href="https://tecqmate.github.io/site/favicon.ico" sizes="75x75"/>
                 <meta property="article:author" content="Tecq Mate"/>
                 <meta property="og:type" content="website"/>
-				<link href="bootstrap.min.css" rel="stylesheet" />
+				<link href="yeti.min.css" rel="stylesheet" id="theme"/>
             </head>
         </html>
         <body>
@@ -88,7 +88,26 @@
 										<ul class="list-unstyled mb-0">
 											<li><a href="#!">Freebies</a></li>
 											<li><a href="#!">CSS</a></li>
-											<li><a href="#!">Tutorials</a></li>
+											<li><a href="#!">Softwares</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-4">
+							<div class="card-header">Site Theme</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<ul class="list-unstyled mb-0">
+											<li><a href="#!" data-theme="yeti.min.css">Yeti</a></li>
+											<li><a href="#!" data-theme="united.min.css">United</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-6">
+										<ul class="list-unstyled mb-0">
+											<li><a href="#!" data-theme="lumen.min.css">Lumen</a></li>
+											<li><a href="#!" data-theme="sketchy.min.css">Sketchy</a></li>
 										</ul>
 									</div>
 								</div>
@@ -140,6 +159,22 @@
 						console.log(arguments);
 						$.alert(error||'Something went wrong!');
 					}
+				});
+
+				$(function(){
+					var useTheme = function(href){
+						$('link#theme').attr('href', href);
+						localStorage.setItem('theme', href);
+					};
+
+					var themes = $('a[data-theme]').on('click', function(e){
+						e.preventDefault();
+						e.stopPropagation();
+						var theme = $(this);
+						useTheme(theme.data('theme'));
+					});
+
+					useTheme(localStorage.getItem('theme')||themes.eq(0).data('theme'));
 				});
 			</script>
 			<xsl:copy-of select="./body/template/*"/>
