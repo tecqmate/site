@@ -37,10 +37,10 @@
 				</div>
 				<div class="card mb-4">
 					<div class="card-body">
-						<div class="small text-muted">Month Day, Year</div>
-						<h2 class="card-title h4">Some service</h2>
-						<p class="card-text">Short description of the service. Call to action.</p>
-						<a class="btn btn-primary" href="#!">Try It →</a>
+						<div class="small text-muted">July 28, 2012</div>
+						<h2 class="card-title h4">De-Obsfucate PHP</h2>
+						<p class="card-text">Did you found some awful php code on your website?</p>
+						<a class="btn btn-primary" href="dephp">Try It →</a>
 					</div>
 				</div>
 			</div>
