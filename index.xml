@@ -8,39 +8,63 @@
   </head>
   <body>
         <main>
-			<div class="col-lg-6">
-				<div class="card mb-4">
+			<div class="col mb-1 col-sm-12 col-md-6 col-md-4">
+				<div class="card">
 					<div class="card-body">
 						<div class="small text-muted">January 1, 2012</div>
 						<h2 class="card-title h4">Tiny URL</h2>
-						<p class="card-text">Shorthen long url, make it easier to type and remember urls.</p>
+						<p class="card-text">Shorten long urls to make them easier to type and remember.</p>
 						<a class="btn btn-primary" href="tiny">Try It →</a>
 					</div>
 				</div>
-				<div class="card mb-4">
+			</div>
+			<div class="col mb-1 col-sm-12 col-md-6 col-md-4">
+				<div class="card">
 					<div class="card-body">
 						<div class="small text-muted">July 25, 2012</div>
 						<h2 class="card-title h4">VCard</h2>
-						<p class="card-text">Generate VCard or Contact .vcf file with our page.</p>
+						<p class="card-text">With our page, you can create a VCard or a Contact.vcf file.</p>
 						<a class="btn btn-primary" href="vcard">Try It →</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<div class="card mb-4">
+			<div class="col mb-1 col-sm-12 col-md-6 col-md-4">
+				<div class="card">
 					<div class="card-body">
 						<div class="small text-muted">July 26, 2012</div>
 						<h2 class="card-title h4">QR Code</h2>
-						<p class="card-text">Generate your own QR Code at instant. QR Code for all.</p>
+						<p class="card-text">Create your own QR Code in an instant. Anyone can use a it.</p>
 						<a class="btn btn-primary" href="qrcode">Try It →</a>
 					</div>
 				</div>
-				<div class="card mb-4">
+			</div>
+			<div class="col mb-1 col-sm-12 col-md-6 col-md-4">
+				<div class="card">
 					<div class="card-body">
 						<div class="small text-muted">July 28, 2012</div>
 						<h2 class="card-title h4">De-Obsfucate PHP</h2>
-						<p class="card-text">Did you found some awful php code on your website?</p>
+						<p class="card-text">Did you have dreadful php code on your website? Let's dig in!</p>
 						<a class="btn btn-primary" href="dephp">Try It →</a>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-1 col-sm-12 col-md-6 col-md-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="small text-muted">July 30, 2012</div>
+						<h2 class="card-title h4">Verify Email</h2>
+						<p class="card-text">Do you want to see if an email address is fake or real?</p>
+						<a class="btn btn-primary" href="verify-email">Try It →</a>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-1 col-sm-12 col-md-6 col-md-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="small text-muted">July 30, 2012</div>
+						<h2 class="card-title h4">Ping Domain</h2>
+						<p class="card-text">Do you want to check the DNS entries of your domain?</p>
+						<a class="btn btn-primary" href="#!">Try It →</a>
 					</div>
 				</div>
 			</div>
