@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<html>
+  <head>
+	  <short value="Tecq Mate Free Services"/>
+	  <long value="Free DNS records service from Tecq Mate. Ping your domain and verify DNS records."/>
+	  <datetime value="2012-01-23T06:17:17"/>
+  </head>
+  <body>
+        <main>
+			<article>
+				<header class="mb-4">
+					<h1 class="fw-bolder mb-1">Ping Domain</h1>
+					<div class="text-muted fst-italic mb-2">Posted on July 30, 2012 by Tecq Mate</div>
+					<span class="badge bg-secondary text-decoration-none link-light">domain</span>
+					<span class="badge bg-secondary text-decoration-none link-light">dns</span>
+					<span class="badge bg-secondary text-decoration-none link-light">mx</span>
+					<span class="badge bg-secondary text-decoration-none link-light">cname</span>
+				</header>
+				<section class="mb-5">
+					<p class="fs-5 mb-4">We will make an attempt to ping the given domain.</p>
+				</section>
+			</article>
+			<section class="mb-5">
+				<div class="row">
+					<div class="col-8">
+						<input placeholder="Type or Paste here ..." id="domain" type="text" class="form-control" autofocus=""/>
+					</div>
+					<div class="col-2">
+						<select class="form-select" id="query">
+							<option class="text-muted">ALL</option>
+							<option class="text-muted">ANY</option>
+							<option>A</option>
+							<option>A6</option>
+							<option>AAAA</option> 
+							<option>CAA</option>
+							<option>CNAME</option>
+							<option>CERT</option>
+							<option>HINFO</option>
+							<option>MX</option>
+							<option>NS</option>
+							<option>NAPTR</option>
+							<option>PTR</option>
+							<option>SOA</option>
+							<option>SRV</option>
+							<option>TXT</option>
+						</select>
+					</div>
+					<div class="col-2">
+						<button class="btn btn-primary" type="button" id="btn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+							  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+			<section><pre><code id="records"/></pre></section>
+        </main>
+		<template>
+			<script>
+				$(function(){
+					var btn = $('#btn');
+					btn.on('click',function(e){
+						var domain = $.trim($('#domain').val());
+						var query = $.trim($('#query').val());
+						var records = $('#records').empty();
+						if(!domain){
+							$.alert('Domain is mandate!');
+							return;
+						}
+						btn.addClass('disabled');
+
+						$.getJSON(
+							'https://unconcealing-gage.000webhostapp.com/ping-domain', 
+							{'domain':domain, 'query': query}, 
+							function(resp){
+								if('msg' in resp){
+									$.alert(resp.msg);
+								}
+								if('result' in resp){
+									records.text(JSON.stringify(resp.result, 0, 4));
+								}
+							}
+						).always(function(){
+							btn.removeClass('disabled');
+						});
+					});
+				});
+			</script>
+		</template>
+  </body>
+</html>

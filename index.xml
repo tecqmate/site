@@ -64,7 +64,7 @@
 						<div class="small text-muted">July 30, 2012</div>
 						<h2 class="card-title h4">Ping Domain</h2>
 						<p class="card-text">Do you want to check the DNS entries of your domain?</p>
-						<a class="btn btn-primary" href="#!">Try It →</a>
+						<a class="btn btn-primary" href="ping-domain">Try It →</a>
 					</div>
 				</div>
 			</div>

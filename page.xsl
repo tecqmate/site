@@ -87,7 +87,7 @@
 									<div class="col-sm-6">
 										<ul class="list-unstyled mb-0">
 											<li><a href="verify-email">Verify Email</a></li>
-											<li><a href="#!">CSS</a></li>
+											<li><a href="ping-domain">Ping Domain</a></li>
 											<li><a href="#!">Softwares</a></li>
 										</ul>
 									</div>
