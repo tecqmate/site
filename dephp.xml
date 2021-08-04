@@ -1,82 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="page.xsl"?>
 <html>
-	<head>
-		<short value="Tecq Mate Free Services"/>
-		<long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com"/>
-		<datetime value="2012-01-23T06:17:17"/>
-	</head>
-	<body>
-		<main>
-			<article>
-				<header class="mb-4">
-					<h1 class="fw-bolder mb-1">De-Obsfucate PHP</h1>
-					<div class="text-muted fst-italic mb-2">Posted on July 28, 2012 by Tecq Mate</div>
-					<span class="badge bg-secondary text-decoration-none link-light">php</span>
-					<span class="badge bg-secondary text-decoration-none link-light">obsfucated</span>
-					<span class="badge bg-secondary text-decoration-none link-light">deobsfucation</span>
-				</header>
-				<section class="mb-5">
-					<p class="fs-5 mb-4">Did you found some awful php code on your website? We will try to decode that php code.</p>
-				</section>
-			</article>
-			<section class="mb-5">
-				<div class="row">
-					<div class="col-sm-12 mb-2">
-						<textarea placeholder="Type or Paste here ..." id="php" class="form-control" autofocus=""/>
-					</div>
-					<div class="col-sm-12 text-center">
-						<button class="btn btn-primary" type="button" id="btn">Decode 
-							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-								<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-							</svg>
-						</button>
-					</div>
-				</div>
-			</section>
-			<section>
-				<h3>Examples of obsfucated code</h3>
-				<div class="row">
-					<div class="card col-sm-12 mb-2">
-						<pre><code>&lt;?php if ($O1b7) { print ("\074/\142\157dy\076\n");
+  <head>
+    <short value="Tecq Mate Free Services" />
+    <long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com" />
+    <datetime value="2012-01-23T06:17:17" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <header class="mb-4">
+          <h1 class="fw-bolder mb-1">De-Obsfucate PHP</h1>
+          <div class="text-muted fst-italic mb-2">Posted on July 28, 2012 by Tecq Mate</div>
+          <span class="badge bg-secondary text-decoration-none link-light">php</span>
+          <span class="badge bg-secondary text-decoration-none link-light">obsfucated</span>
+          <span class="badge bg-secondary text-decoration-none link-light">deobsfucation</span>
+        </header>
+        <section class="mb-5">
+          <p class="fs-5 mb-4">Did you found some awful php code on your website? We will try to
+          decode that php code.</p>
+        </section>
+      </article>
+      <section class="mb-5">
+        <div class="row">
+          <div class="col-sm-12 mb-2">
+            <textarea placeholder="Type or Paste here ..." id="php" class="form-control"
+            autofocus="" />
+          </div>
+          <div class="col-sm-12 text-center">
+            <button class="btn btn-primary" type="button" id="btn">Decode 
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+            class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg></button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>Examples of obsfucated code</h3>
+        <div class="row">
+          <div class="card col-sm-12 mb-2">
+            <pre>
+<code>&lt;?php if ($O1b7) { print ("\074/\142\157dy\076\n");
 print ("\074\057\102\117\104Y&gt;\n&lt;\057\110TML\076\n");
-} ?&gt;</code></pre>
-					</div>
-					<div class="card col-sm-12 mb-2">
-						<pre><code>print ("\074\041D\117\103\124\131P\105 \110TML PU\102LI\103 '\055\057/\1273\103//\104\124D\040H\124\115\114 \064.0\061 \124\162\141n\163it\151\157na\154/\057EN\047\076&lt;H\124\115L\076");
-print ("\074\150\145a\144&gt;&lt;title&gt;\115ortgag\145 C\141lcul\141tor\074/t\151\164\154\145&gt;&lt;/\110E\101D&gt;&lt;BO\104\131&gt;");
+} ?&gt;</code>
+</pre>
+          </div>
+          <div class="card col-sm-12 mb-2">
+            <pre>
+<code>print ("\074\041D\117\103\124\131P\105 \110TML PU\102LI\103
+'\055\057/\1273\103//\104\124D\040H\124\115\114 \064.0\061
+\124\162\141n\163it\151\157na\154/\057EN\047\076&lt;H\124\115L\076");
+print ("\074\150\145a\144&gt;&lt;title&gt;\115ortgag\145
+C\141lcul\141tor\074/t\151\164\154\145&gt;&lt;/\110E\101D&gt;&lt;BO\104\131&gt;");
 print ("\074\142\157dy\040bgcolor=\134'\043\063\063\143cff\134\047&gt;");
-print ("\074\1101\040st\171\154e=\134\047mar\147in-bottom:\040\0635p\170;\134'\076\120\110\120 Mortgage \103al\143u\154at\157r&lt;\057h1\076");
-print ("&lt;h\162\076\n\n");</code></pre>
- 					</div>
-				</div>
-			</section>
-		</main>
-		<template>
-			<style>
-				#php{min-height:200px;resize:none;}
-				.card pre code{word-break:break-all;white-space: break-spaces;}
-			</style>
-			<script>
-				$(function(){
-					$('#btn').on('click',function(e){
-						var php = $.trim($('#php').val());
-						if(!php){
-							$.alert('Code is mandate!');
-							return;
-						}
-						$.post('https://unconcealing-gage.000webhostapp.com/dephp', {'php':php}, function(resp){
-							if('clean' in resp){
-								$('#php').val(resp.clean);
-								return;
-							}
-							if('error' in resp){
-								$.alert(resp.error);
-							}
-						});
-					});
-				});
-			</script>
-		</template>
-	</body>
+print ("\074\1101\040st\171\154e=\134\047mar\147in-bottom:\040\0635p\170;\134'\076\120\110\120
+Mortgage \103al\143u\154at\157r&lt;\057h1\076");
+print ("&lt;h\162\076\n\n");</code>
+</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+    <template>
+      <style>#php{min-height:200px;resize:none;} .card pre code{word-break:break-all;white-space:
+      break-spaces;}</style>
+      <script>$(function(){ $('#btn').on('click',function(e){ var php = $.trim($('#php').val());
+      if(!php){ $.alert('Code is mandate!'); return; }
+      $.post('https://unconcealing-gage.000webhostapp.com/dephp', {'php':php}, function(resp){
+      if('clean' in resp){ $('#php').val(resp.clean); return; } if('error' in resp){
+      $.alert(resp.error); } }); }); });</script>
+    </template>
+  </body>
 </html>

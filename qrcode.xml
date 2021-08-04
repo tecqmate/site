@@ -2,40 +2,31 @@
 <?xml-stylesheet type="text/xsl" href="page.xsl"?>
 <html>
   <head>
-	  <short value="Tecq Mate Free Services"/>
-	  <long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com"/>
-	  <datetime value="2012-07-26T06:17:17"/>
+    <short value="Tecq Mate Free Services" />
+    <long value="Free Tiny URL Services from Tecq Mate. Tiny URL powered by tinyurl.com" />
+    <datetime value="2012-07-26T06:17:17" />
   </head>
   <body>
-        <main>
-			<article>
-				<header class="mb-4">
-					<h1 class="fw-bolder mb-1">QR Code</h1>
-					<div class="text-muted fst-italic mb-2">Posted on July 26, 2012 by Tecq Mate</div>
-					<span class="badge bg-secondary text-decoration-none link-light">QR Code</span>
-				</header>
-			</article>
-			<section class="mb-3">
-				<input placeholder="Type or Paste here ..." id="txt" type="text" class="form-control" autofocus=""/>
-			</section>
-			<section class="mb-3" id="qrc"></section>
-        </main>
-		<template>
-			<style>
-				#qrc img{margin:auto;}
-			</style>
-			<script src="qrcode.min.js"></script>
-			<script>
-				$(function(){
-					var qrc = new QRCode(document.getElementById("qrc"), {width : 150,	height : 150});
-					$('#txt').on('input',function(e){
-						var txt = $.trim(this.value) || '#tecqmate';
-						this.value = txt;
-						qrc.clear();
-						qrc.makeCode(txt);
-					});
-				});
-			</script>
-		</template>
+    <main>
+      <article>
+        <header class="mb-4">
+          <h1 class="fw-bolder mb-1">QR Code</h1>
+          <div class="text-muted fst-italic mb-2">Posted on July 26, 2012 by Tecq Mate</div>
+          <span class="badge bg-secondary text-decoration-none link-light">QR Code</span>
+        </header>
+      </article>
+      <section class="mb-3">
+        <input placeholder="Type or Paste here ..." id="txt" type="text" class="form-control"
+        autofocus="" value="#tecqmate" />
+      </section>
+      <section class="mb-3" id="qrc"></section>
+    </main>
+    <template>
+      <style>#qrc img{margin:auto;}</style>
+      <script src="qrcode.min.js"></script>
+      <script>$(function(){ var qrc = new QRCode(document.getElementById("qrc"), {width : 150,
+      height : 150}); $('#txt').on('input',function(e){ var txt = $.trim(this.value); this.value =
+      txt; qrc.clear(); if(txt){qrc.makeCode(txt);} }).trigger('input'); });</script>
+    </template>
   </body>
 </html>
