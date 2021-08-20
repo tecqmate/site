@@ -175,7 +175,7 @@
       <script>$.extend({'alert':function(msg){ bootbox.dialog({ closeButton: false, animate: false,
       size: 'sm', message: msg, onEscape: true, backdrop: true, centerVertical: true, buttons:{
       ok:{ label: 'Okay', className: 'btn btn-sm btn-primary' } } }); }}); $.ajaxSetup({ cache:
-      true, error: function(xhr,status,error){ console.log(arguments); $.alert(error||'Something
+      true, error: function(xhr,status,error){ console.log(arguments); $.alert(error || 'Something\
       went wrong!'); } }); $(function(){ var useTheme = function(href){
       $('link#theme').attr('href', href); localStorage.setItem('theme', href); }; var themes =
       $('a[data-theme]').on('click', function(e){ e.preventDefault(); e.stopPropagation(); var
