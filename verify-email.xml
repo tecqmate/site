@@ -43,7 +43,7 @@
     </main>
     <template>
       <script>$(function(){ var btn = $('#btn'); btn.on('click',function(e){
-      btn.addClass('disabled'); var email = $.trim($('#email').val()); if(!email){ $.alert('Email
+      btn.addClass('disabled'); var email = $.trim($('#email').val()); if(!email){ $.alert('Email \
       is mandate!'); return; } $.getJSON('https://pingme.pythonanywhere.com/email-exists',
       {'email':email}, function(resp){ if('msg' in resp){ $.alert(resp.msg); }
       }).always(function(){ btn.removeClass('disabled'); }); }); });</script>
