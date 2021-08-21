@@ -104,6 +104,9 @@
                       <li>
                         <a href="qrcode">QR Code</a>
                       </li>
+                      <li>
+                        <a href="timezone">Time Zone</a>
+                      </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">

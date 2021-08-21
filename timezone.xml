@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<html>
+  <head>
+    <short value="Tecq Mate Free Services" />
+    <long value="Free Time Zone Services from Tecq Mate. Time Zone powered by worldtimeapi.org/" />
+    <datetime value="2012-07-26T06:17:17" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <header class="mb-4">
+          <h1 class="fw-bolder mb-1">World Time Zones</h1>
+          <div class="text-muted fst-italic mb-2">Posted on Aug 21, 2021 by Tecq Mate</div>
+          <span class="badge bg-secondary text-decoration-none link-light">World</span>
+          <span class="badge bg-secondary text-decoration-none link-light">Time Zone</span>
+        </header>
+      </article>
+      <section class="mb-3 col-sm-12 col-md-4">
+		<select id="zone" class="custom-select col-sm-12">
+		  <option value=""> -- Zone -- </option>
+		</select>
+      </section>
+      <section class="mb-3 col-sm-12 col-md-8"><pre><code id="time"></code></pre></section>
+    </main>
+    <template>
+      <link href="select2.min.css" rel="stylesheet"/>
+      <script src="select2.min.js"></script>
+      <script>$(function(){
+	    var baseUrl = 'http://worldtimeapi.org/api/timezone';
+		$.getJSON(baseUrl,function (list) {
+		   var dom = $(document.createDocumentFragment());
+		   while(list.length){
+			 dom.append(new Option(list.shift()));
+		   }
+		   $('#zone').append(dom).select2().on('change',function(e){
+			 var zone = this.value;
+			 $('#time').text('Kindly select time zone to view more details');
+			 if(zone){
+				$.getJSON(baseUrl+'/'+zone, function(data){
+					$('#time').text(JSON.stringify(data, 0, 4));
+				});
+			 }
+		   }).trigger('change');
+		});
+	  });</script>
+    </template>
+  </body>
+</html>
