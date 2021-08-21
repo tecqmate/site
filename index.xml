@@ -68,6 +68,16 @@
           </div>
         </div>
       </div>
+      <div class="col mb-2 col-12 col-sm-12 col-md-6 col-xl-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="small text-muted">August 21, 2021</div>
+            <h2 class="card-title h4">Time Zone</h2>
+            <p class="card-text">Do you want to check the world wide time?</p>
+            <a class="btn btn-primary" href="ping-domain">Try It →</a>
+          </div>
+        </div>
+      </div>
     </main>
     <template />
   </body>

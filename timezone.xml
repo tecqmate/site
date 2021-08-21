@@ -27,7 +27,7 @@
       <link href="select2.min.css" rel="stylesheet"/>
       <script src="select2.min.js"></script>
       <script>$(function(){
-	    var baseUrl = 'http://worldtimeapi.org/api/timezone';
+	    var baseUrl = 'https://worldtimeapi.org/api/timezone';
 		$.getJSON(baseUrl,function (list) {
 		   var dom = $(document.createDocumentFragment());
 		   while(list.length){
