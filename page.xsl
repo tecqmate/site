@@ -121,7 +121,7 @@
                         <a href="dephp">Decode PHP</a>
                       </li>
                       <li>
-                        <a href="#!">Softwares</a>
+                        <a href="https://github.com/sdksmate?tab=repositories" target="_blank">Softwares</a>
                       </li>
                     </ul>
                   </div>
