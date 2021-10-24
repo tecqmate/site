@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+<html>
+  <head>
+    <short value="Tecq Mate Free Services" />
+    <long value="Free URL Encode Services from Tecq Mate." />
+    <datetime value="2021-11-23T06:17:17" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <header class="mb-4">
+          <h1 class="fw-bolder mb-1">URL Encode</h1>
+          <div class="text-muted fst-italic mb-2">Posted on October 23, 2021 by
+          Tecq Mate</div>
+          <span class="badge bg-secondary text-decoration-none link-light">
+          URL</span>
+          <span class="badge bg-secondary text-decoration-none link-light">
+          encode</span>
+        </header>
+        <section class="mb-5">
+          <p class="fs-5 mb-4">Bulk URL service comming soon.</p>
+        </section>
+      </article>
+      <section class="mb-5">
+        <div class="row">
+          <div class="col-12 col-md-6 text-center">
+            <textarea placeholder="Type or Paste Plain Text here ..." id="dec"
+            class="form-control mb-3" autofocus="" rows="7"/>
+            <button class="btn btn-primary" type="button" id="ebtn">Encode</button>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <textarea placeholder="Type or Paste Encoded Text here ..." id="enc"
+            class="form-control mb-3" rows="7"/>
+            <button class="btn btn-primary" type="button" id="dbtn">Decode</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <template>
+      <script>
+      $(function(){
+
+        var rep = {
+          '!' : '%21',
+          '\'': '%27',
+          '(' : '%28',
+          ')' : '%29',
+          '*' : '%2A',
+          '+' : '%20'
+        };
+
+        $('#ebtn').on('click',function(e){
+         var inp = $.trim($('#dec').val());
+         if(!inp){
+           $.alert('Input is mandate!');
+           return;
+         }
+         inp = encodeURIComponent(inp);
+         for(var c in rep){
+           if(!rep.hasOwnProperty(c))continue;
+           inp = inp.replaceAll(c, rep[c]);
+         }
+         $('#enc').val(inp);
+        });
+
+        $('#dbtn').on('click',function(e){
+         var inp = $.trim($('#enc').val());
+         if(!inp){
+           $.alert('Input is mandate!');
+           return;
+         }
+         inp = decodeURIComponent(inp);
+         for(var c in rep){
+           if(!rep.hasOwnProperty(c))continue;
+           inp = inp.replaceAll(rep[c],c);
+         }
+         $('#dec').val(inp);
+        });
+      });
+     </script>
+    </template>
+  </body>
+</html>

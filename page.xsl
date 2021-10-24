@@ -96,32 +96,39 @@
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="tiny">Tiny URL</a>
+                        <a href="tiny.xml">Tiny URL</a>
                       </li>
                       <li>
-                        <a href="vcard">VCard</a>
+                        <a href="vcard.xml">VCard</a>
                       </li>
                       <li>
-                        <a href="qrcode">QR Code</a>
+                        <a href="qrcode.xml">QR Code</a>
                       </li>
                       <li>
-                        <a href="timezone">Time Zone</a>
+                        <a href="timezone.xml">Time Zone</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="verify-email">Verify Email</a>
+                        <a href="verify-email.xml">Verify Email</a>
                       </li>
                       <li>
-                        <a href="ping-domain">Ping Domain</a>
+                        <a href="ping-domain.xml">Ping Domain</a>
                       </li>
                       <li>
-                        <a href="dephp">Decode PHP</a>
+                        <a href="dephp.xml">Decode PHP</a>
                       </li>
                       <li>
                         <a href="https://github.com/sdksmate?tab=repositories" target="_blank">Softwares</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-6">
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="url-encode.xml">URL Encode</a>
                       </li>
                     </ul>
                   </div>
