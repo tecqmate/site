@@ -40,27 +40,13 @@
     <template>
       <script>
       $(function(){
-
-        var rep = {
-          '!' : '%21',
-          '\'': '%27',
-          '(' : '%28',
-          ')' : '%29',
-          '*' : '%2A',
-          '+' : '%20'
-        };
-
         $('#ebtn').on('click',function(e){
          var inp = $.trim($('#dec').val());
          if(!inp){
            $.alert('Input is mandate!');
            return;
          }
-         inp = encodeURIComponent(inp);
-         for(var c in rep){
-           if(!rep.hasOwnProperty(c))continue;
-           inp = inp.replaceAll(c, rep[c]);
-         }
+         inp = $.esc_url(inp);
          $('#enc').val(inp);
         });
 
@@ -70,11 +56,7 @@
            $.alert('Input is mandate!');
            return;
          }
-         inp = decodeURIComponent(inp);
-         for(var c in rep){
-           if(!rep.hasOwnProperty(c))continue;
-           inp = inp.replaceAll(rep[c],c);
-         }
+         inp = $.unesc_url(inp);
          $('#dec').val(inp);
         });
       });
