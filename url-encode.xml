@@ -5,6 +5,7 @@
     <short value="Tecq Mate Free Services" />
     <long value="Free URL Encode Services from Tecq Mate." />
     <datetime value="2021-11-23T06:17:17" />
+    <style>#dec,#enc{resize:none;min-height:200px;}</style>
   </head>
   <body>
     <main>

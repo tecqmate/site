@@ -5,31 +5,48 @@
     <short value="Tecq Mate Free Services" />
     <long value="HTML Encode Services from Tecq Mate." />
     <datetime value="2022-02-20T06:17:17" />
+    <style>#txt,#esc{resize:none;min-height:200px;}</style>
   </head>
   <body>
     <main>
       <article>
         <header class="mb-4">
-          <h1 class="fw-bolder mb-1">HTML Encode</h1>
+          <h1 class="fw-bolder mb-1">Sanitize HTML</h1>
           <div class="text-muted fst-italic mb-2">Posted on Febuary 20, 2022 by Tecq Mate</div>
-          <span class="badge bg-secondary text-decoration-none link-light">HTML Encode</span>
-        </header>
+          <span class="badge bg-secondary text-decoration-none link-light">HTML Escape</span>
+          <span class="badge bg-secondary text-decoration-none link-light">Sanitize HTML</span>
+        </header> 
       </article>
-      <section class="mb-3">
-        <textarea placeholder="Type or Paste here ..." id="txt" class="form-control"
-        autofocus=""></textarea>
+      <section class="mb-5">
+        <div class="row">
+          <div class="col-12 col-md-6 text-center">
+            <textarea placeholder="Type or Paste Plain Text here ..." id="txt"
+            class="form-control mb-3" autofocus=""/>
+            <button class="btn btn-primary" type="button" id="ebtn">Escape</button>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <textarea readonly="" id="esc" class="form-control mb-3" />
+            <button class="btn btn-primary" type="button" id="cbtn">Copy</button>
+          </div>
+        </div>
       </section>
-      <section class="mb-3"><pre><code id="esc"></code></pre></section>
     </main>
     <template>
-      <style>#txt{resize:none;min-height:200px;}</style>
       <script>
         $(function(){
-          $('#txt').on('input',function(e){
-            var text = document.createTextNode(this.value);
+          $('#cbtn').on('click',function(e){
+            var el = $('#esc').get(0);
+            el.select();
+            if(document.execCommand('copy')){
+                $.alert('HTML copied!');
+            }
+          });
+
+          $('#ebtn').on('click',function(e){
+            var text = document.createTextNode($('#txt').val());
             var p = document.createElement('p');
             p.appendChild(text);
-            $('#esc').text(p.innerHTML);
+            $('#esc').val(p.innerHTML);
           });
         });
       </script>
