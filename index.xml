@@ -98,6 +98,16 @@
           </div>
         </div>
       </div>
+      <div class="col mb-2 col-12 col-sm-12 col-md-6 col-xl-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="small text-muted">May 18, 2022</div>
+            <h2 class="card-title h4">Google Analytics</h2>
+            <p class="card-text">Looking for GA Link Builder?</p>
+            <a class="btn btn-primary" href="ga-link.xml">Try It →</a>
+          </div>
+        </div>
+      </div>
     </main>
     <template />
   </body>
