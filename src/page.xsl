@@ -96,29 +96,29 @@
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="tiny.xml">Tiny URL</a>
+                        <a href="tiny.html">Tiny URL</a>
                       </li>
                       <li>
-                        <a href="vcard.xml">VCard</a>
+                        <a href="vcard.html">VCard</a>
                       </li>
                       <li>
-                        <a href="qrcode.xml">QR Code</a>
+                        <a href="qrcode.html">QR Code</a>
                       </li>
                       <li>
-                        <a href="timezone.xml">Time Zone</a>
+                        <a href="timezone.html">Time Zone</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="verify-email.xml">Verify Email</a>
+                        <a href="verify-email.html">Verify Email</a>
                       </li>
                       <li>
-                        <a href="ping-domain.xml">Ping Domain</a>
+                        <a href="ping-domain.html">Ping Domain</a>
                       </li>
                       <li>
-                        <a href="dephp.xml">Decode PHP</a>
+                        <a href="dephp.html">Decode PHP</a>
                       </li>
                       <li>
                         <a href="https://github.com/sdksmate?tab=repositories" target="_blank">Softwares</a>
@@ -128,49 +128,49 @@
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="url-encode.xml">URL Encode</a>
+                        <a href="url-encode.html">URL Encode</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="whatsapp.xml">WhatsApp</a>
+                        <a href="whatsapp.html">WhatsApp</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="html-encode.xml">HTML Escape</a>
+                        <a href="html-encode.html">HTML Escape</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="embeded-url.xml">Embeded URL</a>
+                        <a href="embeded-url.html">Embeded URL</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="transliterate.xml">Transliterate</a>
+                        <a href="transliterate.html">Transliterate</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="sms-count.xml">SMS Count</a>
+                        <a href="sms-count.html">SMS Count</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="ga-link.xml">GA Link</a>
+                        <a href="ga-link.html">GA Link</a>
                       </li>
                     </ul>
                   </div>
