@@ -45,13 +45,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="dns-prefetch" href="//s.w.org" />
-        <link rel="icon" href="https://tecqmate.github.io/site/favicon.ico" sizes="75x75" />
+        <link rel="dns-prefetch" href="//s.w.org"></link>
+        <link rel="icon" href="https://tecqmate.github.io/site/favicon.ico" sizes="75x75"></link>
         <meta property="article:author" content="Tecq Mate" />
         <meta property="og:type" content="website" />
-        <link href="lumen.min.css" rel="stylesheet" id="theme"/>
+        <link href="lumen.min.css" rel="stylesheet" id="theme"></link>
       </head>
-    </html>
     <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -249,5 +248,6 @@
       </script>
       <xsl:copy-of select="./body/template/*" />
     </body>
+  </html>
   </xsl:template>
 </xsl:stylesheet>

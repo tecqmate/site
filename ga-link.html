@@ -1,5 +1,6 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Tecq Mate Free Services</title>
 <meta name="description" content="Tecq Mate Free ServicesFree Google Analytics Campaign Links Services from Tecq Mate.">
@@ -17,7 +18,8 @@
 <meta property="article:author" content="Tecq Mate">
 <meta property="og:type" content="website">
 <link href="lumen.min.css" rel="stylesheet" id="theme">
-</head></html><body>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><div class="container">
 <a class="navbar-brand" href="https://tecqmate.github.io/site">Tecq Mate</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 <li class="nav-item"><a class="nav-link" href="https://tecqmate.blogspot.com" target="_blank">Blog</a></li>
@@ -62,7 +64,7 @@
             <label for="content" class="form-label">Campaign Content(Optional)</label>
             <input type="text" class="form-control" id="content" name="content" placeholder="To defferentiate from ads">
           </div>
-					<div class="col-2">
+					<div class="col-sm-12" style="padding-top:10px; text-align: right;">
 						<button class="btn btn-primary" type="button" id="btn">
 							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
 							  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
@@ -70,11 +72,7 @@
 						</button>
 					</div>
 				</div>
-			</section><script>
-        document.addEventListener('DOMContentLoaded',function(){
-          console.log('hi');
-        });
-			</script>
+			</section>
 </div></div>
 <div class="col-lg-4">
 <div class="card mb-4">
@@ -147,5 +145,27 @@
           $.extend({'unesc_url':function(inp){inp = decodeURIComponent(inp);
             for(var c in rep){if(!rep.hasOwnProperty(c))continue; inp = inp.replaceAll(rep[c],c);} return inp;}});
       })($);});
+      </script><script>
+        $(function(){
+          var fields = ['source','medium','name','term','content'];
+          var optional = ['term','content'];
+          var url = $('#url');
+          $('#btn').on('click', function(){
+            var href = $.trim(url.val());
+            if(!href){$.alert('URL is mandate!');return;}
+            var params={};
+            $.each(fields, function(_, id){
+              var el = document.getElementById(id);
+              var va = $.trim(el.value);
+              if(!va) if(-1 === $.inArray(id, optional)){
+                $.alert(id+' is mandate');
+                return false;
+              }
+              if(va)params['utm_'+id] = va;
+            });
+            $.alert(href+'?'+$.param(params));
+          });
+        });
       </script>
 </body>
+</html>
