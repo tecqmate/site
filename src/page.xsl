@@ -225,15 +225,15 @@
         </div>
       </footer>
       <script src="jquery-3.5.0.min.js"></script>
-      <script defer="true" src="bootstrap.min.js"></script>
+      <script src="bootstrap.min.js"></script>
       <script src="bootbox.min.js"></script>
       <script>
+      $(function(){
       $.extend({'alert':function(msg){ bootbox.dialog({ closeButton: false, animate: false,
       size: 'sm', message: msg, onEscape: true, backdrop: true, centerVertical: true, buttons:{
       ok:{ label: 'Okay', className: 'btn btn-sm btn-primary' } } }); }});
-      $.ajaxSetup({ cache:
-      true, error: function(xhr,status,error){ console.log(arguments); $.alert(error || 'Something\
-      went wrong!'); } }); 
+      $.ajaxSetup({cache: true, error: function(xhr,status,error){ 
+      console.log(arguments); $.alert(error || 'Something went wrong!'); } }); 
       $(function(){ var useTheme = function(href){
       $('link#theme').attr('href', href); localStorage.setItem('theme', href); }; var themes =
       $('a[data-theme]').on('click', function(e){ e.preventDefault(); e.stopPropagation(); var
@@ -245,7 +245,7 @@
             for(var c in rep){ if(!rep.hasOwnProperty(c))continue;str = str.replaceAll(c, rep[c]);} return str;}});
           $.extend({'unesc_url':function(inp){inp = decodeURIComponent(inp);
             for(var c in rep){if(!rep.hasOwnProperty(c))continue; inp = inp.replaceAll(rep[c],c);} return inp;}});
-      })($);
+      })($);});
       </script>
       <xsl:copy-of select="./body/template/*" />
     </body>

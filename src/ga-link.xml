@@ -54,20 +54,11 @@
 					</div>
 				</div>
 			</section>
-        </main>
-		<template>
 			<script>
-				$(function(){
-					$('#btn').on('click',function(e){
-						var url = $.trim($('#url').val());
-						if(!url){
-							$.alert('URL is mandate!');
-							return;
-						}
-//fb.com?utm_source=source&utm_medium=medium&utm_campaign=name&utm_term=term&utm_content=content
-					});
-				});
+        document.addEventListener('DOMContentLoaded',function(){
+          console.log('hi');
+        });
 			</script>
-		</template>
+    </main>
   </body>
 </html>
