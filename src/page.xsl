@@ -50,8 +50,13 @@
         <meta property="article:author" content="Tecq Mate" />
         <meta property="og:type" content="website" />
         <link href="lumen.min.css" rel="stylesheet" id="theme"></link>
+        <link href="style.css" rel="stylesheet"></link>
       </head>
     <body>
+      <div id="loader">
+        <div id="overlay"></div>
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+      </div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <a class="navbar-brand" href="https://tecqmate.github.io/site">Tecq Mate</a>
@@ -226,26 +231,7 @@
       <script src="jquery-3.5.0.min.js"></script>
       <script src="bootstrap.min.js"></script>
       <script src="bootbox.min.js"></script>
-      <script>
-      $(function(){
-      $.extend({'alert':function(msg){ bootbox.dialog({ closeButton: false, animate: false,
-      size: 'sm', message: msg, onEscape: true, backdrop: true, centerVertical: true, buttons:{
-      ok:{ label: 'Okay', className: 'btn btn-sm btn-primary' } } }); }});
-      $.ajaxSetup({cache: true, error: function(xhr,status,error){ 
-      console.log(arguments); $.alert(error || 'Something went wrong!'); } }); 
-      $(function(){ var useTheme = function(href){
-      $('link#theme').attr('href', href); localStorage.setItem('theme', href); }; var themes =
-      $('a[data-theme]').on('click', function(e){ e.preventDefault(); e.stopPropagation(); var
-      theme = $(this); useTheme(theme.data('theme')); });
-      useTheme(localStorage.getItem('theme')||themes.eq(0).data('theme')); });
-      (function($){
-          var rep = {'!' : '%21','\'': '%27', '(' : '%28', ')' : '%29', '*' : '%2A', '+' : '%20' };
-          $.extend({'esc_url':function(str){ str = encodeURIComponent(str);
-            for(var c in rep){ if(!rep.hasOwnProperty(c))continue;str = str.replaceAll(c, rep[c]);} return str;}});
-          $.extend({'unesc_url':function(inp){inp = decodeURIComponent(inp);
-            for(var c in rep){if(!rep.hasOwnProperty(c))continue; inp = inp.replaceAll(rep[c],c);} return inp;}});
-      })($);});
-      </script>
+      <script src="script.js"></script>
       <xsl:copy-of select="./body/template/*" />
     </body>
   </html>
