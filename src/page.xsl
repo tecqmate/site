@@ -231,7 +231,7 @@
       <script src="jquery-3.5.0.min.js"></script>
       <script src="bootstrap.min.js"></script>
       <script src="bootbox.min.js"></script>
-      <script src="script.js"></script>
+      <script src="script.js?_=0.0.0"></script>
       <xsl:copy-of select="./body/template/*" />
     </body>
   </html>
