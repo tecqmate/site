@@ -54,7 +54,7 @@ $(function(){
       e.stopPropagation();
       var theme = $(this);
       if(theme.hasClass('active')) return;
-      loader.show();
+      //loader.show();
       useTheme(theme.data('theme'));
     });
 
