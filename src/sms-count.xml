@@ -26,15 +26,6 @@
             <textarea placeholder="Type or Paste here ..." id="text"
             class="form-control" rows="7" style="resize:none;" autofocus=""></textarea>
           </div>
-          <div class="col-12 text-center">
-            <button class="btn btn-primary" type="button" id="btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-              </svg>
-            </button>
-          </div>
         </div>
       </section>
       <section class="mb-2">
@@ -42,15 +33,7 @@
       </section>
     </main>
     <template>
-      <script>$(function(){ var btn = $('#btn'); btn.on('click',function(e){
-      btn.addClass('disabled'); var text = $('#text').val();
-      $.getJSON('https://pingme.pythonanywhere.com/sms-count',
-      {'text':text}, function(resp){ if('msg' in resp){ $.alert(resp.msg); }
-      var ihtml = [];if('unicode' in resp){ihtml.push(['<strong>Unicode: </strong>', (resp.unicode?'Yes':'No')].join(''));}
-      if('chars' in resp){ihtml.push('<strong>Characters: </strong>'+ (resp.chars));}
-      if('chunk' in resp){ihtml.push('<strong>SMS: </strong>'+ (resp.chunk));}
-      $('#out').html(ihtml.join(', '));
-      }).always(function(){ btn.removeClass('disabled'); }); }); });</script>
+      <script defer="" src="sms-counter.js"></script>
     </template>
   </body>
 </html>
