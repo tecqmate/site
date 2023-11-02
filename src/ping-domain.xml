@@ -67,7 +67,7 @@
       $.trim($('#domain').val()); var query = $.trim($('#query').val()); var records =
       $('#records').empty(); if(!domain){ $.alert('Domain is mandate!'); return; }
       btn.addClass('disabled'); $.getJSON(
-      'https://pingme.pythonanywhere.com/ping-dns', {'site':domain, 'query': query},
+      'http://tecq.free.nf/dns-query.php', {'domain':domain, 'type': query},
       function(resp){ if('msg' in resp){ $.alert(resp.msg); } if('result' in resp){
       records.text(JSON.stringify(resp.result, 0, 4)); } } ).always(function(){
       btn.removeClass('disabled'); }); }); });</script>
