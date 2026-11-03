@@ -2,9 +2,11 @@ title: Tecqmate Blog
 author: Tecqmate
 email: tecqmat@gmail.com
 description: Tech tutorials, backend development, and web engineering.
-baseurl: ""
-url: "https://tecqmate.github.io/site"
+url: "https://tecqmate.github.io"
+baseurl: "/site"
 theme: minima
+
+permalink: pretty
 
 # Default Language
 lang: en
@@ -19,3 +21,10 @@ paginate_path: "/page:num/"
 
 twitter:
   username: tecqmate
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor/
