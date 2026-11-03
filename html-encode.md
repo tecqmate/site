@@ -31,11 +31,11 @@ lang: en
 <script>
   $(function() {
     $('#cbtn').on('click', function(e) {
-      var el = $('#esc').get(0);
-      el.select();
-      if (document.execCommand('copy')) {
-        $.alert('HTML copied!');
-      }
+      navigator.clipboard.writeText($('#esc').val()).then(function() {
+        $.alert('Copied successfully!');
+      }).catch(function(err) {
+        $.alert('Failed to copy text.');
+      });
     });
 
     $('#ebtn').on('click', function(e) {

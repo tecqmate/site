@@ -31,7 +31,7 @@ lang: en
       </div>
       <div class="col-sm-12">
         <button class="mt-3 btn btn-primary btn-sm" id="copy">Copy Link</button>
-        <a class="mt-3 btn btn-primary btn-sm" id="tab" target="_blank" rel="noopener">Open Chat</a>
+        <a class="mt-3 btn btn-primary btn-sm" id="tab" target="_blank" rel="noopener noreferrer">Open Chat</a>
       </div>
     </div>
   </div>
@@ -58,9 +58,11 @@ lang: en
     });
 
     $('#copy').on('click', function(e) {
-      var link = $('#link').get(0);
-      link.select();
-      document.execCommand('copy', link);
+      navigator.clipboard.writeText($('#link').val()).then(function() {
+        $.alert('Copied successfully!');
+      }).catch(function(err) {
+        $.alert('Failed to copy text.');
+      });
     });
   });
 </script>

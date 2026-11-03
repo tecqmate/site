@@ -28,11 +28,11 @@ lang: en
 <script>
   $(function() {
     $('#cbtn').on('click', function(e) {
-      var el = $('#out').get(0);
-      el.select();
-      if (document.execCommand('copy')) {
-        $.alert('Embeded URL copied!');
-      }
+      navigator.clipboard.writeText($('#out').val()).then(function() {
+        $.alert('Copied successfully!');
+      }).catch(function(err) {
+        $.alert('Failed to copy text.');
+      });
     });
 
     $('#txt').on('change', function(e) {

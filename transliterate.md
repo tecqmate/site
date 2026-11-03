@@ -82,9 +82,11 @@ lang: en
     destLang.on('change', changeLang);
 
     $('#copy').on('click', function(e) {
-      var msg = $('#msg').get(0);
-      msg.select();
-      document.execCommand('copy', msg);
+      navigator.clipboard.writeText($('#msg').val()).then(function() {
+        $.alert('Copied successfully!');
+      }).catch(function(err) {
+        $.alert('Failed to copy text.');
+      });
     });
   });
 </script>
