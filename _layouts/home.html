@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="75x75" />
+  
+  <!-- Bootstrap & Custom Styles -->
+  <link href="{{ '/lumen.min.css' | relative_url }}" rel="stylesheet" id="theme-style">
+  <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
+  
+  <style>
+    #txt, #esc {
+      resize: none;
+      min-height: 200px;
+    }
+    [data-theme="dark"] body {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      
+      <!-- Language Switcher & Theme Toggle in Nav -->
+      <div class="ms-auto d-flex align-items-center">
+        <div class="navbar-nav me-3">
+          <a class="nav-link text-white px-1" href="{{ '/' | relative_url }}">EN</a>
+          <span class="nav-link text-white px-1">|</span>
+          <a class="nav-link text-white px-1" href="{{ '/es/' | relative_url }}">ES</a>
+        </div>
+        <button id="theme-toggle" onclick="toggleTheme()" class="btn btn-outline-light btn-sm">🌙 / ☀️</button>
+      </div>
+
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1" target="_blank">Youtube</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://tecqmate.blogspot.com" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/about#donate' | relative_url }}" target="_blank">Donate</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-1 bg-light border-bottom mb-4">
+    <div class="container">
+      <div class="text-center my-1">
+        <p class="lead mb-0">{{ site.description }}</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <!-- Main Content Area -->
+      <div class="col-lg-8">
+        <div class="row">
+          <article>
+            <header class="mb-4">
+              <h1 class="fw-bolder mb-1">{{ page.title | default: "Freemium Services" }}</h1>
+              <div class="text-muted fst-italic mb-2">Published on 28 Oct, 2025</div>
+              <span class="badge bg-secondary text-decoration-none link-light">services</span>
+              <span class="badge bg-secondary text-decoration-none link-light">freelance</span>
+              <span class="badge bg-secondary text-decoration-none link-light">php</span>
+              <span class="badge bg-secondary text-decoration-none link-light">python</span>
+              <span class="badge bg-secondary text-decoration-none link-light">java</span>
+              <span class="badge bg-secondary text-decoration-none link-light">go</span>
+            </header>
+          </article>
+
+          <section>
+            <p class="card-text">Your Tech Companion</p>
+          </section>
+
+          <!-- Contact Widget -->
+          <div class="col mb-2 col-12 col-sm-12 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title h4">Contact</h2>
+                <p class="card-text">+917304164348</p>
+                <p class="card-text">tecqmat@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Widget -->
+          <div class="col mb-2 col-12 col-sm-12 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title h4">Location</h2>
+                <p class="card-text">Mira Road, Thane, India</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timing Widget -->
+          <div class="col mb-2 col-12 col-sm-12 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title h4">Timing</h2>
+                <p class="card-text">Monday - Sunday</p>
+                <p class="card-text">10:00 AM - 07:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Markdown Body Content -->
+          <div class="col-12 mt-4">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <!-- Services Widget -->
+        <div class="card mb-4">
+          <div class="card-header">Services</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6"><a href="{{ '/tiny.html' | relative_url }}">Tiny URL</a></div>
+              <div class="col-sm-6"><a href="{{ '/vcard.html' | relative_url }}">VCard</a></div>
+              <div class="col-sm-6"><a href="{{ '/qrcode.html' | relative_url }}">QR Code</a></div>
+              <div class="col-sm-6"><a href="{{ '/timezone.html' | relative_url }}">Time Zone</a></div>
+              <div class="col-sm-6"><a href="{{ '/verify-email.html' | relative_url }}">Verify Email</a></div>
+              <div class="col-sm-6"><a href="{{ '/ping-domain.html' | relative_url }}">Ping Domain</a></div>
+              <div class="col-sm-6"><a href="{{ '/dephp.html' | relative_url }}">Decode PHP</a></div>
+              <div class="col-sm-6"><a href="{{ '/url-encode.html' | relative_url }}">URL Encode</a></div>
+              <div class="col-sm-6"><a href="{{ '/whatsapp.html' | relative_url }}">WhatsApp Chat</a></div>
+              <div class="col-sm-6"><a href="{{ '/html-encode.html' | relative_url }}">HTML Escape</a></div>
+              <div class="col-sm-6"><a href="{{ '/embeded-url.html' | relative_url }}">Embeded URL</a></div>
+              <div class="col-sm-6"><a href="{{ '/transliterate.html' | relative_url }}">Transliterate</a></div>
+              <div class="col-sm-6"><a href="{{ '/sms-count.html' | relative_url }}">SMS Count</a></div>
+              <div class="col-sm-6"><a href="{{ '/ga-link.html' | relative_url }}">Google Analytics</a></div>
+              <div class="col-sm-6"><a href="https://github.com/sdksmate?tab=repositories" target="_blank">Softwares</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Site Theme Switcher -->
+        <div class="card mb-4">
+          <div class="card-header">Site Theme</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/yeti.min.css' | relative_url }}')">Yeti</a></div>
+              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/united.min.css' | relative_url }}')">United</a></div>
+              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/lumen.min.css' | relative_url }}')">Lumen</a></div>
+              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header">Alert</div>
+          <div class="card-body">Important notice will appear here</div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">Ads</div>
+          <div class="card-body">Ads will appear here</div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">Donations</div>
+          <div class="card-body">Top 10 frequent donations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-auto py-3 bg-dark">
+    <div class="container my-2">
+      <p class="m-0 text-center text-white">Copyright © Tecq Mate 2026</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ '/jquery-3.5.0.min.js' | relative_url }}"></script>
+  <script src="{{ '/bootstrap.min.js' | relative_url }}"></script>
+  <script src="{{ '/bootbox.min.js' | relative_url }}"></script>
+  <script src="{{ '/script.js' | relative_url }}?_=0.0.0"></script>
+  <script>
+    function changeTheme(themeUrl) {
+      $('#theme-style').attr('href', themeUrl);
+      localStorage.setItem('selected-theme', themeUrl);
+    }
+    
+    function toggleTheme() {
+      if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('mode', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('mode', 'dark');
+      }
+    }
+
+    $(function() {
+      const savedTheme = localStorage.getItem('selected-theme');
+      if (savedTheme) $('#theme-style').attr('href', savedTheme);
+
+      const savedMode = localStorage.getItem('mode');
+      if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    });
+  </script>
+</body>
+
+</html>

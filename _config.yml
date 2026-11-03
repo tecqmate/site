@@ -1,0 +1,21 @@
+title: Tecqmate Blog
+author: Tecqmate
+email: tecqmat@gmail.com
+description: Tech tutorials, backend development, and web engineering.
+baseurl: ""
+url: "https://tecqmate.github.io/site"
+theme: minima
+
+# Default Language
+lang: en
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+paginate: 5
+paginate_path: "/page:num/"
+
+twitter:
+  username: tecqmate

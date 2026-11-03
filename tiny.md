@@ -1,0 +1,45 @@
+---
+layout: home
+title: "Tiny URL"
+description: "A free service platform supported by your donations."
+date: "January 1, 2012"
+tags: ["short", "url", "tiny"]
+lang: en
+---
+
+<section class="mb-5">
+  <p class="fs-5 mb-4">Bulk URL service comming soon. Tiny URL service is powered by tinyurl.com</p>
+</section>
+
+<section class="mb-5">
+  <div class="row">
+    <div class="col-10">
+      <input placeholder="Type or Paste here ..." id="url" type="url" class="form-control" autofocus="" />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-primary" type="button" id="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(function() {
+    $('#btn').on('click', function(e) {
+      var url = $.trim($('#url').val());
+      if (!url) {
+        $.alert('URL is mandate!');
+        return;
+      }
+
+      $.get('https://tinyurl.com/api-create.php', {
+        'url': url
+      }, function(resp) {
+        $('#url').val(resp);
+      });
+    });
+  });
+</script>

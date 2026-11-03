@@ -1,0 +1,79 @@
+---
+layout: home
+title: "Ping Domain"
+description: "A free service platform supported by your donations."
+date: "July 30, 2012"
+tags: ["domain", "dns", "mx", "cname"]
+lang: en
+---
+
+<section class="mb-5">
+  <p class="fs-5 mb-4">We will make an attempt to ping the given domain.</p>
+</section>
+
+<section class="mb-5">
+  <div class="row">
+    <div class="col-8">
+      <input placeholder="Type or Paste here ..." id="domain" type="text" class="form-control" autofocus="" />
+    </div>
+    <div class="col-2">
+      <select class="form-select" id="query">
+        <option>A</option>
+        <option>A6</option>
+        <option>AAAA</option>
+        <option>CAA</option>
+        <option>CNAME</option>
+        <option>CERT</option>
+        <option>HINFO</option>
+        <option>MX</option>
+        <option>NS</option>
+        <option>NAPTR</option>
+        <option>PTR</option>
+        <option>SOA</option>
+        <option>SRV</option>
+        <option>TXT</option>
+      </select>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-primary" type="button" id="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <pre><code id="records"></code></pre>
+</section>
+
+<script>
+  $(function() {
+    var btn = $('#btn');
+    btn.on('click', function(e) {
+      var domain = $.trim($('#domain').val());
+      var query = $.trim($('#query').val());
+      var records = $('#records').empty();
+      if (!domain) {
+        $.alert('Domain is mandate!');
+        return;
+      }
+      btn.addClass('disabled');
+      $.getJSON(
+        'https://unconcealing-gage.000webhostapp.com/dns-query', // Updated to https to avoid mixed-content blocks
+        { 'domain': domain, 'type': query },
+        function(resp) {
+          if ('msg' in resp) {
+            $.alert(resp.msg);
+          }
+          if ('result' in resp) {
+            records.text(JSON.stringify(resp.result, 0, 4));
+          }
+        }
+      ).always(function() {
+        btn.removeClass('disabled');
+      });
+    });
+  });
+</script>
