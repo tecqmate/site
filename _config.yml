@@ -11,14 +11,12 @@ permalink: pretty
 lang: en
 
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
 
-paginate: 5
-paginate_path: "/page:num/"
 
 keep_files: []
+
 future: true
 
 exclude:
