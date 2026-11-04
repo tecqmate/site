@@ -10,35 +10,25 @@ tags: ["free", "service", "blog", "guide"]
     <p class="card-text">Welcome to Your Tech Companion Platform</p>
     <p class="card-text">Explore our suite of developer tools, utilities, and freemium services listed in the sidebar. All tools are built for speed and reliability.</p>
 </section>
-
-<!-- Contact Widget -->
-<div class="col mb-2 col-12 col-sm-12 col-md-4">
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-title h4">Contact</h2>
-            <p class="card-text">+917304164348</p>
-            <p class="card-text">tecqmat@gmail.com</p>
-        </div>
-    </div>
+<!-- Most Recent Blog Post Section -->
+<hr class="my-5">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h2 class="h4 mb-0">Latest Technical Guide</h2>
+<a href="{{ '/blog' | relative_url }}" class="btn btn-outline-primary btn-sm">View All Guides &rarr;</a>
 </div>
 
-<!-- Location Widget -->
-<div class="col mb-2 col-12 col-sm-12 col-md-4">
-    <div class="card">
-            <div class="card-body">
-            <h2 class="card-title h4">Location</h2>
-            <p class="card-text">Mira Road, Thane, India</p>
-        </div>
+{% if site.posts.size > 0 %}
+{% assign latest = site.posts.first %}
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+    <h3 class="card-title h5">
+        <a href="{{ latest.url | relative_url }}" class="text-decoration-none">{{ latest.title }}</a>
+    </h3>
+    <div class="text-muted fst-italic small mb-2">Published on {{ latest.date | date: '%B %d, %Y' }}</div>
+    <p class="card-text">{{ latest.excerpt | strip_html | truncatewords: 35 }}</p>
+    <a href="{{ latest.url | relative_url }}" class="btn btn-primary btn-sm">Read Full Guide</a>
     </div>
 </div>
-
-<!-- Timing Widget -->
-<div class="col mb-2 col-12 col-sm-12 col-md-4">
-    <div class="card">
-            <div class="card-body">
-            <h2 class="card-title h4">Timing</h2>
-            <p class="card-text">Monday - Sunday</p>
-            <p class="card-text">10:00 AM - 07:00 PM</p>
-        </div>
-    </div>
-</div>
+{% else %}
+<p class="text-muted">No blog posts published yet. Check back soon!</p>
+{% endif %}
