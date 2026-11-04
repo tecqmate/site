@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "June 15, 2024"
 tags: ["qrcode", "generator"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-3">
@@ -21,7 +23,7 @@ lang: en
 <!-- Load qrcode.min.js plugin script -->
 <script src="{{ '/assets/js/qrcode.min.js' | relative_url }}"></script>
 <script>
-  $(function() {
+  function pageInit() {
     var qrc = new QRCode(document.getElementById("qrc"), {
       width: 150,
       height: 150
@@ -34,5 +36,5 @@ lang: en
         qrc.makeCode(txt);
       }
     }).trigger('input');
-  });
+  }
 </script>

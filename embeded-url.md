@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "Febuary 20, 2022"
 tags: ["embeded", "url"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-3">
@@ -26,7 +28,7 @@ lang: en
 </style>
 
 <script>
-  $(function() {
+  function pageInit() {
     $('#cbtn').on('click', function(e) {
       navigator.clipboard.writeText($('#out').val()).then(function() {
         $.alert('Copied successfully!');
@@ -54,5 +56,5 @@ lang: en
         fr.readAsDataURL(file);
       }
     });
-  });
+  }
 </script>

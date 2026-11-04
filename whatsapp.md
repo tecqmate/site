@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "Jan 16, 2012"
 tags: ["whatsapp", "chat", "link"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-5">
@@ -38,7 +40,7 @@ lang: en
 </section>
 
 <script>
-  $(function() {
+  function pageInit() {
     $('#chat').on('click', function(e) {
       var phone = $('#phone').val().replace(/\D/g, '');
       if (!/^[0-9]{5,15}$/.test(phone)) {
@@ -64,5 +66,5 @@ lang: en
         $.alert('Failed to copy text.');
       });
     });
-  });
+  }
 </script>

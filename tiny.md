@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "January 1, 2012"
 tags: ["short", "url", "tiny"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-5">
@@ -27,7 +29,7 @@ lang: en
 </section>
 
 <script>
-  $(function() {
+  function pageInit() {
     $('#btn').on('click', function(e) {
       var url = $.trim($('#url').val());
       if (!url) {
@@ -41,5 +43,5 @@ lang: en
         $('#url').val(resp);
       });
     });
-  });
+  }
 </script>

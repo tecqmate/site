@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "July 30, 2012"
 tags: ["email", "verify", "soft", "hard", "bounce"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-5">
@@ -28,7 +30,7 @@ lang: en
 </section>
 
 <script>
-  $(function() {
+  function pageInit() {
     var btn = $('#btn');
     btn.on('click', function(e) {
       btn.addClass('disabled');
@@ -48,5 +50,5 @@ lang: en
         btn.removeClass('disabled');
       });
     });
-  });
+  }
 </script>

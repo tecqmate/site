@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "October 23, 2021"
 tags: ["encode", "url", "decode"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-5">
@@ -25,7 +27,7 @@ lang: en
 </section>
 
 <script>
-  $(function() {
+  function pageInit() {
     $('#ebtn').on('click', function(e) {
       var inp = $.trim($('#dec').val());
       if (!inp) {
@@ -45,5 +47,5 @@ lang: en
       inp = $.unesc_url(inp);
       $('#dec').val(inp);
     });
-  });
+  }
 </script>
