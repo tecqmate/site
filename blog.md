@@ -10,7 +10,7 @@ permalink: /blog/
     <p class="lead">Independent educational resources and technical overviews covering enterprise solutions and industry frameworks.</p>
   </div>
 </div>
-
+<p>pages: {{paginator.total_pages}}</p>
 <div class="row">
   <!-- Blog Posts Column -->
   <div class="col-lg-12">

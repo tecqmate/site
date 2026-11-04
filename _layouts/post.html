@@ -1,19 +1,25 @@
 ---
 layout: home
 ---
+<!-- Back to Blog Link Top -->
+<div class="mb-3">
+  <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-secondary btn-sm">&larr; Back to Technical Guides</a>
+</div>
+<!-- Optional Cover Image -->
+{% if page.image %}
+<div class="mb-4">
+  <img src="{{ page.image | relative_url }}" class="img-fluid rounded shadow-sm w-100" alt="{{ page.title }}">
+</div>
+{% endif %}
 
-  <!-- Optional Cover Image -->
-  {% if page.image %}
-    <div class="mb-4">
-      <img src="{{ page.image | relative_url }}" class="img-fluid rounded shadow-sm w-100" alt="{{ page.title }}">
-    </div>
-  {% endif %}
+<!-- Editorial Note Partial -->
+{% include editorial-note.html %}
 
-  <!-- Editorial Note Partial -->
-  {% include editorial-note.html %}
-
-  <!-- Main Markdown Body Content -->
-  <div class="post-content fs-6">
-    {{ content }}
-  </div>
-</article>
+<!-- Main Markdown Body Content -->
+<div class="post-content fs-6">
+  {{ content }}
+</div>
+<!-- Back to Blog Link Bottom -->
+<div class="mt-5 pt-3 border-top">
+  <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-primary btn-sm">&larr; Return to Blog Archive</a>
+</div>
