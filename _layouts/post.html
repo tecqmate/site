@@ -73,20 +73,4 @@ permalink: /blog/
     {% endif %}
   </div>
 
-  <!-- Category Filter Sidebar -->
-  <div class="col-lg-4">
-    <div class="card shadow-sm mb-4">
-      <div class="card-header bg-dark text-white">Categories</div>
-      <div class="card-body">
-        <ul class="list-unstyled mb-0">
-          {% assign all_categories = site.posts | map: "categories" | compact | uniq %}
-          {% for cat in all_categories %}
-            <li class="mb-2">
-              <span class="text-secondary">&rsaquo;</span> <strong>{{ cat }}</strong>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+</div><!-- /.row -->
