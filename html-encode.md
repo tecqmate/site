@@ -5,6 +5,8 @@ description: "A free service platform supported by your donations."
 date: "Febuary 20, 2022"
 tags: ["escape", "html"]
 lang: en
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-5">
@@ -29,7 +31,7 @@ lang: en
 </style>
 
 <script>
-  $(function() {
+  function pageInit() {
     $('#cbtn').on('click', function(e) {
       navigator.clipboard.writeText($('#esc').val()).then(function() {
         $.alert('Copied successfully!');
@@ -44,5 +46,5 @@ lang: en
       p.appendChild(text);
       $('#esc').val(p.innerHTML);
     });
-  });
+  }
 </script>
