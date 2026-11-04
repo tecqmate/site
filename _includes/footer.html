@@ -1,36 +1,35 @@
-
-  <footer class="footer mt-auto py-3 bg-dark">
+<footer class="footer mt-auto py-3 bg-dark">
     <div class="container my-2">
-      <p class="m-0 text-center text-white">Copyright © Tecq Mate 2011</p>
+        <p class="m-0 text-center text-white">Copyright © Tecq Mate 2011</p>
     </div>
-  </footer>
+</footer>
 
-  <!-- Scripts -->
-  <script src="{{ '/jquery-3.5.0.min.js' | relative_url }}"></script>
-  <script src="{{ '/bootstrap.min.js' | relative_url }}"></script>
-  <script src="{{ '/bootbox.min.js' | relative_url }}"></script>
-  <script src="{{ '/script.js' | relative_url }}?_=0.0.1"></script>
-  <script>
+<!-- Scripts -->
+<script src="{{ '/jquery-3.5.0.min.js' | relative_url }}"></script>
+<script src="{{ '/bootstrap.min.js' | relative_url }}"></script>
+<script src="{{ '/bootbox.min.js' | relative_url }}"></script>
+<script src="{{ '/script.js' | relative_url }}?_=0.0.1"></script>
+<script>
     function changeTheme(themeUrl) {
-      $('#theme-style').attr('href', themeUrl);
-      localStorage.setItem('selected-theme', themeUrl);
+        $('#theme-style').attr('href', themeUrl);
+        localStorage.setItem('selected-theme', themeUrl);
     }
-    
+
     function toggleTheme() {
-      if (document.documentElement.getAttribute('data-theme') === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('mode', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('mode', 'dark');
-      }
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('mode', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('mode', 'dark');
+        }
     }
 
-    $(function() {
-      const savedTheme = localStorage.getItem('selected-theme');
-      if (savedTheme) $('#theme-style').attr('href', savedTheme);
+    $(function () {
+        const savedTheme = localStorage.getItem('selected-theme');
+        if (savedTheme) $('#theme-style').attr('href', savedTheme);
 
-      const savedMode = localStorage.getItem('mode');
-      if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     });
-  </script>
+</script>

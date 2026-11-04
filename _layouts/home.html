@@ -8,15 +8,16 @@
     <div class="container">
       <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1" target="_blank">Youtube</a>
+            <a class="nav-link" href="https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1"
+              target="_blank">Youtube</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://tecqmate.blogspot.com" target="_blank">Blog</a>
@@ -45,51 +46,12 @@
           <article>
             <header class="mb-4">
               <h1 class="fw-bolder mb-1">{{ page.title | default: "Freemium Services" }}</h1>
-              <div class="text-muted fst-italic mb-2">Published on 28 Oct, 2025</div>
-              <span class="badge bg-secondary text-decoration-none link-light">services</span>
-              <span class="badge bg-secondary text-decoration-none link-light">freelance</span>
-              <span class="badge bg-secondary text-decoration-none link-light">php</span>
-              <span class="badge bg-secondary text-decoration-none link-light">python</span>
-              <span class="badge bg-secondary text-decoration-none link-light">java</span>
-              <span class="badge bg-secondary text-decoration-none link-light">go</span>
+              <div class="text-muted fst-italic mb-2">Published on {{ page.date | date: '%B %d, %Y' }}</div>
+              {% for tag in page.tags %}
+              <span class="badge bg-secondary text-decoration-none link-light">{{ tag }}</span>
+              {% endfor %}
             </header>
           </article>
-
-          <section>
-            <p class="card-text">Your Tech Companion</p>
-          </section>
-
-          <!-- Contact Widget -->
-          <div class="col mb-2 col-12 col-sm-12 col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title h4">Contact</h2>
-                <p class="card-text">+917304164348</p>
-                <p class="card-text">tecqmat@gmail.com</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Location Widget -->
-          <div class="col mb-2 col-12 col-sm-12 col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title h4">Location</h2>
-                <p class="card-text">Mira Road, Thane, India</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Timing Widget -->
-          <div class="col mb-2 col-12 col-sm-12 col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title h4">Timing</h2>
-                <p class="card-text">Monday - Sunday</p>
-                <p class="card-text">10:00 AM - 07:00 PM</p>
-              </div>
-            </div>
-          </div>
 
           <!-- Dynamic Markdown Body Content -->
           <div class="col-12 mt-4">
@@ -100,41 +62,40 @@
 
       <!-- Sidebar -->
       <div class="col-lg-4">
-        <!-- Services Widget -->
-        <div class="card mb-4">
-          <div class="card-header">Services</div>
-          <div class="card-body">
-              {% include services.html %}
-          </div>
-        </div>
+        {% include services.html %}
+      </div>
 
-        <!-- Site Theme Switcher -->
-        <div class="card mb-4">
-          <div class="card-header">Site Theme</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/yeti.min.css' | relative_url }}')">Yeti</a></div>
-              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/united.min.css' | relative_url }}')">United</a></div>
-              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/lumen.min.css' | relative_url }}')">Lumen</a></div>
-              <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
+      <!-- Site Theme Switcher -->
+      <div class="card mb-4">
+        <div class="card-header">Site Theme</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/yeti.min.css' | relative_url }}')">Yeti</a>
             </div>
+            <div class="col-sm-6"><a href="#!"
+                onclick="changeTheme('{{ '/united.min.css' | relative_url }}')">United</a></div>
+            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/lumen.min.css' | relative_url }}')">Lumen</a>
+            </div>
+            <div class="col-sm-6"><a href="#!"
+                onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
           </div>
-        </div>
-
-        <div class="card mb-4">
-          <div class="card-header">Alert</div>
-          <div class="card-body">Important notice will appear here</div>
-        </div>
-        <div class="card mb-4">
-          <div class="card-header">Ads</div>
-          <div class="card-body">Ads will appear here</div>
-        </div>
-        <div class="card mb-4">
-          <div class="card-header">Donations</div>
-          <div class="card-body">Top 10 frequent donations</div>
         </div>
       </div>
+
+      <div class="card mb-4">
+        <div class="card-header">Alert</div>
+        <div class="card-body">Important notice will appear here</div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header">Ads</div>
+        <div class="card-body">Ads will appear here</div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header">Donations</div>
+        <div class="card-body">Top 10 frequent donations</div>
+      </div>
     </div>
+  </div>
   </div>
 
   {% include footer.html %}
