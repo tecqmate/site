@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-bs-theme="light">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -30,18 +30,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      
-      <!-- Language Switcher & Theme Toggle in Nav -->
-       <!--
-      <div class="ms-auto d-flex align-items-center">
-        <div class="navbar-nav me-3">
-          <a class="nav-link text-white px-1" href="{{ '/' | relative_url }}">EN</a>
-          <span class="nav-link text-white px-1">|</span>
-          <a class="nav-link text-white px-1" href="{{ '/es/' | relative_url }}">ES</a>
-        </div>
-        <button id="theme-toggle" onclick="toggleTheme()" class="btn btn-outline-light btn-sm">🌙 / ☀️</button>
-      </div>
--->
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -170,14 +158,6 @@
               <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
             </div>
           </div>
-          <div class="card mb-4">
-            <div class="card-header">Appearance</div>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-secondary btn-sm w-100" id="theme-toggle" type="button">
-                <span id="theme-icon">🌙</span> <span id="theme-text">Switch to Dark Mode</span>
-              </button>
-            </div>
-          </div>
         </div>
 
         <div class="card mb-4">
@@ -206,7 +186,7 @@
   <script src="{{ '/jquery-3.5.0.min.js' | relative_url }}"></script>
   <script src="{{ '/bootstrap.min.js' | relative_url }}"></script>
   <script src="{{ '/bootbox.min.js' | relative_url }}"></script>
-  <script src="{{ '/script.js' | relative_url }}?_=0.0.0"></script>
+  <script src="{{ '/script.js' | relative_url }}?_=0.0.1"></script>
   <script>
     function changeTheme(themeUrl) {
       $('#theme-style').attr('href', themeUrl);

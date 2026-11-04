@@ -1,10 +1,9 @@
-title: Tecqmate Blog
-author: Tecqmate
+title: Tecqmate
+author: Arvind Sharma
 email: tecqmat@gmail.com
 description: Tech tutorials, backend development, and web engineering.
 url: "https://tecqmate.github.io"
 baseurl: "/site"
-theme: minima
 
 permalink: pretty
 
@@ -18,9 +17,6 @@ plugins:
 
 paginate: 5
 paginate_path: "/page:num/"
-
-twitter:
-  username: tecqmate
 
 exclude:
   - Gemfile

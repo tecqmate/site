@@ -69,35 +69,3 @@ $(function(){
        for(var c in rep){if(!rep.hasOwnProperty(c))continue; inp = inp.replaceAll(rep[c],c);} return inp;}});
    })($);
 });
-document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-  const themeText = document.getElementById('theme-text');
-  const htmlElement = document.documentElement;
-
-  // Check for saved user preference
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  htmlElement.setAttribute('data-bs-theme', savedTheme);
-  updateButtonUI(savedTheme);
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function() {
-      const currentTheme = htmlElement.getAttribute('data-bs-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-      htmlElement.setAttribute('data-bs-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateButtonUI(newTheme);
-    });
-  }
-
-  function updateButtonUI(theme) {
-    if (theme === 'dark') {
-      themeIcon.textContent = '☀️';
-      themeText.textContent = 'Switch to Light Mode';
-    } else {
-      themeIcon.textContent = '🌙';
-      themeText.textContent = 'Switch to Dark Mode';
-    }
-  }
-});
