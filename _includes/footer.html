@@ -1,23 +1,4 @@
-<footer class="footer mt-auto py-3 bg-dark text-white">
-    <div class="container text-center my-2">
-        <!-- Footer Navigation Links -->
-        <ul class="list-inline mb-2">
-            {% for menu in site.data.menus %}
-                <li class="list-inline-item">
-                {% if menu.external %}
-                    <a href="{{ menu.url }}" target="_blank" rel="noopener">{{ menu.name }}</a>
-                {% else %}
-                    <a href="{{ menu.url | relative_url }}">{{ menu.name }}</a>
-                {% endif %}
-                </li>
-                <li class="list-inline-item text-muted">&bull;</li>
-            {% endfor %}
-        </ul>
 
-        <!-- Copyright Notice -->
-        <p class="m-0 text-white-50 small">Copyright &copy; Tecq Mate 2011</p>
-    </div>
-</footer>
 
 <footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
     <div class="container">
@@ -35,7 +16,8 @@
                 <ul class="list-unstyled mb-0 small">
                     {% for menu in site.data.menus %}
                     <li class="mb-1">
-                        <a href="{{ menu.url }}" 
+                        <a 
+                            href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}" 
                             class="text-white-50 text-decoration-none" 
                             {% if menu.external %} target="_blank" rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
@@ -49,7 +31,8 @@
                 <ul class="list-unstyled mb-0 small">
                     {% for menu in site.data.links %}
                     <li class="mb-1">
-                        <a href="{{ menu.url }}" 
+                        <a 
+                            href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}" 
                             class="text-white-50 text-decoration-none" 
                             {% if menu.external %} target="_blank" rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
