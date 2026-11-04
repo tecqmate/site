@@ -26,9 +26,9 @@ lang: en
 </section>
 
 <!-- Google Transliteration Asset Scripts and Styles -->
-<script src="{{ '/G.min.js' | relative_url }}"></script>
-<link href="{{ '/I.min.css' | relative_url }}" rel="stylesheet" />
-<script src="{{ '/I.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/G.min.js' | relative_url }}"></script>
+<link href="{{ '/assets/css/I.min.css' | relative_url }}" rel="stylesheet" />
+<script src="{{ '/assets/js/I.min.js' | relative_url }}"></script>
 
 <style>
   .inputapi-popupeditor-logo {

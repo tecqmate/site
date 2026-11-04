@@ -38,4 +38,4 @@ lang: en
 </section>
 
 <!-- Load vcard.js script -->
-<script src="{{ '/vcard.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/vcard.js' | relative_url }}"></script>

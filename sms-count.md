@@ -24,4 +24,4 @@ lang: en
 </section>
 
 <!-- Load sms-counter.js plugin script -->
-<script defer="" src="{{ '/sms-counter.js' | relative_url }}"></script>
+<script defer="" src="{{ '/assets/js/sms-counter.js' | relative_url }}"></script>

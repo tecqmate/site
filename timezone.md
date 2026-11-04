@@ -17,8 +17,8 @@ lang: en
 </section>
 
 <!-- Select2 CSS and JS Assets -->
-<link href="{{ '/select2.min.css' | relative_url }}" rel="stylesheet" />
-<script src="{{ '/select2.min.js' | relative_url }}"></script>
+<link href="{{ '/assets/css/select2.min.css' | relative_url }}" rel="stylesheet" />
+<script src="{{ '/assets/js/select2.min.js' | relative_url }}"></script>
 
 <script>
   $(function() {

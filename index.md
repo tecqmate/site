@@ -21,7 +21,7 @@ tags: ["free", "service", "blog", "guide"]
 {% assign latest = site.posts.last %}
 <div class="card shadow-sm mb-4">
     <div class="card-body">
-    <h3 class="card-title h5 bg-dark text-white">
+    <h3 class="card-title h5">
         <a href="{{ latest.url | relative_url }}" class="text-decoration-none">{{ latest.title }}</a>
     </h3>
     <div class="text-muted fst-italic small mb-2">Published on {{ latest.date | date: '%B %d, %Y' }}</div>

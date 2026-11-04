@@ -19,7 +19,7 @@ lang: en
 </style>
 
 <!-- Load qrcode.min.js plugin script -->
-<script src="{{ '/qrcode.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/qrcode.min.js' | relative_url }}"></script>
 <script>
   $(function() {
     var qrc = new QRCode(document.getElementById("qrc"), {
