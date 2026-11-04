@@ -5,6 +5,13 @@ description: "A free service platform supported by your donations."
 date: "March 7, 2022"
 tags: ["translate", "transliterate"]
 lang: en
+scripts:
+  - '/assets/js/G.min.js'
+  - '/assets/js/I.min.js'
+styles:
+  - '/assets/css/I.min.css'
+inline_scripts:
+  - $(pageInit);
 ---
 
 <section class="mb-3">
@@ -26,9 +33,6 @@ lang: en
 </section>
 
 <!-- Google Transliteration Asset Scripts and Styles -->
-<script src="{{ '/assets/js/G.min.js' | relative_url }}"></script>
-<link href="{{ '/assets/css/I.min.css' | relative_url }}" rel="stylesheet" />
-<script src="{{ '/assets/js/I.min.js' | relative_url }}"></script>
 
 <style>
   .inputapi-popupeditor-logo {
@@ -57,7 +61,7 @@ lang: en
   }
   google.setOnLoadCallback(onLoad);
 
-  $(function() {
+  function pageInit() {
     var srcLang = $('#srcLang');
     var destLang = $('#destLang');
     var langCode = google.elements.transliteration.LanguageCode;
@@ -88,5 +92,5 @@ lang: en
         $.alert('Failed to copy text.');
       });
     });
-  });
+  }
 </script>

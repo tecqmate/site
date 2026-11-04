@@ -44,6 +44,13 @@
     </div>
 </footer>
 
+<!-- Dynamic External styles Files Injection -->
+{% if page.styles %}
+  {% for style in page.styles %}
+    <style rel="stylesheet" href="{{ style | relative_url }}?v={{ date: '%s' }}"/>
+  {% endfor %}
+{% endif %}
+
 <!-- Scripts -->
 <script src="{{ '/assets/js/jquery-3.5.0.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
@@ -73,3 +80,19 @@
         if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     });
 </script>
+
+<!-- Dynamic External Script Files Injection -->
+{% if page.scripts %}
+  {% for script in page.scripts %}
+    <script src="{{ script | relative_url }}?v={{ date: '%s' }}"></script>
+  {% endfor %}
+{% endif %}
+
+<!-- Dynamic Inline Script Code Block Injection -->
+{% if page.inline_scripts %}
+  <script>
+    {% for code_block in page.inline_scripts %}
+      {{ code_block }}
+    {% endfor %}
+  </script>
+{% endif %}
