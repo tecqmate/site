@@ -22,7 +22,7 @@ permalink: /blog/
             <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" style="max-height: 240px; object-fit: cover;">
           {% endif %}
           <div class="card-body">
-            <h2 class="card-title h4">
+            <h2 class="card-title h4 bg-dark text-white">
               <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
             </h2>
             <div class="text-muted fst-italic small mb-2">Published on {{ post.date | date: '%B %d, %Y' }}</div>
