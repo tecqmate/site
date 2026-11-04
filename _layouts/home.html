@@ -1,5 +1,6 @@
+---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-bs-theme="light">
 
 {% include header.html %}
 
@@ -17,13 +18,13 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1"
-              target="_blank">Youtube</a>
+              target="_blank" rel="noopener">Youtube</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://tecqmate.blogspot.com" target="_blank">Blog</a>
+            <a class="nav-link" href="https://tecqmate.blogspot.com" target="_blank" rel="noopener">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ '/about#donate' | relative_url }}" target="_blank">Donate</a>
+            <a class="nav-link" href="{{ '/about#donate' | relative_url }}" target="_blank" rel="noopener">Donate</a>
           </li>
         </ul>
       </div>
@@ -38,67 +39,44 @@
     </div>
   </header>
 
-  <div class="container">
+  <!-- Main Grid Wrapper -->
+  <div class="container my-4">
     <div class="row">
-      <!-- Main Content Area -->
+      
+      <!-- Main Content Area (col-lg-8) -->
       <div class="col-lg-8">
-        <div class="row">
-          <article>
-            <header class="mb-4">
-              <h1 class="fw-bolder mb-1">{{ page.title | default: "Freemium Services" }}</h1>
-              <div class="text-muted fst-italic mb-2">Published on {{ page.date | date: '%B %d, %Y' }}</div>
-              {% for tag in page.tags %}
-              <span class="badge bg-secondary text-decoration-none link-light">{{ tag }}</span>
-              {% endfor %}
-            </header>
-          </article>
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">{{ page.title | default: "Freemium Services" }}</h1>
+            {% if page.date %}
+            <div class="text-muted fst-italic mb-2">Published on {{ page.date | date: '%B %d, %Y' }}</div>
+            {% endif %}
+            {% for tag in page.tags %}
+            <span class="badge bg-secondary text-decoration-none link-light">{{ tag }}</span>
+            {% endfor %}
+          </header>
+        </article>
 
-          <!-- Dynamic Markdown Body Content -->
-          <div class="col-12 mt-4">
-            {{ content }}
-          </div>
+        <!-- Dynamic Markdown Body Content -->
+        <div class="col-12 mt-4 px-0">
+          {{ content }}
         </div>
       </div>
 
-      <!-- Sidebar -->
+      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
       <div class="col-lg-4">
-        {% include services.html %}
-      </div>
+        
+        <!-- Services Include -->
+        {% include sidebar.html %}
+      
+        
+      </div><!-- /col-lg-4 -->
 
-      <!-- Site Theme Switcher -->
-      <div class="card mb-4">
-        <div class="card-header">Site Theme</div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/yeti.min.css' | relative_url }}')">Yeti</a>
-            </div>
-            <div class="col-sm-6"><a href="#!"
-                onclick="changeTheme('{{ '/united.min.css' | relative_url }}')">United</a></div>
-            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/lumen.min.css' | relative_url }}')">Lumen</a>
-            </div>
-            <div class="col-sm-6"><a href="#!"
-                onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-4">
-        <div class="card-header">Alert</div>
-        <div class="card-body">Important notice will appear here</div>
-      </div>
-      <div class="card mb-4">
-        <div class="card-header">Ads</div>
-        <div class="card-body">Ads will appear here</div>
-      </div>
-      <div class="card mb-4">
-        <div class="card-header">Donations</div>
-        <div class="card-body">Top 10 frequent donations</div>
-      </div>
-    </div>
-  </div>
-  </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
 
   {% include footer.html %}
+
 </body>
 
 </html>

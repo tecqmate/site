@@ -3,7 +3,7 @@ layout: home
 title: "Freemium Services"
 description: "A free service platform supported by your donations."
 date: "July 30, 2011"
-tags: ["domain", "dns", "mx", "cname"]
+tags: ["free", "service", "blog", "guide"]
 
 ---
 
