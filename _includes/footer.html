@@ -47,7 +47,7 @@
 <!-- Dynamic External styles Files Injection -->
 {% if page.styles %}
   {% for style in page.styles %}
-    <style rel="stylesheet" href="{{ style | relative_url }}?_={{ site.time }}"/>
+    <style rel="stylesheet" href="{{ style | relative_url }}?_={{ global_build_hash}}"/>
   {% endfor %}
 {% endif %}
 
@@ -55,7 +55,7 @@
 <script src="{{ '/assets/js/jquery-3.5.0.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/bootbox.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/script.js' | relative_url }}?_={{ site.time }}"></script>
+<script src="{{ '/assets/js/script.js' | relative_url }}?_={{ global_build_hash  }}"></script>
 <script>
     function changeTheme(themeUrl) {
         $('#theme-style').attr('href', themeUrl);
@@ -84,7 +84,7 @@
 <!-- Dynamic External Script Files Injection -->
 {% if page.scripts %}
   {% for script in page.scripts %}
-    <script src="{{ script | relative_url }}?_={{ site.time }}"></script>
+    <script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
   {% endfor %}
 {% endif %}
 

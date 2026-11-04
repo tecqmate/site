@@ -1,3 +1,4 @@
+{% assign global_build_hash = site.time | date: '%s' %}
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -15,7 +16,7 @@
   
   <!-- Bootstrap & Custom Styles -->
   <link href="{{ '/assets/css/lumen.min.css' | relative_url }}" rel="stylesheet" id="theme-style">
-  <link href="{{ '/assets/css/style.css' | relative_url }}?_={{date: '%s' }}" rel="stylesheet">
+  <link href="{{ '/assets/css/style.css' | relative_url }}?_={{global_build_hash }}" rel="stylesheet">
   
   <style>
     textarea#txt, textarea#esc {

@@ -78,10 +78,9 @@ inline_scripts:
     }
   }
 
-
   function pageInit() {
-    google.load('elements', '1', {packages: 'transliteration'});
     google.setOnLoadCallback(onLoad);
+    google.load('elements', '1', {packages: 'transliteration'});
     $('#copy').on('click', function(e) {
       navigator.clipboard.writeText($('#msg').val()).then(function() {
         $.alert('Copied successfully!');
