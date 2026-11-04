@@ -3,7 +3,7 @@
   url: /sitemap
 
 - name: Donate
-  url: https://tecqmate.github.io/about#donate
+  url: upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation
   external: true
 
 - name: Youtube
