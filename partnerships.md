@@ -77,6 +77,6 @@ permalink: /partnerships/
   <div class="col-lg-8 mx-auto text-center">
     <h3 class="fw-bold mb-3">Ready to Collaborate?</h3>
     <p class="text-muted mb-4">Let's discuss how your product fits into our technical ecosystem. Reach out directly to pitch your partnership or affiliate proposal.</p>
-    <a href="{{ /contact | relative_url }}" class="btn btn-dark btn-lg px-4">Contact Now &rarr;</a>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-dark btn-lg px-4">Contact Now &rarr;</a>
   </div>
 </div>
