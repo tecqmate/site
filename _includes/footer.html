@@ -37,7 +37,7 @@
                     <li class="mb-1">
                         <a href="{{ menu.url }}" 
                             class="text-white-50 text-decoration-none" 
-                            {% if menu.external %} target="_blank" rel="noopener" {% else %}>{{ menu.name }}</a>
+                            {% if menu.external %} target="_blank" rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -51,7 +51,7 @@
                     <li class="mb-1">
                         <a href="{{ menu.url }}" 
                             class="text-white-50 text-decoration-none" 
-                            {% if menu.external %} target="_blank" rel="noopener" {% else %}>{{ menu.name }}</a>
+                            {% if menu.external %} target="_blank" rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
                     {% endfor %}
                 </ul>
