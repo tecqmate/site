@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-bs-theme="light">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -168,6 +168,14 @@
               <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/united.min.css' | relative_url }}')">United</a></div>
               <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/lumen.min.css' | relative_url }}')">Lumen</a></div>
               <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-header">Appearance</div>
+            <div class="card-body text-center">
+              <button class="btn btn-outline-secondary btn-sm w-100" id="theme-toggle" type="button">
+                <span id="theme-icon">🌙</span> <span id="theme-text">Switch to Dark Mode</span>
+              </button>
             </div>
           </div>
         </div>
