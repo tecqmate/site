@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: post
 title: "High-Throughput Log Analytics and PostgreSQL Indexing Strategies"
 description: "An architectural guide on optimizing log ingestion pipelines using Unix Epoch integer partitioning, BRIN indexes, and dynamic table partitioning in PostgreSQL."
 date: 2026-11-08

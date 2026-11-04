@@ -1,10 +1,9 @@
 ---
-layout: home
+layout: post
 title: "Enterprise Webhook Architecture and Reliable Message Delivery Pipelines"
 description: "An engineering guide to designing fault-tolerant webhook dispatchers, exponential backoff retry queues, and HMAC signature verification for CPaaS platforms."
 date: 2026-11-06
 categories: ["api-security", "business-automation", "messaging", "architecture"]
-image: "/assets/images/webhook-cover.jpg"
 ---
 
 ## 1. The Challenge of Asynchronous Delivery

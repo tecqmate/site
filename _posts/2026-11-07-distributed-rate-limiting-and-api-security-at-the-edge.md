@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: post
 title: "Distributed Rate Limiting and API Security Patterns at the Edge"
 description: "An architectural deep-dive into implementing token bucket algorithms, sliding window counters in Redis, and DDoS mitigation strategies at the API gateway layer."
 date: 2026-11-07
