@@ -4,14 +4,11 @@ title: "Freemium Services"
 description: "A free service platform supported by your donations."
 date: "July 30, 2011"
 tags: ["free", "service", "blog", "guide"]
-
 ---
 
 <section>
-### Welcome to Your Tech Companion Platform
-
-Explore our suite of developer tools, utilities, and freemium services listed in the sidebar. All tools are built for speed and reliability.
-<p class="card-text">Your Tech Companion</p>
+    <p class="card-text">Welcome to Your Tech Companion Platform</p>
+    <p class="card-text">Explore our suite of developer tools, utilities, and freemium services listed in the sidebar. All tools are built for speed and reliability.</p>
 </section>
 
 <!-- Contact Widget -->
