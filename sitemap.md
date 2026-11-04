@@ -58,7 +58,7 @@ permalink: /sitemap/
         <span class="badge bg-secondary">{{ site.posts.size }} Articles</span>
       </div>
       <div class="card-body">
-        {% assign sorted_posts = site.posts | reverse %}
+        {% assign sorted_posts = site.posts %}
         {% if sorted_posts.size > 0 %}
           <div class="list-group list-group-flush">
             {% for post in sorted_posts %}
