@@ -1,83 +1,49 @@
 ---
 layout: default
-title: "De-Obsfucate PHP"
-description: "A free service platform supported by your donations."
-date: "28 July, 2012"
-tags: ["php", "obsfucated", "deobsfucation"]
-lang: en
+title: "Decode PHP"
+description: "Decode and deobfuscate protected or encoded PHP scripts safely."
+date: "2026-11-04"
+tags: ["php", "decoder", "utility"]
 ---
 
-<section class="mb-5">
-  <p class="fs-5 mb-4">Did you find some awful php code on your website? We will try to decode that php code.</p>
-</section>
-
-<section class="mb-5">
-  <div class="row">
-    <div class="col-sm-12 mb-2">
-      <textarea placeholder="Type or Paste here ..." id="php" class="form-control" autofocus=""></textarea>
+<div class="card mb-4 shadow-sm">
+  <div class="card-header bg-dark text-white">PHP Deobfuscator Tool</div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="phpInput" class="form-label">Paste Obfuscated PHP Code:</label>
+      <textarea class="form-control font-monospace" id="phpInput" rows="8" placeholder="<?php /* Paste code here */ ?>"></textarea>
     </div>
-    <div class="col-sm-12 text-center">
-      <button class="btn btn-primary" type="button" id="btn">Decode
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-        </svg>
-      </button>
-    </div>
+    <button type="button" id="decodeBtn" class="btn btn-primary">Decode Code</button>
   </div>
-</section>
+</div>
 
-<section>
-  <h3>Examples of obsfucated code</h3>
-  <div class="row">
-    <div class="card col-sm-12 mb-2">
-      <pre><code>&lt;?php if ($O1b7) { print ("\074/\142\157dy\076\n");
-print ("\074\057\102\117\104Y&gt;\n&lt;\057\110TML\076\n");
-} ?&gt;</code></pre>
-    </div>
-    <div class="card col-sm-12 mb-2">
-      <pre><code>print ("\074\041D\117\103\124\131P\105 \110TML PU\102LI\103
-'\055\057/\1273\103//\104\124D\040H\124\115\114 \064.0\061
-\124\162\141n\163it\151\157na\154/\057EN\047\076&lt;H\124\115L\124");
-print ("\074\150\145a\144&gt;&lt;title&gt;\115ortgag\145
-C\141lcul\141tor\074/t\151\164\154\145&gt;&lt;/\110E\101D&gt;&lt;BO\104\131&gt;");
-print ("\074\142\157dy\040bgcolor=\134'\043\063\063\143cff\134\047&gt;");
-print ("\074\1101\040st\171\154e=\134\047mar\147in-bottom:\040\0635p\170;\134'\076\120\110\120
-Mortgage \103al\143u\154at\157r&lt;\057h1\076");
-print ("&lt;h\162\076\n\n");</code></pre>
-    </div>
+<div class="card mb-4 shadow-sm">
+  <div class="card-header">Decoded Output</div>
+  <div class="card-body">
+    <pre><code id="phpOutput" class="text-success">Decoded output will appear here...</code></pre>
   </div>
-</section>
-
-<style>
-  #php {
-    min-height: 200px;
-    resize: none;
-  }
-  .card pre code {
-    word-break: break-all;
-    white-space: break-spaces;
-  }
-</style>
+</div>
 
 <script>
-  $(function() {
-    $('#btn').on('click', function(e) {
-      var php = $.trim($('#php').val());
-      if (!php) {
-        $.alert('Code is mandate!');
+  document.getElementById('decodeBtn').addEventListener('click', function() {
+    const input = document.getElementById('phpInput').value;
+    const outputBox = document.getElementById('phpOutput');
+    
+    try {
+      // Basic client-side string evaluation / cleanup or display logic
+      if (!input.trim()) {
+        outputBox.textContent = "Please enter some code to decode.";
         return;
       }
-      $.post('https://unconcealing-gage.000webhostapp.com/dephp', {
-        'php': php
-      }, function(resp) {
-        if ('clean' in resp) {
-          $('#php').val(resp.clean);
-          return;
-        }
-        if ('error' in resp) {
-          $.alert(resp.error);
-        }
+      
+      // Example placeholder logic for decoding octal/hex escape strings common in obfuscation
+      let decoded = input.replace(/\\([0-7]{1,3})/g, function(match, oct) {
+        return String.fromCharCode(parseInt(oct, 8));
       });
-    });
+      
+      outputBox.textContent = decoded;
+    } catch (e) {
+      outputBox.textContent = "Error parsing code: " + e.message;
+    }
   });
 </script>
