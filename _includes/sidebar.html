@@ -15,17 +15,34 @@
         </div>
     </div>
 </div>
+
 <div class="card mb-4">
-          <div class="card-header  bg-dark text-white">Alert</div>
-          <div class="card-body">Important notice will appear here</div>
+    <div class="card-header bg-dark text-white">Site Theme</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/yeti.min.css' | relative_url }}')">Yeti</a>
+            </div>
+            <div class="col-sm-6"><a href="#!"
+                    onclick="changeTheme('{{ '/united.min.css' | relative_url }}')">United</a></div>
+            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/lumen.min.css' | relative_url }}')">Lumen</a>
+            </div>
+            <div class="col-sm-6"><a href="#!"
+                    onclick="changeTheme('{{ '/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
         </div>
-        
-        <div class="card mb-4">
-          <div class="card-header bg-dark text-white">Ads</div>
-          <div class="card-body">Ads will appear here</div>
-        </div>
-        
-        <div class="card mb-4">
-          <div class="card-header bg-dark text-white">Donations</div>
-          <div class="card-body">Top 10 frequent donations</div>
-        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header  bg-dark text-white">Alert</div>
+    <div class="card-body">Important notice will appear here</div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Ads</div>
+    <div class="card-body">Ads will appear here</div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Donations</div>
+    <div class="card-body">Top 10 frequent donations</div>
+</div>
