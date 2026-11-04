@@ -12,6 +12,8 @@ styles:
   - '/assets/css/I.min.css'
 inline_scripts:
   - $(pageInit);
+  - google.load('elements', '1', {packages: 'transliteration'});
+  - google.setOnLoadCallback(onLoad);
 ---
 
 <section class="mb-3">
@@ -41,12 +43,7 @@ inline_scripts:
 </style>
 
 <script>
-  google.load("elements", "1", {
-    packages: "transliteration"
-  });
-
   var control = null;
-
   function onLoad() {
     var options = {
       sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
@@ -55,11 +52,9 @@ inline_scripts:
     };
 
     control = new google.elements.transliteration.TransliterationControl(options);
-
     control.makeTransliteratable(['msg']);
     control.c.qc.t13n.c[3].c.d.keyup[0].ia.F.p = 'https://www.google.com';
   }
-  google.setOnLoadCallback(onLoad);
 
   function pageInit() {
     var srcLang = $('#srcLang');
