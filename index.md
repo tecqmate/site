@@ -18,7 +18,7 @@ tags: ["free", "service", "blog", "guide"]
 </div>
 
 {% if site.posts.size > 0 %}
-{% assign latest = site.posts.last %}
+{% assign latest = site.posts.first %}
 <div class="card shadow-sm mb-4">
     <div class="card-body">
     <h3 class="card-title h5">
