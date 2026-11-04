@@ -12,8 +12,6 @@ styles:
   - '/assets/css/I.min.css'
 inline_scripts:
   - $(pageInit);
-  - google.load('elements', '1', {packages: 'transliteration'});
-  - google.setOnLoadCallback(onLoad);
 ---
 
 <section class="mb-3">
@@ -57,6 +55,8 @@ inline_scripts:
   }
 
   function pageInit() {
+    google.load('elements', '1', {packages: 'transliteration'});
+    google.setOnLoadCallback(onLoad);
     var srcLang = $('#srcLang');
     var destLang = $('#destLang');
     var langCode = google.elements.transliteration.LanguageCode;
