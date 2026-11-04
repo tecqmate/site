@@ -33,6 +33,6 @@ permalink: /blog
           <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary btn-sm">Read Article &rarr;</a>
         </div>
       </div>
-    endfor %}
+    {% endfor %}
   </div>
 </div>
