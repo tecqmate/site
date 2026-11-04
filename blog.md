@@ -14,7 +14,7 @@ permalink: /blog/
 <div class="row">
   <!-- Blog Posts Column -->
   <div class="col-lg-12">
-    {% assign recent_posts = site.posts | reverse | slice: 0, 3 %}
+    {% assign recent_posts = site.posts | slice: 0, 3 %}
     {% if recent_posts.size > 0 %}
       {% for post in recent_posts %}
         <div class="card mb-4 shadow-sm">
