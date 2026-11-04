@@ -15,13 +15,17 @@ permalink: /sitemap/
   <!-- Core Site Pages & Utilities -->
   <div class="col-md-6 mb-4">
     <div class="card h-100 shadow-sm border-0">
-      <div class="card-header bg-dark text-white fw-bold">Main Navigation & Utilities</div>
+      <div class="card-header bg-dark text-white fw-bold">Main Navigation &amp; Utilities</div>
       <div class="card-body">
         <ul class="list-unstyled mb-0">
-          <li class="mb-2">&rsaquo; <a href="{{ '/' | relative_url }}" class="text-decoration-none fw-bold">Home</a></li>
           {% for menu in site.data.menus %}
-            <li class="mb-2">&rsaquo; <a href="{{ menu.url | relative_url }}" class="text-decoration-none fw-bold">{{menu.name}}</a></li>
-            {% endfor %}
+            <li class="mb-2">&rsaquo; 
+              <a 
+              href="{{ menu.url | relative_url }}" 
+              class="text-decoration-none fw-bold">{{menu.name}}</a>
+            </li>
+            
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -30,7 +34,7 @@ permalink: /sitemap/
   <!-- Developer Web Tools Directory -->
   <div class="col-md-6 mb-4">
     <div class="card h-100 shadow-sm border-0">
-      <div class="card-header bg-dark text-white fw-bold">Developer Services & Tools</div>
+      <div class="card-header bg-dark text-white fw-bold">Developer Services &amp; Tools</div>
       <div class="card-body">
         <div class="row">
           <div class="card-body">
