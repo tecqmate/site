@@ -69,15 +69,15 @@ inline_scripts:
   }
 
   function changeLang(e) {
-      try {
-        control.setLanguagePair(srcLang.val(), destLang.val());
-      } catch (ex) {
-        srcLang.find('option[value=' + control.p.b.t13n.X + ']').prop('selected', true);
-        destLang.find('option[value=' + control.p.b.t13n.B + ']').prop('selected', true);
-        $.alert('Cannot use those language(s)! Please try a different language.');
-      }
+    try {
+      control.setLanguagePair(srcLang.val(), destLang.val());
+    } catch (ex) {
+      srcLang.find('option[value=' + control.p.b.t13n.X + ']').prop('selected', true);
+      destLang.find('option[value=' + control.p.b.t13n.B + ']').prop('selected', true);
+      $.alert('Cannot use those language(s)! Please try a different language.');
     }
   }
+
 
   function pageInit() {
     google.load('elements', '1', {packages: 'transliteration'});
