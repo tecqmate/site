@@ -6,10 +6,6 @@ date: 2026-11-04
 tags: ["import-export", "trade", "compliance", "guide"]
 ---
 
-<div class="alert alert-secondary small" role="alert">
-  <strong>Editorial Note:</strong> This guide is an independent educational overview intended for general informational purposes. Regulations vary significantly by jurisdiction; businesses should consult official customs authorities or licensed trade brokers for specific shipments.
-</div>
-
 <section class="mb-5">
   <h2>1. Introduction to Cross-Border Trade Workflows</h2>
   <p class="fs-6">International trade requires precise coordination between buyers, sellers, freight forwarders, and regulatory bodies. Ensuring smooth clearance relies on accurate paperwork, standardized commercial descriptions, and strict adherence to local import-export laws.</p>

@@ -6,10 +6,6 @@ date: 2026-11-04
 tags: ["e-commerce", "marketplace", "architecture", "guide"]
 ---
 
-<div class="alert alert-secondary small" role="alert">
-  <strong>Editorial Note:</strong> This guide is an independent technical overview intended purely for educational and architectural planning purposes. All platform categories and terminology are discussed from a generic architectural standpoint.
-</div>
-
 <section class="mb-5">
   <h2>1. Introduction to Multi-Vendor E-Commerce</h2>
   <p class="fs-6">Building or scaling digital commerce platforms often involves shifting from single-inventory online storefronts to dynamic multi-vendor marketplaces. Managing multiple independent merchants requires robust underlying models for catalog control, order routing, and financial reconciliation.</p>

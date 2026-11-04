@@ -6,10 +6,6 @@ date: 2026-11-04
 tags: ["telecom", "messaging", "api", "guide"]
 ---
 
-<div class="alert alert-secondary small" role="alert">
-  <strong>Editorial Note:</strong> This guide is an independent technical overview intended purely for educational and architectural planning purposes. All protocol standards, interface names, and trademarks belong to their respective statutory owners.
-</div>
-
 <section class="mb-5">
   <h2>1. Introduction to Enterprise Messaging Protocols</h2>
   <p class="fs-6">Modern business communication relies heavily on reliable, high-throughput messaging pipelines to dispatch authentication OTPs, transactional alerts, and customer support notifications. Choosing the right channel involves balancing delivery latency, network fallback capabilities, and interactive user experiences.</p>
