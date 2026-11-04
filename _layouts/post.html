@@ -2,20 +2,6 @@
 layout: home
 ---
 
-<article class="mb-5">
-  <header class="mb-4">
-    <h1 class="fw-bolder mb-1">{{ page.title }}</h1>
-    <div class="text-muted fst-italic mb-2">
-      Published on {{ page.date | date: '%B %d, %Y' }}
-      {% if page.categories %}
-        &bull; Categories: 
-        {% for cat in page.categories %}
-          <span class="badge bg-secondary">{{ cat }}</span>
-        {% endfor %}
-      {% endif %}
-    </div>
-  </header>
-
   <!-- Optional Cover Image -->
   {% if page.image %}
     <div class="mb-4">

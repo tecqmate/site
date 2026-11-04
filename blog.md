@@ -2,7 +2,7 @@
 layout: home
 title: "Technical Guides & Blog"
 description: "Explore independent educational guides on import-export, telecom, e-commerce, and software engineering."
-permalink: /blog
+permalink: /blog/
 ---
 
 <div class="row mb-4">
@@ -14,7 +14,7 @@ permalink: /blog
 <div class="row">
   <!-- Blog Posts Column -->
   <div class="col-lg-8">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <div class="card mb-4 shadow-sm">
         {% if post.image %}
           <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" style="max-height: 240px; object-fit: cover;">
@@ -33,12 +33,44 @@ permalink: /blog
             </div>
           {% endif %}
 
-          <!-- Clean Excerpt (Editorial note is excluded automatically) -->
           <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary btn-sm">Read Article &rarr;</a>
         </div>
       </div>
     {% endfor %}
+
+    <!-- Bootstrap Pagination Controls -->
+    {% if paginator.total_pages > 1 %}
+      <nav aria-label="Page navigation" class="my-4">
+        <ul class="pagination justify-content-center">
+          {% if paginator.previous_page %}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a>
+            </li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo; Previous</span></li>
+          {% endif %}
+
+          {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+              <li class="page-item active"><span class="page-link">{{ page }}</span></li>
+            {% elsif page == 1 %}
+              <li class="page-item"><a class="page-link" href="{{ '/blog/' | relative_url }}">1</a></li>
+            {% else %}
+              <li class="page-item"><a class="page-link" href="{{ site.paginate_path | replace: ':num', page | relative_url }}">{{ page }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if paginator.next_page %}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+            </li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">Next &raquo;</span></li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
   </div>
 
   <!-- Category Filter Sidebar -->

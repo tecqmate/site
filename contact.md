@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "Contact Us"
 description: "Get in touch with Tecqmate for support, inquiries, or tech solutions."
 permalink: /contact

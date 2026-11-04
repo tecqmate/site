@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "Decode PHP"
 description: "Decode and deobfuscate protected or encoded PHP scripts safely."
 date: "2026-11-04"
