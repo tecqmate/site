@@ -18,6 +18,8 @@ plugins:
 paginate: 5
 paginate_path: "/page:num/"
 
+keep_files: []
+
 exclude:
   - Gemfile
   - Gemfile.lock
