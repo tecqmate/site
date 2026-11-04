@@ -1,0 +1,11 @@
+<div class="row">
+  {% for item in site.data.services %}
+    <div class="col-sm-6">
+      {% if item.external %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
+      {% else %}
+        <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

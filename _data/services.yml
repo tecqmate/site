@@ -1,0 +1,32 @@
+# _data/services.yml
+- name: Tiny URL
+  url: /tiny
+- name: VCard
+  url: /vcard
+- name: QR Code
+  url: /qrcode
+- name: Time Zone
+  url: /timezone
+- name: Verify Email
+  url: /verify-email
+- name: Ping Domain
+  url: /ping-domain
+- name: Decode PHP
+  url: /dephp
+- name: URL Encode
+  url: /url-encode
+- name: WhatsApp Chat
+  url: /whatsapp
+- name: HTML Escape
+  url: /html-encode
+- name: Embeded URL
+  url: /embeded-url
+- name: Transliterate
+  url: /transliterate
+- name: SMS Count
+  url: /sms-count
+- name: Google Analytics
+  url: /ga-link
+- name: Softwares
+  url: https://github.com/sdksmate?tab=repositories
+  external: true

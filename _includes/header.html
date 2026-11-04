@@ -1,15 +1,21 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>{{ page.title }} - {{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <meta name="description" content="{{ page.description | default: site.description }}" />
   <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="75x75" />
   
-  <!-- Core Bootstrap & Custom Stylesheet -->
-  <link href="{{ '/lumen.min.css' | relative_url }}" rel="stylesheet" id="theme">
+  <!-- Bootstrap & Custom Styles -->
+  <link href="{{ '/lumen.min.css' | relative_url }}" rel="stylesheet" id="theme-style">
   <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
+  
+  <style>
+    #txt, #esc {
+      resize: none;
+      min-height: 200px;
+    }
+  </style>
 </head>

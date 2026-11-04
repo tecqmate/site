@@ -1,30 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
-  <meta name="description" content="{{ page.description | default: site.description }}" />
-  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="75x75" />
-  
-  <!-- Bootstrap & Custom Styles -->
-  <link href="{{ '/lumen.min.css' | relative_url }}" rel="stylesheet" id="theme-style">
-  <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
-  
-  <style>
-    #txt, #esc {
-      resize: none;
-      min-height: 200px;
-    }
-    [data-theme="dark"] body {
-      background-color: #121212 !important;
-      color: #e0e0e0 !important;
-    }
-  </style>
-</head>
+{% include header.html %}
 
 <body oncontextmenu="return false">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -127,23 +104,7 @@
         <div class="card mb-4">
           <div class="card-header">Services</div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-sm-6"><a href="{{ '/tiny' | relative_url }}">Tiny URL</a></div>
-              <div class="col-sm-6"><a href="{{ '/vcard' | relative_url }}">VCard</a></div>
-              <div class="col-sm-6"><a href="{{ '/qrcode' | relative_url }}">QR Code</a></div>
-              <div class="col-sm-6"><a href="{{ '/timezone' | relative_url }}">Time Zone</a></div>
-              <div class="col-sm-6"><a href="{{ '/verify-email' | relative_url }}">Verify Email</a></div>
-              <div class="col-sm-6"><a href="{{ '/ping-domain' | relative_url }}">Ping Domain</a></div>
-              <div class="col-sm-6"><a href="{{ '/dephp' | relative_url }}">Decode PHP</a></div>
-              <div class="col-sm-6"><a href="{{ '/url-encode' | relative_url }}">URL Encode</a></div>
-              <div class="col-sm-6"><a href="{{ '/whatsapp' | relative_url }}">WhatsApp Chat</a></div>
-              <div class="col-sm-6"><a href="{{ '/html-encode' | relative_url }}">HTML Escape</a></div>
-              <div class="col-sm-6"><a href="{{ '/embeded-url' | relative_url }}">Embeded URL</a></div>
-              <div class="col-sm-6"><a href="{{ '/transliterate' | relative_url }}">Transliterate</a></div>
-              <div class="col-sm-6"><a href="{{ '/sms-count' | relative_url }}">SMS Count</a></div>
-              <div class="col-sm-6"><a href="{{ '/ga-link' | relative_url }}">Google Analytics</a></div>
-              <div class="col-sm-6"><a href="https://github.com/sdksmate?tab=repositories" target="_blank">Softwares</a></div>
-            </div>
+              {% include services.html %}
           </div>
         </div>
 
@@ -176,41 +137,7 @@
     </div>
   </div>
 
-  <footer class="footer mt-auto py-3 bg-dark">
-    <div class="container my-2">
-      <p class="m-0 text-center text-white">Copyright © Tecq Mate 2011</p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="{{ '/jquery-3.5.0.min.js' | relative_url }}"></script>
-  <script src="{{ '/bootstrap.min.js' | relative_url }}"></script>
-  <script src="{{ '/bootbox.min.js' | relative_url }}"></script>
-  <script src="{{ '/script.js' | relative_url }}?_=0.0.1"></script>
-  <script>
-    function changeTheme(themeUrl) {
-      $('#theme-style').attr('href', themeUrl);
-      localStorage.setItem('selected-theme', themeUrl);
-    }
-    
-    function toggleTheme() {
-      if (document.documentElement.getAttribute('data-theme') === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('mode', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('mode', 'dark');
-      }
-    }
-
-    $(function() {
-      const savedTheme = localStorage.getItem('selected-theme');
-      if (savedTheme) $('#theme-style').attr('href', savedTheme);
-
-      const savedMode = localStorage.getItem('mode');
-      if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-    });
-  </script>
+  {% include footer.html %}
 </body>
 
 </html>
