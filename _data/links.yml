@@ -1,4 +1,7 @@
 
+- name: Sitemap
+  url: /sitemap
+
 - name: Donate
   url: https://tecqmate.github.io/about#donate
   external: true

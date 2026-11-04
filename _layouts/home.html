@@ -33,7 +33,7 @@
       <div class="col-lg-8">
         <article>
           <header class="mb-4">
-            <h1 class="fw-bolder mb-1">{{ page.title | default: "Freemium Services" }}</h1>
+            <h1 class="fw-bolder mb-1">{{ page.title | site.title | default: "Page" }}</h1>
             {% if page.date %}
               <div class="text-muted fst-italic mb-2">Published on {{ page.date | date: '%B %d, %Y' }}</div>
             {% endif %}

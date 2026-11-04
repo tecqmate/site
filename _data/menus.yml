@@ -1,5 +1,8 @@
+- name: Home
+  url: /
+
 - name: Contact
   url: /contact
 
-- name: Blogs
+- name: Blog
   url: /blog

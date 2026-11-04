@@ -1,9 +1,23 @@
-<footer class="footer mt-auto py-3 bg-dark">
-    <div class="container my-2">
-        <p class="m-0 text-center text-white">Copyright © Tecq Mate 2011</p>
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center my-2">
+        <!-- Footer Navigation Links -->
+        <ul class="list-inline mb-2">
+            {% for menu in site.data.menus %}
+                <li class="list-inline-item">
+                {% if menu.external %}
+                    <a href="{{ menu.url }}" target="_blank" rel="noopener">{{ menu.name }}</a>
+                {% else %}
+                    <a href="{{ menu.url | relative_url }}">{{ menu.name }}</a>
+                {% endif %}
+                </li>
+                <li class="list-inline-item text-muted">&bull;</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Copyright Notice -->
+        <p class="m-0 text-white-50 small">Copyright &copy; Tecq Mate 2011</p>
     </div>
 </footer>
-
 <!-- Scripts -->
 <script src="{{ '/assets/js/jquery-3.5.0.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
