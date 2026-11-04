@@ -6,7 +6,7 @@
             
             <!-- Column 1: Copyright & Brand -->
             <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                <h5 class="text-white h6 mb-1">Tecq Mate</h5>
+                <h5 class="text-white h6 mb-1">{{ site.title }}</h5>
                 <p class="text-white-50 small mb-0">Copyright &copy; 2011. All rights reserved.</p>
             </div>
 
@@ -47,7 +47,7 @@
 <!-- Dynamic External styles Files Injection -->
 {% if page.styles %}
   {% for style in page.styles %}
-    <style rel="stylesheet" href="{{ style | relative_url }}?v={{ date: '%s' }}"/>
+    <style rel="stylesheet" href="{{ style | relative_url }}?_={{ site.time }}"/>
   {% endfor %}
 {% endif %}
 
@@ -55,7 +55,7 @@
 <script src="{{ '/assets/js/jquery-3.5.0.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/bootbox.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/script.js' | relative_url }}?_={{date: '%s' }}"></script>
+<script src="{{ '/assets/js/script.js' | relative_url }}?_={{ site.time }}"></script>
 <script>
     function changeTheme(themeUrl) {
         $('#theme-style').attr('href', themeUrl);
@@ -84,7 +84,7 @@
 <!-- Dynamic External Script Files Injection -->
 {% if page.scripts %}
   {% for script in page.scripts %}
-    <script src="{{ script | relative_url }}?v={{ date: '%s' }}"></script>
+    <script src="{{ script | relative_url }}?_={{ site.time }}"></script>
   {% endfor %}
 {% endif %}
 

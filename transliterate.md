@@ -42,6 +42,8 @@ inline_scripts:
 
 <script>
   var control = null;
+  var srcLang = null;
+  var destLang = null;
   function onLoad() {
     var options = {
       sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
@@ -51,14 +53,10 @@ inline_scripts:
 
     control = new google.elements.transliteration.TransliterationControl(options);
     control.makeTransliteratable(['msg']);
-    control.c.qc.t13n.c[3].c.d.keyup[0].ia.F.p = 'https://www.google.com';
-  }
-
-  function pageInit() {
-    google.load('elements', '1', {packages: 'transliteration'});
-    google.setOnLoadCallback(onLoad);
-    var srcLang = $('#srcLang');
-    var destLang = $('#destLang');
+    control.c.qc.t13n.c[3].c.d.keyup[0].ia.F.p = 'about:_blank';
+    
+    srcLang = $('#srcLang');
+    destLang = $('#destLang');
     var langCode = google.elements.transliteration.LanguageCode;
     for (var lang in langCode) {
       var opt = ['<option value="', langCode[lang], '">', lang, '</option>'].join('');
@@ -66,8 +64,11 @@ inline_scripts:
       destLang.append(opt);
     }
     destLang.find('option[value=' + google.elements.transliteration.LanguageCode.HINDI + ']').prop('selected', true);
+    srcLang.on('change', changeLang);
+    destLang.on('change', changeLang);
+  }
 
-    var changeLang = function(e) {
+  function changeLang(e) {
       try {
         control.setLanguagePair(srcLang.val(), destLang.val());
       } catch (ex) {
@@ -75,11 +76,12 @@ inline_scripts:
         destLang.find('option[value=' + control.p.b.t13n.B + ']').prop('selected', true);
         $.alert('Cannot use those language(s)! Please try a different language.');
       }
-    };
+    }
+  }
 
-    srcLang.on('change', changeLang);
-    destLang.on('change', changeLang);
-
+  function pageInit() {
+    google.load('elements', '1', {packages: 'transliteration'});
+    google.setOnLoadCallback(onLoad);
     $('#copy').on('click', function(e) {
       navigator.clipboard.writeText($('#msg').val()).then(function() {
         $.alert('Copied successfully!');
