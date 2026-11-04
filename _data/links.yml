@@ -1,0 +1,8 @@
+
+- name: Donate
+  url: https://tecqmate.github.io/about#donate
+  external: true
+
+- name: Youtube
+  url: https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1
+  external: true

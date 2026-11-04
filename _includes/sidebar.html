@@ -20,14 +20,12 @@
     <div class="card-header bg-dark text-white">Site Theme</div>
     <div class="card-body">
         <div class="row">
-            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/assets/css/yeti.min.css' | relative_url }}')">Yeti</a>
+            {% for theme in site.data.themes %}
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('{{ theme.href | relative_url }}')">{{theme.name}}</a>
             </div>
-            <div class="col-sm-6"><a href="#!"
-                    onclick="changeTheme('{{ '/assets/css/united.min.css' | relative_url }}')">United</a></div>
-            <div class="col-sm-6"><a href="#!" onclick="changeTheme('{{ '/assets/css/lumen.min.css' | relative_url }}')">Lumen</a>
-            </div>
-            <div class="col-sm-6"><a href="#!"
-                    onclick="changeTheme('{{ '/assets/css/sketchy.min.css' | relative_url }}')">Sketchy</a></div>
+            {% endfor %}
         </div>
     </div>
 </div>
