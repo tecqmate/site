@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: post
 title: "Understanding Modern Business Messaging Channels: SMS, WhatsApp, and RCS"
 description: "An independent technical overview of enterprise messaging architectures, protocol mechanics, and delivery considerations for business communications."
 date: 2026-11-04

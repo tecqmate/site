@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Understanding Luxury Lifestyle Brands and Product Authentication"
 description: "An independent educational overview of luxury market dynamics, material craftsmanship standards, and product authentication methodologies."
 date: 2026-11-04

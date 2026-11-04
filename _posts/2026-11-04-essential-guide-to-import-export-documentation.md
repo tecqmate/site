@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Essential Guide to Import-Export Documentation and Compliance"
 description: "An independent educational overview of standard cross-border trade documents, customs compliance requirements, and regulatory workflows."
 date: 2026-11-04

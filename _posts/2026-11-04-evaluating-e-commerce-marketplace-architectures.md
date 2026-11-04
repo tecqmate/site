@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Evaluating E-Commerce Marketplace Architectures and Multi-Vendor Models"
 description: "An independent educational overview of multi-vendor e-commerce structures, catalog synchronization strategies, and payment settlement workflows."
 date: 2026-11-04
