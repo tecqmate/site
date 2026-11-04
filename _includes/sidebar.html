@@ -17,20 +17,6 @@
 </div>
 
 <div class="card mb-4">
-    <div class="card-header bg-dark text-white">Categories</div>
-    <div class="card-body">
-    <ul class="list-unstyled mb-0">
-        {% assign all_categories = site.posts | map: "tags" | compact | uniq %}
-        {% for cat in all_categories %}
-        <li class="mb-2">
-            <span class="text-secondary">&rsaquo;</span> <strong>{{ cat }}</strong>
-        </li>
-        {% endfor %}
-    </ul>
-    </div>
-</div>
-
-<div class="card mb-4">
     <div class="card-header bg-dark text-white">Site Theme</div>
     <div class="card-body">
         <div class="row">
