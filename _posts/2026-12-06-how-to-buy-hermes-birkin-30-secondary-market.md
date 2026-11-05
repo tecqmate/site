@@ -50,4 +50,4 @@ If you are committing five-figure capital to acquire a Hermès Birkin 30, follow
 
 Owning a Hermès Birkin 30 is a pinnacle achievement in luxury collecting. By prioritizing independent physical authentication, inspecting hand-waxed saddle stitching, and validating artisanal blind stamps, you protect your investment and secure a timeless leathercraft masterwork.
 
-*Looking for verified, museum-grade vintage luxury elegance? Explore our vetted selection of bag specialists at <a href="{{ site.data.sponsored.fashluxee }}" target="_blank" rel="noopener sponsored">Trusted Secondary-Market Horology Vaults</a>.*
+{% include fashluxee-sponsored.md %}

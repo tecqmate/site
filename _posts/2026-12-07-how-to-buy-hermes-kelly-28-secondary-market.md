@@ -51,4 +51,4 @@ If you are committing serious capital to acquire a Hermès Kelly 28, enforce thi
 Acquiring a Hermès Kelly 28 is a milestone addition to any luxury collection. By understanding the structural differences between Sellier and Retourne builds, auditing hardware engravings, and securing third-party physical authentication, you protect your capital and acquire a true masterpiece of French leathercraft.
 
 
-*Looking for verified, museum-grade vintage luxury elegance? Explore our vetted selection of bag specialists at <a href="{{ site.data.sponsored.fashluxee }}" target="_blank" rel="noopener sponsored">Trusted Secondary-Market Horology Vaults</a>.*
+{% include fashluxee-sponsored.md %}

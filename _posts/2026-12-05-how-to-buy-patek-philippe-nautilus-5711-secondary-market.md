@@ -50,4 +50,4 @@ If you are committing high-tier capital to acquire a Patek Philippe 5711/1A, enf
 
 Acquiring a Patek Philippe Nautilus 5711/1A is a pinnacle milestone in fine horology. By prioritizing third-party movement inspection, auditing case dimensions down to the millimeter, and insisting on original Certificate of Origin documentation, you protect your capital and secure a timeless asset.
 
-*Looking for verified, museum-grade vintage luxury timepieces? Explore our vetted selection of horology specialists at <a href="{{ site.data.sponsored.fashluxee }}" target="_blank" rel="noopener sponsored">Trusted Secondary-Market Horology Vaults</a>.*
+{% include fashluxee-sponsored.md %}

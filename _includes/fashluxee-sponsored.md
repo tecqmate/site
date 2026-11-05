@@ -1,0 +1,1 @@
+*Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings through our <a href="{{ site.data.sponsored.fashluxee }}" target="_blank" rel="noopener sponsored">Vetted Secondary-Market Partners</a>.*
