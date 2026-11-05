@@ -5,6 +5,9 @@ layout: home
 <div class="mb-3">
   <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-primary btn-sm">&larr; Back to Blog Archive</a>
 </div>
+
+{% include reader-hint.html %}
+
 <!-- Optional Cover Image -->
 {% if page.image %}
 <div class="mb-4">
@@ -12,30 +15,34 @@ layout: home
 </div>
 {% endif %}
 
-<!-- Editorial Note Partial -->
-{% include editorial-note.html %}
-
 <!-- Main Markdown Body Content -->
 <div class="post-content fs-6">
   {{ content }}
 </div>
 
+<!-- Editorial Note Partial -->
+{% include editorial-note.html %}
+
+{% if page.affiliated %}
+  {% include affiliate-disclosure.html %}
+{% endif %}
+
 <!-- Previous & Next Post Navigation Links -->
   <nav class="blog-pagination py-4 border-top border-bottom my-4">
     <div class="row align-items-center">
       <div class="col-6 text-start">
-        {% if page.previous %}
-          <div class="small text-muted mb-1">&larr; Old Post</div>
-          <a href="{{ page.previous.url | relative_url }}" class="text-decoration-none fw-bold text-dark">
-            {{ page.previous.title | truncate: 45 }}
+        {% if page.next %}
+          <div class="small text-muted mb-1">&larr; Newer Post</div>
+          <a href="{{ page.next.url | relative_url }}" class="text-decoration-none fw-bold text-dark">
+            {{ page.next.title | truncate: 45 }}
           </a>
         {% endif %}
       </div>
       <div class="col-6 text-end">
-        {% if page.next %}
-          <div class="small text-muted mb-1">Next Post &rarr;</div>
-          <a href="{{ page.next.url | relative_url }}" class="text-decoration-none fw-bold text-dark">
-            {{ page.next.title | truncate: 45 }}
+        {% if page.previous %}
+          <div class="small text-muted mb-1">Older Post &rarr;</div>
+          <a href="{{ page.previous.url | relative_url }}" class="text-decoration-none fw-bold text-dark">
+            {{ page.previous.title | truncate: 45 }}
           </a>
         {% endif %}
       </div>

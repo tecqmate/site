@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>OAuth2 Token Exchange and Stateless JWT Verification at Scale - Tecqmate</title>
+  <link rel="canonical" href="http://localhost:4000/site/2026/11/10/oauth2-token-exchange-and-jwt-security-patterns/" />
+  <!-- Prevents browser caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta name="build-version" content="1793853343">
+  <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
+  <meta name="description" content="An engineering blueprint for implementing cryptographic JSON Web Token verification, asymmetric public key caching, and fine-grained scope enforcement across microservice clusters." />
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/site/favicon.ico" sizes="75x75" />
+  
+  <!-- Bootstrap & Custom Styles -->
+  <link href="/site/assets/css/lumen.min.css" rel="stylesheet" id="theme-style">
+  <link href="/site/assets/css/style.css?_=1793853343" rel="stylesheet">
+  
+  <style>
+    textarea#txt, textarea#esc {
+      resize: none;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+
+<body oncontextmenu="return false">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/site/">Tecqmate</a>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/contact">Contact</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/blog">Blog</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/partnerships">Partnerships</a>
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Grid Wrapper -->
+  <div class="container my-4">
+    <div class="row">
+      
+      <!-- Main Content Area (col-lg-8) -->
+      <div class="col-lg-8">
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">OAuth2 Token Exchange and Stateless JWT Verification at Scale</h1>
+            
+              <div class="text-muted fst-italic mb-2">Published on November 10, 2026</div>
+            
+            
+              <span class="badge bg-secondary text-decoration-none link-light">api-security</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">cloud-architecture</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">fintech</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">business-automation</span>
+            
+          </header>
+
+          <!-- Dynamic Markdown Body Content -->
+          <div class="col-12 mt-4 px-0">
+            <!-- Back to Blog Link Top -->
+<div class="mb-3">
+  <a href="/site/blog/" class="btn btn-outline-primary btn-sm">&larr; Back to Blog Archive</a>
+</div>
+
+
+
+
+
+<!-- Optional Cover Image -->
+
+
+<!-- Main Markdown Body Content -->
+<div class="post-content fs-6">
+  <h2 id="1-the-challenge-of-distributed-token-validation">1. The Challenge of Distributed Token Validation</h2>
+
+<p>In high-throughput microservice ecosystems and distributed fintech platforms, validating a user or client session by querying a centralized authentication server (AS) on every HTTP request introduces catastrophic network latency and a single point of failure.</p>
+
+<p>To achieve horizontal scalability, modern API gateways and backend workers rely on <strong>stateless cryptographic verification</strong> via JSON Web Tokens (JWTs) paired with decentralized public-key cryptography.</p>
+
+<hr />
+
+<h2 id="2-core-architecture-jwt-vs-reference-tokens">2. Core Architecture: JWT vs. Reference Tokens</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Token Type</th>
+      <th style="text-align: left">Storage Requirement</th>
+      <th style="text-align: left">Validation Mechanism</th>
+      <th style="text-align: left">Best Used For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Reference Token (Opaque)</strong></td>
+      <td style="text-align: left">Centralized Database / Redis Lookup</td>
+      <td style="text-align: left">Requires a network round-trip to the Auth Server (<code class="language-plaintext highlighter-rouge">/introspect</code>).</td>
+      <td style="text-align: left">High-security banking sessions requiring instant server-side revocation.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>JSON Web Token (JWT)</strong></td>
+      <td style="text-align: left">None (Stateless self-contained payload)</td>
+      <td style="text-align: left">Cryptographic signature verification using cached asymmetric public keys.</td>
+      <td style="text-align: left">Public APIs, microservice-to-microservice data transit, and high-volume CPaaS platforms.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="3-asymmetric-key-management--jwks-caching">3. Asymmetric Key Management &amp; JWKS Caching</h2>
+
+<p>Verifying JWTs using a shared symmetric secret (<code class="language-plaintext highlighter-rouge">HMAC</code>) across multiple distributed services introduces massive security risks: if any single service is compromised, an attacker can mint valid tokens for the entire platform.</p>
+
+<p>Instead, production systems must utilize asymmetric algorithms (<strong>RS256</strong> or <strong>ES256</strong>) where the Authorization Server signs tokens with a <strong>Private Key</strong>, and downstream gateways verify them using a rotating <strong>JSON Web Key Set (JWKS)</strong> endpoint.</p>
+
+<h3 id="jwks-caching-best-practice-nodejs--express-gateway-example">JWKS Caching Best Practice (Node.js / Express Gateway Example):</h3>
+<p>To prevent network stalls when fetching public keys on every request, implement an in-memory JWKS client with automatic background refresh:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">jwksRsa</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">jwks-rsa</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">jwt</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">jsonwebtoken</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nf">jwksRsa</span><span class="p">({</span>
+  <span class="na">jwksUri</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[https://auth.tecqmate.internal/.well-known/jwks.json](https://auth.tecqmate.internal/.well-known/jwks.json)</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">cache</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">rateLimit</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">jwksRequestsPerMinute</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nf">getKey</span><span class="p">(</span><span class="nx">header</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">client</span><span class="p">.</span><span class="nf">getSigningKey</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">kid</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">signingKey</span> <span class="o">=</span> <span class="nx">key</span><span class="p">.</span><span class="nx">publicKey</span> <span class="o">||</span> <span class="nx">key</span><span class="p">.</span><span class="nx">rsaPublicKey</span><span class="p">;</span>
+    <span class="nf">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">signingKey</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">verifyApiToken</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">?.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">token</span><span class="p">)</span> <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">status</span><span class="p">(</span><span class="mi">401</span><span class="p">).</span><span class="nf">json</span><span class="p">({</span> <span class="na">error</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Missing bearer token</span><span class="dl">'</span> <span class="p">});</span>
+
+  <span class="nx">jwt</span><span class="p">.</span><span class="nf">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span> <span class="nx">getKey</span><span class="p">,</span> <span class="p">{</span> <span class="na">algorithms</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">RS256</span><span class="dl">'</span><span class="p">]</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">decoded</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">status</span><span class="p">(</span><span class="mi">403</span><span class="p">).</span><span class="nf">json</span><span class="p">({</span> <span class="na">error</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Invalid or expired token signature</span><span class="dl">'</span> <span class="p">});</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">user</span> <span class="o">=</span> <span class="nx">decoded</span><span class="p">;</span>
+    <span class="nf">next</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-enforcing-fine-grained-scope-and-role-hierarchies">4. Enforcing Fine-Grained Scope and Role Hierarchies</h2>
+
+<p>A verified cryptographic signature only proves <em>who</em> sent the request; authorization policies must ensure they are allowed to perform the action. Scopes and roles should be validated as explicit string arrays inside the JWT payload (<code class="language-plaintext highlighter-rouge">scp</code> or <code class="language-plaintext highlighter-rouge">roles</code> claims):</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usr_9981273401"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[https://auth.tecqmate.internal](https://auth.tecqmate.internal)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"aud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[https://api.tecqmate.internal/v1/](https://api.tecqmate.internal/v1/)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1731000000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"messaging:send"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ledger:read"</span><span class="p">,</span><span class="w"> </span><span class="s2">"billing:write"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h3 id="middleware-scope-guard-example">Middleware Scope Guard Example:</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">requireScope</span><span class="p">(</span><span class="nx">requiredScope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">scopes</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">?.</span><span class="nx">scp</span> <span class="o">||</span> <span class="p">[];</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">scopes</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">requiredScope</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">next</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">status</span><span class="p">(</span><span class="mi">403</span><span class="p">).</span><span class="nf">json</span><span class="p">({</span> 
+      <span class="na">error</span><span class="p">:</span> <span class="dl">'</span><span class="s1">insufficient_scope</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="na">message</span><span class="p">:</span> <span class="s2">`Required scope missing: </span><span class="p">${</span><span class="nx">requiredScope</span><span class="p">}</span><span class="s2">`</span> 
+    <span class="p">});</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// Route Definition</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/v1/ledger/transfer</span><span class="dl">'</span><span class="p">,</span> <span class="nx">verifyApiToken</span><span class="p">,</span> <span class="nf">requireScope</span><span class="p">(</span><span class="dl">'</span><span class="s1">ledger:write</span><span class="dl">'</span><span class="p">),</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Execute transactional ledger transfer</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-security-checklist-for-production">5. Security Checklist for Production</h2>
+
+<ol>
+  <li><strong>Enforce <code class="language-plaintext highlighter-rouge">aud</code> and <code class="language-plaintext highlighter-rouge">iss</code> Claims:</strong> Always validate the <code class="language-plaintext highlighter-rouge">audience</code> and <code class="language-plaintext highlighter-rouge">issuer</code> claims in your JWT verification parameters to prevent token substitution attacks across different services.</li>
+  <li><strong>Short Token Lifetimes:</strong> Keep access token expirations short (15 minutes to 1 hour) and rely on securely stored refresh tokens for session prolongation.</li>
+  <li><strong>Handle Key Rotation Gracefully:</strong> Ensure your JWKS validator caches multiple public keys simultaneously during key-rotation rollover windows to avoid 403 authorization storms.</li>
+</ol>
+
+</div>
+
+<!-- Editorial Note Partial -->
+<!-- _includes/editorial-note.html -->
+<div class="alert alert-secondary small mb-4" role="alert">
+  <strong>Editorial Note:</strong> This guide is an independent educational overview intended for general informational purposes. All brand names, trademarks, and registered insignia belong to their respective statutory owners. Regulations and specifications vary by jurisdiction.
+</div>
+
+
+
+<!-- Previous & Next Post Navigation Links -->
+  <nav class="blog-pagination py-4 border-top border-bottom my-4">
+    <div class="row align-items-center">
+      <div class="col-6 text-start">
+        
+          <div class="small text-muted mb-1">&larr; Newer Post</div>
+          <a href="/site/2026/11/11/multi-tenant-database-isolation-postgresql-rls/" class="text-decoration-none fw-bold text-dark">
+            Multi-Tenant Database Isolation: PostgreSQ...
+          </a>
+        
+      </div>
+      <div class="col-6 text-end">
+        
+          <div class="small text-muted mb-1">Older Post &rarr;</div>
+          <a href="/site/2026/11/09/zero-trust-architecture-mtls-and-service-mesh-security/" class="text-decoration-none fw-bold text-dark">
+            Zero-Trust Microservice Authentication wit...
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+  
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
+      <div class="col-lg-4">
+        
+        <!-- Services Include -->
+        <!-- Render Ads / Sponsored Content -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Sponsored Partner
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Luxury lifestyle & home decors.</p>
+    <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" class="btn btn-outline-primary btn-sm">
+      Explore Collection &rarr;
+    </a>
+  </div>
+</div>
+
+<!-- Render Alerts / Announcements -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+     Alert &amp; Updates
+  </div>
+  <div class="card-body">
+      <strong>New Post:</strong> <a href="/site/2026/11/30/how-to-buy-audemars-piguet-royal-oak-jumbo-16202-secondary-market/" class="link">How to Buy an Audemars Piguet Royal Oak Jumbo 16202 ST Without Getting Burned on the Resale Market</a>
+  </div>
+</div>
+
+<!-- Render Donations / Support -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Support Us
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Fuel open-source guides, enterprise tooling, and architecture blueprints.</p>
+    <a href="upi://pay?pa=7304164348@upi&am=99&cu=INR&tn=Coffee" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm fw-bold mb-2">
+      ☕ Buy Me a Coffee
+    </a>
+  </div>
+</div>
+
+<!-- Services Widget -->
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Tools &amp; Services</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/tiny">Tiny URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/qrcode">QR Code</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/verify-email">Verify Email</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/url-encode">URL Encode</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/whatsapp">WhatsApp Chat</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/html-encode">HTML Escape</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/embeded-url">Embeded URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/sms-count">SMS Count</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="https://github.com/sdksmate?tab=repositories" target="_blank" rel="noopener">Softwares</a>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Site Theme</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/yeti.min.css')">Yeti</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/united.min.css')">United</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/lumen.min.css')">Lumen</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/sketchy.min.css')">Sketchy</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+      
+        
+      </div><!-- /col-lg-4 -->
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+
+  
+
+<footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- Column 1: Copyright & Brand -->
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <h5 class="text-white h6 mb-1">Tecqmate</h5>
+                <p class="text-white-50 small mb-0">Copyright &copy; 2011. All rights reserved.</p>
+            </div>
+
+            <!-- Column 2: Main Navigation Links -->
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Navigation</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/ " 
+                            class="text-white-50 text-decoration-none" 
+                            >Home</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/contact " 
+                            class="text-white-50 text-decoration-none" 
+                            >Contact</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/blog " 
+                            class="text-white-50 text-decoration-none" 
+                            >Blog</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/partnerships " 
+                            class="text-white-50 text-decoration-none" 
+                            >Partnerships</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Tools & Resources Links -->
+            <div class="col-md-4 text-center text-md-end">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Others</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/sitemap " 
+                            class="text-white-50 text-decoration-none" 
+                            >Sitemap</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Donate</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1 " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Youtube</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic External styles Files Injection -->
+
+
+<!-- Scripts -->
+<script src="/site/assets/js/jquery-3.5.0.min.js"></script>
+<script src="/site/assets/js/bootstrap.min.js"></script>
+<script src="/site/assets/js/bootbox.min.js"></script>
+<script src="/site/assets/js/script.js?_=1793853343"></script>
+<script>
+    function changeTheme(themeUrl) {
+        $('#theme-style').attr('href', themeUrl);
+        localStorage.setItem('selected-theme', themeUrl);
+    }
+
+    function toggleTheme() {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('mode', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('mode', 'dark');
+        }
+    }
+
+    $(function () {
+        const savedTheme = localStorage.getItem('selected-theme');
+        if (savedTheme) $('#theme-style').attr('href', savedTheme);
+
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    });
+</script>
+
+<!-- Dynamic External Script Files Injection -->
+
+
+<!-- Dynamic Inline Script Code Block Injection -->
+
+
+</body>
+
+</html>

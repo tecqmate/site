@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Embeded URL - Tecqmate</title>
+  <link rel="canonical" href="http://localhost:4000/site/embeded-url/" />
+  <!-- Prevents browser caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta name="build-version" content="1793853343">
+  <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
+  <meta name="description" content="A free service platform supported by your donations." />
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/site/favicon.ico" sizes="75x75" />
+  
+  <!-- Bootstrap & Custom Styles -->
+  <link href="/site/assets/css/lumen.min.css" rel="stylesheet" id="theme-style">
+  <link href="/site/assets/css/style.css?_=1793853343" rel="stylesheet">
+  
+  <style>
+    textarea#txt, textarea#esc {
+      resize: none;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+
+<body oncontextmenu="return false">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/site/">Tecqmate</a>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/contact">Contact</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/blog">Blog</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/partnerships">Partnerships</a>
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Grid Wrapper -->
+  <div class="container my-4">
+    <div class="row">
+      
+      <!-- Main Content Area (col-lg-8) -->
+      <div class="col-lg-8">
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">Embeded URL</h1>
+            
+              <div class="text-muted fst-italic mb-2">Published on February 20, 2022</div>
+            
+            
+              <span class="badge bg-secondary text-decoration-none link-light">embeded</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">url</span>
+            
+          </header>
+
+          <!-- Dynamic Markdown Body Content -->
+          <div class="col-12 mt-4 px-0">
+            <section class="mb-3">
+  <input id="txt" class="form-control" autofocus="" type="file" />
+</section>
+<section class="mb-3">
+  <textarea id="out" class="form-control" readonly=""></textarea>
+</section>
+<section class="mb-3 text-center">
+  <button class="btn btn-primary" type="button" id="cbtn">Copy</button>
+  <a class="btn btn-primary" id="alink" target="_blank">Open Link</a>
+</section>
+
+<style>
+  #out {
+    resize: none;
+    min-height: 200px;
+  }
+</style>
+
+<script>
+  function pageInit() {
+    $('#cbtn').on('click', function(e) {
+      navigator.clipboard.writeText($('#out').val()).then(function() {
+        $.alert('Copied successfully!');
+      }).catch(function(err) {
+        $.alert('Failed to copy text.');
+      });
+    });
+
+    $('#txt').on('change', function(e) {
+      var file = this.files[0];
+      var out = $('#out');
+      if (!file) {
+        out.val('Please choose file');
+      }
+      if (file) {
+        out.val('Reading file ...');
+        var fr = new FileReader();
+        fr.onload = function(e) {
+          out.val(fr.result);
+          $('#alink').attr('href', fr.result).attr('download', file.name);
+        };
+        fr.onerror = function() {
+          out.val('Something went wrong!');
+        };
+        fr.readAsDataURL(file);
+      }
+    });
+  }
+</script>
+
+
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
+      <div class="col-lg-4">
+        
+        <!-- Services Include -->
+        <!-- Render Ads / Sponsored Content -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Sponsored Partner
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Luxury lifestyle & home decors.</p>
+    <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" class="btn btn-outline-primary btn-sm">
+      Explore Collection &rarr;
+    </a>
+  </div>
+</div>
+
+<!-- Render Alerts / Announcements -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+     Alert &amp; Updates
+  </div>
+  <div class="card-body">
+      <strong>New Post:</strong> <a href="/site/2026/11/30/how-to-buy-audemars-piguet-royal-oak-jumbo-16202-secondary-market/" class="link">How to Buy an Audemars Piguet Royal Oak Jumbo 16202 ST Without Getting Burned on the Resale Market</a>
+  </div>
+</div>
+
+<!-- Render Donations / Support -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Support Us
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Fuel open-source guides, enterprise tooling, and architecture blueprints.</p>
+    <a href="upi://pay?pa=7304164348@upi&am=99&cu=INR&tn=Coffee" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm fw-bold mb-2">
+      ☕ Buy Me a Coffee
+    </a>
+  </div>
+</div>
+
+<!-- Services Widget -->
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Tools &amp; Services</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/tiny">Tiny URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/qrcode">QR Code</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/verify-email">Verify Email</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/url-encode">URL Encode</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/whatsapp">WhatsApp Chat</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/html-encode">HTML Escape</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/embeded-url">Embeded URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/sms-count">SMS Count</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="https://github.com/sdksmate?tab=repositories" target="_blank" rel="noopener">Softwares</a>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Site Theme</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/yeti.min.css')">Yeti</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/united.min.css')">United</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/lumen.min.css')">Lumen</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/sketchy.min.css')">Sketchy</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+      
+        
+      </div><!-- /col-lg-4 -->
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+
+  
+
+<footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- Column 1: Copyright & Brand -->
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <h5 class="text-white h6 mb-1">Tecqmate</h5>
+                <p class="text-white-50 small mb-0">Copyright &copy; 2011. All rights reserved.</p>
+            </div>
+
+            <!-- Column 2: Main Navigation Links -->
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Navigation</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/ " 
+                            class="text-white-50 text-decoration-none" 
+                            >Home</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/contact " 
+                            class="text-white-50 text-decoration-none" 
+                            >Contact</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/blog " 
+                            class="text-white-50 text-decoration-none" 
+                            >Blog</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/partnerships " 
+                            class="text-white-50 text-decoration-none" 
+                            >Partnerships</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Tools & Resources Links -->
+            <div class="col-md-4 text-center text-md-end">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Others</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/sitemap " 
+                            class="text-white-50 text-decoration-none" 
+                            >Sitemap</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Donate</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1 " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Youtube</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic External styles Files Injection -->
+
+
+<!-- Scripts -->
+<script src="/site/assets/js/jquery-3.5.0.min.js"></script>
+<script src="/site/assets/js/bootstrap.min.js"></script>
+<script src="/site/assets/js/bootbox.min.js"></script>
+<script src="/site/assets/js/script.js?_=1793853343"></script>
+<script>
+    function changeTheme(themeUrl) {
+        $('#theme-style').attr('href', themeUrl);
+        localStorage.setItem('selected-theme', themeUrl);
+    }
+
+    function toggleTheme() {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('mode', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('mode', 'dark');
+        }
+    }
+
+    $(function () {
+        const savedTheme = localStorage.getItem('selected-theme');
+        if (savedTheme) $('#theme-style').attr('href', savedTheme);
+
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    });
+</script>
+
+<!-- Dynamic External Script Files Injection -->
+
+
+<!-- Dynamic Inline Script Code Block Injection -->
+
+  <script>
+    
+      $(pageInit);
+    
+  </script>
+
+
+</body>
+
+</html>

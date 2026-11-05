@@ -13,7 +13,7 @@ tags: ["free", "service", "blog", "guide"]
 <!-- Most Recent Blog Post Section -->
 <hr class="my-5">
 <div class="d-flex justify-content-between align-items-center mb-3">
-<h2 class="h4 mb-0">Latest Technical Guide</h2>
+<h2 class="h4 mb-0">Latest Post</h2>
 <a href="{{ '/blog' | relative_url }}" class="btn btn-outline-primary btn-sm">View All Guides &rarr;</a>
 </div>
 

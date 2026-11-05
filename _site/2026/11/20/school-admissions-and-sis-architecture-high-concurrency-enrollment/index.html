@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>School Admissions & Student Information Systems (SIS): Handling High-Concurrency Enrollment Surges - Tecqmate</title>
+  <link rel="canonical" href="http://localhost:4000/site/2026/11/20/school-admissions-and-sis-architecture-high-concurrency-enrollment/" />
+  <!-- Prevents browser caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta name="build-version" content="1793853343">
+  <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
+  <meta name="description" content="An architectural blueprint for scaling school admissions portals, handling fee payment gateway transaction spikes, and securing multi-tier role-based access for educational institutions." />
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/site/favicon.ico" sizes="75x75" />
+  
+  <!-- Bootstrap & Custom Styles -->
+  <link href="/site/assets/css/lumen.min.css" rel="stylesheet" id="theme-style">
+  <link href="/site/assets/css/style.css?_=1793853343" rel="stylesheet">
+  
+  <style>
+    textarea#txt, textarea#esc {
+      resize: none;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+
+<body oncontextmenu="return false">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/site/">Tecqmate</a>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/contact">Contact</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/blog">Blog</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/partnerships">Partnerships</a>
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Grid Wrapper -->
+  <div class="container my-4">
+    <div class="row">
+      
+      <!-- Main Content Area (col-lg-8) -->
+      <div class="col-lg-8">
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">School Admissions & Student Information Systems (SIS): Handling High-Concurrency Enrollment Surges</h1>
+            
+              <div class="text-muted fst-italic mb-2">Published on November 20, 2026</div>
+            
+            
+              <span class="badge bg-secondary text-decoration-none link-light">education</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">business-operations</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">cloud-architecture</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">api-security</span>
+            
+          </header>
+
+          <!-- Dynamic Markdown Body Content -->
+          <div class="col-12 mt-4 px-0">
+            <!-- Back to Blog Link Top -->
+<div class="mb-3">
+  <a href="/site/blog/" class="btn btn-outline-primary btn-sm">&larr; Back to Blog Archive</a>
+</div>
+
+
+
+
+
+<!-- Optional Cover Image -->
+
+
+<!-- Main Markdown Body Content -->
+<div class="post-content fs-6">
+  <h2 id="1-the-admissions-enrollment-stampede">1. The Admissions Enrollment Stampede</h2>
+
+<p>For educational institutions and private school networks, the opening day of academic admissions triggers massive traffic spikes. Thousands of parents hit the portal simultaneously under a first-come, first-served registration model. If the backend architecture lacks proper rate limiting, atomic database locks, and asynchronous queueing, the server collapses under connection exhaustion, resulting in duplicate form submissions, failed payment receipts, and severe administrative friction.</p>
+
+<hr />
+
+<h2 id="2-multi-tier-role-based-access-control-rbac-in-sis">2. Multi-Tier Role-Based Access Control (RBAC) in SIS</h2>
+
+<p>Educational platforms require strict hierarchical data segregation to protect student privacy and ensure regulatory compliance (e.g., FERPA or local data protection frameworks). A robust Student Information System (SIS) separates permissions across distinct administrative tiers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Role Level</th>
+      <th style="text-align: left">Access Scope</th>
+      <th style="text-align: left">Operational Responsibilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>SysAdmin / Principal</strong></td>
+      <td style="text-align: left">Global Institution</td>
+      <td style="text-align: left">System configuration, fee structure definitions, audit log reviews, and final seat allocation approvals.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Admissions Executive</strong></td>
+      <td style="text-align: left">Regional Campus / Grade Level</td>
+      <td style="text-align: left">Reviewing applicant documents, scheduling entrance interviews, and tracking provisional form statuses.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Parent / Applicant</strong></td>
+      <td style="text-align: left">Individual Account</td>
+      <td style="text-align: left">Submitting application forms, uploading birth certificates/transfer certificates, and paying registration fees.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="3-database-schema-for-student-application--enrollment-tracking">3. Database Schema for Student Application &amp; Enrollment Tracking</h2>
+
+<p>To prevent double-booking of limited student seats and maintain absolute integrity during high-concurrency admission windows, database tables must enforce strict uniqueness constraints and status states:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">student_admissions</span> <span class="p">(</span>
+    <span class="n">application_id</span> <span class="n">UUID</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">academic_year</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">grade_applied</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">student_full_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">parent_email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">parent_phone</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">application_status</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'SUBMITTED'</span><span class="p">,</span> <span class="c1">-- SUBMITTED, DOCUMENT_VERIFIED, FEE_PENDING, ENROLLED, REJECTED</span>
+    <span class="n">payment_reference_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">UNIQUE</span><span class="p">,</span>
+    <span class="n">seat_allocated</span> <span class="nb">BOOLEAN</span> <span class="k">DEFAULT</span> <span class="k">FALSE</span><span class="p">,</span>
+    <span class="n">created_at_epoch</span> <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+
+<span class="c1">-- Index for rapid campus admissions filtering and status sorting</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">idx_admissions_lookup</span> <span class="k">ON</span> <span class="n">student_admissions</span> <span class="p">(</span><span class="n">academic_year</span><span class="p">,</span> <span class="n">grade_applied</span><span class="p">,</span> <span class="n">application_status</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-handling-payment-gateway-concurrency-during-registration-fees">4. Handling Payment Gateway Concurrency during Registration Fees</h2>
+
+<p>When registration or admission fees are mandatory to lock in a provisional seat, payment webhooks must update application statuses atomically to prevent race conditions where two parents pay for the last remaining seat simultaneously:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">Pool</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">pg</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">pool</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Pool</span><span class="p">();</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">confirmAdmissionPayment</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">paymentRefId</span><span class="p">,</span> <span class="nx">applicationId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">BEGIN</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// Lock the specific application row to prevent concurrent updates</span>
+    <span class="kd">const</span> <span class="nx">appRow</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+      <span class="s2">`SELECT seat_allocated, grade_applied FROM student_admissions WHERE application_id = $1 FOR UPDATE`</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">applicationId</span><span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="nx">appRow</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Application record not found.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="nx">appRow</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">seat_allocated</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Seat already allocated for this application.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Update application status and lock seat confirmation</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+      <span class="s2">`UPDATE student_admissions 
+       SET application_status = 'ENROLLED', payment_reference_id = $1, seat_allocated = TRUE 
+       WHERE application_id = $2`</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">paymentRefId</span><span class="p">,</span> <span class="nx">applicationId</span><span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">COMMIT</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">success</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Seat successfully confirmed and enrolled.</span><span class="dl">'</span> <span class="p">};</span>
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">ROLLBACK</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-operational-best-practices-for-educational-tech">5. Operational Best Practices for Educational Tech</h2>
+
+<ol>
+  <li><strong>Document Upload Security:</strong> Store applicant documents (transfer certificates, birth certificates, medical records) in secure private cloud storage buckets with short-lived signed URLs rather than public directories.</li>
+  <li><strong>Automated SMS &amp; Email Communications:</strong> Integrate reliable communication gateways to trigger instant confirmation alerts when application forms are submitted, verified, or payment receipts are generated.</li>
+  <li><strong>Queue-Based Form Processing:</strong> During peak morning admission windows, offload heavy PDF generation (admission cards, fee invoices) to asynchronous background worker queues to keep the web application response time under 200ms.</li>
+</ol>
+
+</div>
+
+<!-- Editorial Note Partial -->
+<!-- _includes/editorial-note.html -->
+<div class="alert alert-secondary small mb-4" role="alert">
+  <strong>Editorial Note:</strong> This guide is an independent educational overview intended for general informational purposes. All brand names, trademarks, and registered insignia belong to their respective statutory owners. Regulations and specifications vary by jurisdiction.
+</div>
+
+
+
+<!-- Previous & Next Post Navigation Links -->
+  <nav class="blog-pagination py-4 border-top border-bottom my-4">
+    <div class="row align-items-center">
+      <div class="col-6 text-start">
+        
+          <div class="small text-muted mb-1">&larr; Newer Post</div>
+          <a href="/site/2026/11/21/high-throughput-cpaas-sms-smpp-routing-engines/" class="text-decoration-none fw-bold text-dark">
+            High-Throughput CPaaS SMS & SMPP Routing E...
+          </a>
+        
+      </div>
+      <div class="col-6 text-end">
+        
+          <div class="small text-muted mb-1">Older Post &rarr;</div>
+          <a href="/site/2026/11/19/fmcg-supply-chain-distribution-and-retail-channel-management/" class="text-decoration-none fw-bold text-dark">
+            FMCG Distribution Networks: Optimizing Pri...
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+  
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
+      <div class="col-lg-4">
+        
+        <!-- Services Include -->
+        <!-- Render Ads / Sponsored Content -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Sponsored Partner
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Luxury lifestyle & home decors.</p>
+    <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" class="btn btn-outline-primary btn-sm">
+      Explore Collection &rarr;
+    </a>
+  </div>
+</div>
+
+<!-- Render Alerts / Announcements -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+     Alert &amp; Updates
+  </div>
+  <div class="card-body">
+      <strong>New Post:</strong> <a href="/site/2026/11/30/how-to-buy-audemars-piguet-royal-oak-jumbo-16202-secondary-market/" class="link">How to Buy an Audemars Piguet Royal Oak Jumbo 16202 ST Without Getting Burned on the Resale Market</a>
+  </div>
+</div>
+
+<!-- Render Donations / Support -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Support Us
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Fuel open-source guides, enterprise tooling, and architecture blueprints.</p>
+    <a href="upi://pay?pa=7304164348@upi&am=99&cu=INR&tn=Coffee" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm fw-bold mb-2">
+      ☕ Buy Me a Coffee
+    </a>
+  </div>
+</div>
+
+<!-- Services Widget -->
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Tools &amp; Services</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/tiny">Tiny URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/qrcode">QR Code</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/verify-email">Verify Email</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/url-encode">URL Encode</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/whatsapp">WhatsApp Chat</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/html-encode">HTML Escape</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/embeded-url">Embeded URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/sms-count">SMS Count</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="https://github.com/sdksmate?tab=repositories" target="_blank" rel="noopener">Softwares</a>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Site Theme</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/yeti.min.css')">Yeti</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/united.min.css')">United</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/lumen.min.css')">Lumen</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/sketchy.min.css')">Sketchy</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+      
+        
+      </div><!-- /col-lg-4 -->
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+
+  
+
+<footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- Column 1: Copyright & Brand -->
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <h5 class="text-white h6 mb-1">Tecqmate</h5>
+                <p class="text-white-50 small mb-0">Copyright &copy; 2011. All rights reserved.</p>
+            </div>
+
+            <!-- Column 2: Main Navigation Links -->
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Navigation</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/ " 
+                            class="text-white-50 text-decoration-none" 
+                            >Home</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/contact " 
+                            class="text-white-50 text-decoration-none" 
+                            >Contact</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/blog " 
+                            class="text-white-50 text-decoration-none" 
+                            >Blog</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/partnerships " 
+                            class="text-white-50 text-decoration-none" 
+                            >Partnerships</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Tools & Resources Links -->
+            <div class="col-md-4 text-center text-md-end">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Others</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/sitemap " 
+                            class="text-white-50 text-decoration-none" 
+                            >Sitemap</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Donate</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1 " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Youtube</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic External styles Files Injection -->
+
+
+<!-- Scripts -->
+<script src="/site/assets/js/jquery-3.5.0.min.js"></script>
+<script src="/site/assets/js/bootstrap.min.js"></script>
+<script src="/site/assets/js/bootbox.min.js"></script>
+<script src="/site/assets/js/script.js?_=1793853343"></script>
+<script>
+    function changeTheme(themeUrl) {
+        $('#theme-style').attr('href', themeUrl);
+        localStorage.setItem('selected-theme', themeUrl);
+    }
+
+    function toggleTheme() {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('mode', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('mode', 'dark');
+        }
+    }
+
+    $(function () {
+        const savedTheme = localStorage.getItem('selected-theme');
+        if (savedTheme) $('#theme-style').attr('href', savedTheme);
+
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    });
+</script>
+
+<!-- Dynamic External Script Files Injection -->
+
+
+<!-- Dynamic Inline Script Code Block Injection -->
+
+
+</body>
+
+</html>

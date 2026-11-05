@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>High-Throughput CPaaS SMS & SMPP Routing Engines: Multi-Tier Hierarchy and Credit Ledgers - Tecqmate</title>
+  <link rel="canonical" href="http://localhost:4000/site/2026/11/21/high-throughput-cpaas-sms-smpp-routing-engines/" />
+  <!-- Prevents browser caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta name="build-version" content="1793853343">
+  <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
+  <meta name="description" content="An architectural engineering blueprint for building scalable Communications Platform as a Service (CPaaS) engines handling SMPP bindings, multi-tenant billing ledgers, and dynamic route failover." />
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/site/favicon.ico" sizes="75x75" />
+  
+  <!-- Bootstrap & Custom Styles -->
+  <link href="/site/assets/css/lumen.min.css" rel="stylesheet" id="theme-style">
+  <link href="/site/assets/css/style.css?_=1793853343" rel="stylesheet">
+  
+  <style>
+    textarea#txt, textarea#esc {
+      resize: none;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+
+<body oncontextmenu="return false">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/site/">Tecqmate</a>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/contact">Contact</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/blog">Blog</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/partnerships">Partnerships</a>
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Grid Wrapper -->
+  <div class="container my-4">
+    <div class="row">
+      
+      <!-- Main Content Area (col-lg-8) -->
+      <div class="col-lg-8">
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">High-Throughput CPaaS SMS & SMPP Routing Engines: Multi-Tier Hierarchy and Credit Ledgers</h1>
+            
+              <div class="text-muted fst-italic mb-2">Published on November 21, 2026</div>
+            
+            
+              <span class="badge bg-secondary text-decoration-none link-light">cloud-architecture</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">devops</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">api-security</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">distributed-systems</span>
+            
+          </header>
+
+          <!-- Dynamic Markdown Body Content -->
+          <div class="col-12 mt-4 px-0">
+            <!-- Back to Blog Link Top -->
+<div class="mb-3">
+  <a href="/site/blog/" class="btn btn-outline-primary btn-sm">&larr; Back to Blog Archive</a>
+</div>
+
+
+
+
+
+<!-- Optional Cover Image -->
+
+
+<!-- Main Markdown Body Content -->
+<div class="post-content fs-6">
+  <h2 id="1-the-engineering-challenges-of-cpaas-scale">1. The Engineering Challenges of CPaaS Scale</h2>
+
+<p>Communications Platform as a Service (CPaaS) engines process millions of mission-critical text messages, alerts, and OTPs concurrently. Unlike standard web applications, CPaaS gateways must maintain persistent TCP connections via the <strong>SMPP (Short Message Peer-to-Peer)</strong> protocol with telecom operators while exposing high-performance REST APIs (<code class="language-plaintext highlighter-rouge">POST /v3/sms/send</code>) to enterprise clients.</p>
+
+<p>Balancing throughput, low latency, and strict financial credit accounting across multi-tenant reseller networks requires meticulous distributed system architecture.</p>
+
+<hr />
+
+<h2 id="2-multi-tier-hierarchy--reseller-billing-model">2. Multi-Tier Hierarchy &amp; Reseller Billing Model</h2>
+
+<p>Enterprise CPaaS systems rely on a strict hierarchical tenancy model to manage margins, route priority, and prepaid/postpaid billing ledgers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Hierarchy Tier</th>
+      <th style="text-align: left">Operational Scope</th>
+      <th style="text-align: left">Core Responsibilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>SysAdmin</strong></td>
+      <td style="text-align: left">Global Platform</td>
+      <td style="text-align: left">Managing carrier binds, SMPP bind pools, route cost tables, and global system health.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Admin / Enterprise</strong></td>
+      <td style="text-align: left">Company Account</td>
+      <td style="text-align: left">API credential generation, sender ID registration, and sub-account provisioning.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reseller</strong></td>
+      <td style="text-align: left">Partner Network</td>
+      <td style="text-align: left">White-labeling the CPaaS portal, setting custom credit pricing margins, and managing client wallets.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Client / End-User</strong></td>
+      <td style="text-align: left">Application Consumer</td>
+      <td style="text-align: left">Triggering programmatic SMS/OTP API requests and viewing delivery report (DLR) logs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="3-database-schema-for-credit-ledgers--multi-tier-balances">3. Database Schema for Credit Ledgers &amp; Multi-Tier Balances</h2>
+
+<p>To prevent race conditions where concurrent message blasts drain client balances below zero, financial credit debits must be executed atomically inside PostgreSQL transactions:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">client_wallets</span> <span class="p">(</span>
+    <span class="n">tenant_id</span> <span class="n">UUID</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">account_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">parent_reseller_id</span> <span class="n">UUID</span><span class="p">,</span>
+    <span class="n">credit_balance</span> <span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0000</span><span class="p">,</span>
+    <span class="n">credit_limit_threshold</span> <span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0000</span><span class="p">,</span>
+    <span class="n">is_suspended</span> <span class="nb">BOOLEAN</span> <span class="k">DEFAULT</span> <span class="k">FALSE</span><span class="p">,</span>
+    <span class="n">updated_at_epoch</span> <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">sms_dispatch_outbox</span> <span class="p">(</span>
+    <span class="n">message_id</span> <span class="n">UUID</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">tenant_id</span> <span class="n">UUID</span> <span class="k">REFERENCES</span> <span class="n">client_wallets</span><span class="p">(</span><span class="n">tenant_id</span><span class="p">),</span>
+    <span class="n">destination_phone</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">message_body</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">route_operator</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">cost_per_sms</span> <span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">status</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'QUEUED'</span><span class="p">,</span> <span class="c1">-- QUEUED, SUBMITTED_TO_CARRIER, DELIVERED, FAILED</span>
+    <span class="n">submitted_at_epoch</span> <span class="nb">BIGINT</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+
+<span class="c1">-- Index for real-time delivery status polling</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">idx_sms_tenant_status</span> <span class="k">ON</span> <span class="n">sms_dispatch_outbox</span> <span class="p">(</span><span class="n">tenant_id</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-atomic-credit-deduction-and-api-dispatch-nodejs-example">4. Atomic Credit Deduction and API Dispatch (Node.js Example)</h2>
+
+<p>When an enterprise client submits an SMS batch, the gateway must verify the client’s wallet balance and deduct message costs atomically before passing the payload to the SMPP worker queue:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">Pool</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">pg</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">pool</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Pool</span><span class="p">();</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">deductCreditAndQueueSMS</span><span class="p">(</span><span class="nx">tenantId</span><span class="p">,</span> <span class="nx">smsCount</span><span class="p">,</span> <span class="nx">costPerSms</span><span class="p">,</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">pool</span><span class="p">.</span><span class="nf">connect</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">totalCost</span> <span class="o">=</span> <span class="nx">smsCount</span> <span class="o">*</span> <span class="nx">costPerSms</span><span class="p">;</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">BEGIN</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// Lock tenant wallet row to prevent concurrent overdrafts</span>
+    <span class="kd">const</span> <span class="nx">walletRes</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+      <span class="s2">`SELECT credit_balance, credit_limit_threshold, is_suspended FROM client_wallets WHERE tenant_id = $1 FOR UPDATE`</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">tenantId</span><span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="nx">walletRes</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tenant wallet not found.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">wallet</span> <span class="o">=</span> <span class="nx">walletRes</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">log</span> <span class="o">||</span> <span class="nx">walletRes</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">is_suspended</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tenant account is suspended due to billing policy.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">availableFunds</span> <span class="o">=</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">credit_balance</span><span class="p">)</span> <span class="o">+</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">credit_limit_threshold</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">availableFunds</span> <span class="o">&lt;</span> <span class="nx">totalCost</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Insufficient credit balance for message batch dispatch.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Deduct balance</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+      <span class="s2">`UPDATE client_wallets SET credit_balance = credit_balance - $1, updated_at_epoch = $2 WHERE tenant_id = $3`</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">totalCost</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">),</span> <span class="nx">tenantId</span><span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Insert into dispatch outbox for SMPP worker pick-up</span>
+    <span class="kd">const</span> <span class="nx">messageId</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nf">randomUUID</span><span class="p">();</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+      <span class="s2">`INSERT INTO sms_dispatch_outbox (message_id, tenant_id, destination_phone, message_body, route_operator, cost_per_sms, submitted_at_epoch)
+       VALUES ($1, $2, $3, $4, 'PRIMARY_CARRIER_SMPP', $5, $6)`</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">messageId</span><span class="p">,</span> <span class="nx">tenantId</span><span class="p">,</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">costPerSms</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)]</span>
+    <span class="p">);</span>
+
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">COMMIT</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">success</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">messageId</span><span class="p">,</span> <span class="na">totalDeducted</span><span class="p">:</span> <span class="nx">totalCost</span> <span class="p">};</span>
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="dl">'</span><span class="s1">ROLLBACK</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nf">release</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-production-best-practices-for-cpaas-gateways">5. Production Best Practices for CPaaS Gateways</h2>
+
+<ol>
+  <li><strong>SMPP Transmitter/Receiver Session Pooling:</strong> Maintain persistent TCP binding pools with mobile network operators (MNOs) using asynchronous workers to eliminate TCP handshake latency during high-volume OTP blasts.</li>
+  <li><strong>Dynamic Route Failover:</strong> Implement automated health checks on carrier binds. If a primary carrier bind experiences high SMPP response timeouts (<code class="language-plaintext highlighter-rouge">ESME_RTHROTTLED</code>), dynamically reroute traffic to secondary wholesale carrier routes within milliseconds.</li>
+  <li><strong>Asynchronous DLR Callbacks:</strong> Process Delivery Reports (DLRs) received from telecom operators asynchronously via Redis pub/sub or Kafka queues to prevent webhook HTTP delays from blocking carrier ingestion threads.</li>
+</ol>
+
+</div>
+
+<!-- Editorial Note Partial -->
+<!-- _includes/editorial-note.html -->
+<div class="alert alert-secondary small mb-4" role="alert">
+  <strong>Editorial Note:</strong> This guide is an independent educational overview intended for general informational purposes. All brand names, trademarks, and registered insignia belong to their respective statutory owners. Regulations and specifications vary by jurisdiction.
+</div>
+
+
+
+<!-- Previous & Next Post Navigation Links -->
+  <nav class="blog-pagination py-4 border-top border-bottom my-4">
+    <div class="row align-items-center">
+      <div class="col-6 text-start">
+        
+          <div class="small text-muted mb-1">&larr; Newer Post</div>
+          <a href="/site/2026/11/22/luxury-goods-authentication-supply-chain-watches-handbags/" class="text-decoration-none fw-bold text-dark">
+            Luxury Goods Provenance & Supply Chain: An...
+          </a>
+        
+      </div>
+      <div class="col-6 text-end">
+        
+          <div class="small text-muted mb-1">Older Post &rarr;</div>
+          <a href="/site/2026/11/20/school-admissions-and-sis-architecture-high-concurrency-enrollment/" class="text-decoration-none fw-bold text-dark">
+            School Admissions & Student Information Sy...
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+  
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
+      <div class="col-lg-4">
+        
+        <!-- Services Include -->
+        <!-- Render Ads / Sponsored Content -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Sponsored Partner
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Luxury lifestyle & home decors.</p>
+    <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" class="btn btn-outline-primary btn-sm">
+      Explore Collection &rarr;
+    </a>
+  </div>
+</div>
+
+<!-- Render Alerts / Announcements -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+     Alert &amp; Updates
+  </div>
+  <div class="card-body">
+      <strong>New Post:</strong> <a href="/site/2026/11/30/how-to-buy-audemars-piguet-royal-oak-jumbo-16202-secondary-market/" class="link">How to Buy an Audemars Piguet Royal Oak Jumbo 16202 ST Without Getting Burned on the Resale Market</a>
+  </div>
+</div>
+
+<!-- Render Donations / Support -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Support Us
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Fuel open-source guides, enterprise tooling, and architecture blueprints.</p>
+    <a href="upi://pay?pa=7304164348@upi&am=99&cu=INR&tn=Coffee" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm fw-bold mb-2">
+      ☕ Buy Me a Coffee
+    </a>
+  </div>
+</div>
+
+<!-- Services Widget -->
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Tools &amp; Services</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/tiny">Tiny URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/qrcode">QR Code</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/verify-email">Verify Email</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/url-encode">URL Encode</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/whatsapp">WhatsApp Chat</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/html-encode">HTML Escape</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/embeded-url">Embeded URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/sms-count">SMS Count</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="https://github.com/sdksmate?tab=repositories" target="_blank" rel="noopener">Softwares</a>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Site Theme</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/yeti.min.css')">Yeti</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/united.min.css')">United</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/lumen.min.css')">Lumen</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/sketchy.min.css')">Sketchy</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+      
+        
+      </div><!-- /col-lg-4 -->
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+
+  
+
+<footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- Column 1: Copyright & Brand -->
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <h5 class="text-white h6 mb-1">Tecqmate</h5>
+                <p class="text-white-50 small mb-0">Copyright &copy; 2011. All rights reserved.</p>
+            </div>
+
+            <!-- Column 2: Main Navigation Links -->
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Navigation</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/ " 
+                            class="text-white-50 text-decoration-none" 
+                            >Home</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/contact " 
+                            class="text-white-50 text-decoration-none" 
+                            >Contact</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/blog " 
+                            class="text-white-50 text-decoration-none" 
+                            >Blog</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/partnerships " 
+                            class="text-white-50 text-decoration-none" 
+                            >Partnerships</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Tools & Resources Links -->
+            <div class="col-md-4 text-center text-md-end">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Others</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" /site/sitemap " 
+                            class="text-white-50 text-decoration-none" 
+                            >Sitemap</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Donate</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a 
+                            href=" https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1 " 
+                            class="text-white-50 text-decoration-none" 
+                             target="_blank" rel="noopener" >Youtube</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic External styles Files Injection -->
+
+
+<!-- Scripts -->
+<script src="/site/assets/js/jquery-3.5.0.min.js"></script>
+<script src="/site/assets/js/bootstrap.min.js"></script>
+<script src="/site/assets/js/bootbox.min.js"></script>
+<script src="/site/assets/js/script.js?_=1793853343"></script>
+<script>
+    function changeTheme(themeUrl) {
+        $('#theme-style').attr('href', themeUrl);
+        localStorage.setItem('selected-theme', themeUrl);
+    }
+
+    function toggleTheme() {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('mode', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('mode', 'dark');
+        }
+    }
+
+    $(function () {
+        const savedTheme = localStorage.getItem('selected-theme');
+        if (savedTheme) $('#theme-style').attr('href', savedTheme);
+
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    });
+</script>
+
+<!-- Dynamic External Script Files Injection -->
+
+
+<!-- Dynamic Inline Script Code Block Injection -->
+
+
+</body>
+
+</html>
