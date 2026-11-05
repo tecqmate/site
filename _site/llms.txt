@@ -70,7 +70,7 @@
 
 - [Hardware-logistics](http://localhost:4000/site/tags/#hardware-logistics): 1 guide(s) published under this topic.
 
-- [Retail-commerce](http://localhost:4000/site/tags/#retail-commerce): 15 guide(s) published under this topic.
+- [Retail-commerce](http://localhost:4000/site/tags/#retail-commerce): 16 guide(s) published under this topic.
 
 - [Business-operations](http://localhost:4000/site/tags/#business-operations): 7 guide(s) published under this topic.
 
@@ -78,11 +78,11 @@
 
 - [Education](http://localhost:4000/site/tags/#education): 1 guide(s) published under this topic.
 
-- [Luxury-lifestyle](http://localhost:4000/site/tags/#luxury-lifestyle): 10 guide(s) published under this topic.
+- [Luxury-lifestyle](http://localhost:4000/site/tags/#luxury-lifestyle): 11 guide(s) published under this topic.
 
 - [Luxury-watches](http://localhost:4000/site/tags/#luxury-watches): 6 guide(s) published under this topic.
 
-- [Luxury-handbags](http://localhost:4000/site/tags/#luxury-handbags): 4 guide(s) published under this topic.
+- [Luxury-handbags](http://localhost:4000/site/tags/#luxury-handbags): 5 guide(s) published under this topic.
 
 - [Wooden-furniture](http://localhost:4000/site/tags/#wooden-furniture): 1 guide(s) published under this topic.
 
@@ -98,6 +98,8 @@
 
 
 ## 20 Latest Buying & Technical Guides
+
+- [How to Buy a Hermès Kelly 28 Without Getting Scammed by Sellier vs. Retourne Counterfeits](http://localhost:4000/site/2026/12/07/how-to-buy-hermes-kelly-28-secondary-market/): A secondary-market luxury handbag buyer's guide to authenticating the Hermès Kelly 28, evaluating Sellier structural integrity versus Retourne slouch, blind stamp verification, and hardware hallmarks.
 
 - [How to Buy a Hermès Birkin 30 Without Falling for High-End Super-Fakes and Altered Leathers](http://localhost:4000/site/2026/12/06/how-to-buy-hermes-birkin-30-secondary-market/): A secondary-market luxury handbag buyer's guide to authenticating Hermès Birkin 30 saddle stitching, blind stamps, Togo/Clemence leather grains, and avoiding counterfeit pitfalls.
 
@@ -136,8 +138,6 @@
 - [FMCG Distribution Networks: Optimizing Primary-to-Secondary Sales and Retail Channel Inventories](http://localhost:4000/site/2026/11/19/fmcg-supply-chain-distribution-and-retail-channel-management/): An operational blueprint for managing Fast-Moving Consumer Goods (FMCG) distribution tiers, distributor stockist ledgers, and retail shelf-space replenishment.
 
 - [Hardware Supply Chain Logistics: Optimizing Warehouse Inventory Tracking and Point-of-Sale Integration](http://localhost:4000/site/2026/11/18/hardware-supply-chain-and-warehouse-inventory-optimization/): An operational blueprint for managing brick-and-mortar hardware inventory, tracking multi-tier distribution channels, and automating stock replenishment cycles.
-
-- [Securing LLM and Generative AI APIs: Prompt Injection Defense and Token-Bucket Rate Limiting](http://localhost:4000/site/2026/11/17/securing-llm-apis-prompt-injection-defense-and-rate-limiting/): An architectural blueprint for protecting enterprise AI endpoints against indirect prompt injection, token exhaustion attacks, and high-latency LLM gateway bottlenecks.
 
 
 ## Full Site Index

@@ -1,20 +1,16 @@
 ---
 layout: home
-title: "3 Recent Guides & Blog"
+title: "7 Recent Guides & Blog"
 description: "Explore independent educational guides on import-export, telecom, e-commerce, and software engineering."
 permalink: /blog/
 ---
 
-<div class="row mb-4">
-  <div class="col-12">
-    <p class="lead">Independent educational resources and technical overviews covering enterprise solutions and industry frameworks.</p>
-  </div>
-</div>
+{% include editorial-note.html %}
 
 <div class="row">
   <!-- Blog Posts Column -->
   <div class="col-lg-12">
-    {% assign recent_posts = site.posts | slice: 0, 3 %}
+    {% assign recent_posts = site.posts | slice: 0, 7 %}
     {% if recent_posts.size > 0 %}
       {% for post in recent_posts %}
         <div class="card mb-4 shadow-sm">
