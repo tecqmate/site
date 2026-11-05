@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.title | default: "Tech & Buying Guides Blog" }}
+
+> {{ site.description | default: "High-authority technical architecture blueprints, luxury buying guides, and compliance workflows." }}
+
+## Topics & Tags Covered
+{% for tag in site.tags %}
+- [{{ tag[0] | capitalize }}]({{ '/tags/'| absolute_url }}#{{ tag[0] | slugify }}): {{ tag[1].size }} guide(s) published under this topic.
+{% endfor %}
+
+## 20 Latest Buying & Technical Guides
+{% for post in site.posts limit:20 %}
+- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.description | strip_newlines }}
+{% endfor %}
+
+## Full Site Index
+- [All Posts]({{ '/archive.html' | absolute_url}}): Complete historical archive of technical blueprints and consumer guides.

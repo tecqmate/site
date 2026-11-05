@@ -1,9 +1,24 @@
-
-
 <footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
     <div class="container">
+        <div class="legal-disclaimer-box my-4 p-3 text-muted small">
+            <p class="mb-2">
+                <strong>Legal & Affiliate Disclaimer:</strong> This website contains affiliate links and sponsored
+                recommendations. If you purchase products or services through these links, we may earn a commission at
+                no additional cost to you.
+            </p>
+            <p class="mb-0">
+                <strong>Third-Party Liability & Authenticity Notice:</strong> All content published on this platform is
+                for informational, educational, and buying-guide purposes only. This website, its owners, and its
+                authors do not sell, authenticate, verify, warrant, or guarantee any third-party products, services,
+                sellers, merchants, platforms, or sponsors mentioned herein. We do not act as an authorized dealer,
+                broker, escrow agent, or guarantor for any entity, nor shall we be held liable for any financial loss,
+                counterfeit goods, deceptive seller practices, or damages resulting from third-party transactions.
+                Readers are strictly advised to perform their own independent due diligence before engaging in
+                high-value or secondary-market transactions.
+            </p>
+        </div>
         <div class="row align-items-center">
-            
+
             <!-- Column 1: Copyright & Brand -->
             <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
                 <h5 class="text-white h6 mb-1">{{ site.title }}</h5>
@@ -16,10 +31,9 @@
                 <ul class="list-unstyled mb-0 small">
                     {% for menu in site.data.menus %}
                     <li class="mb-1">
-                        <a 
-                            href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}" 
-                            class="text-white-50 text-decoration-none" 
-                            {% if menu.external %} target="_blank" rel="noopener" {% endif %}>{{ menu.name }}</a>
+                        <a href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}"
+                            class="text-white-50 text-decoration-none" {% if menu.external %} target="_blank"
+                            rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -31,24 +45,22 @@
                 <ul class="list-unstyled mb-0 small">
                     {% for menu in site.data.links %}
                     <li class="mb-1">
-                        <a 
-                            href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}" 
-                            class="text-white-50 text-decoration-none" 
-                            {% if menu.external %} target="_blank" rel="noopener" {% endif %}>{{ menu.name }}</a>
+                        <a href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}"
+                            class="text-white-50 text-decoration-none" {% if menu.external %} target="_blank"
+                            rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
                     {% endfor %}
                 </ul>
             </div>
-
         </div>
     </div>
 </footer>
 
 <!-- Dynamic External styles Files Injection -->
 {% if page.styles %}
-  {% for style in page.styles %}
-    <style rel="stylesheet" href="{{ style | relative_url }}?_={{ global_build_hash}}"/>
-  {% endfor %}
+{% for style in page.styles %}
+<style rel="stylesheet" href="{{ style | relative_url }}?_={{ global_build_hash}}" />
+{% endfor %}
 {% endif %}
 
 <!-- Scripts -->
@@ -83,16 +95,16 @@
 
 <!-- Dynamic External Script Files Injection -->
 {% if page.scripts %}
-  {% for script in page.scripts %}
-    <script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
-  {% endfor %}
+{% for script in page.scripts %}
+<script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
+{% endfor %}
 {% endif %}
 
 <!-- Dynamic Inline Script Code Block Injection -->
 {% if page.inline_scripts %}
-  <script>
+<script>
     {% for code_block in page.inline_scripts %}
-      {{ code_block }}
+    { { code_block } }
     {% endfor %}
-  </script>
+</script>
 {% endif %}

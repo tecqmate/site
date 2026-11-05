@@ -1,3 +1,5 @@
+- name: Disclaimer
+  url: /disclaimer
 
 - name: Sitemap
   url: /sitemap

@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Technical Guides & Blog"
+title: "3 Recent Guides & Blog"
 description: "Explore independent educational guides on import-export, telecom, e-commerce, and software engineering."
 permalink: /blog/
 ---

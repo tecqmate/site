@@ -1,6 +1,9 @@
 ---
 layout: home
 ---
+<!-- Editorial Note Partial -->
+{% include editorial-note.html %}
+
 <!-- Back to Blog Link Top -->
 <div class="mb-3">
   <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-primary btn-sm">&larr; Back to Blog Archive</a>
@@ -19,9 +22,6 @@ layout: home
 <div class="post-content fs-6">
   {{ content }}
 </div>
-
-<!-- Editorial Note Partial -->
-{% include editorial-note.html %}
 
 {% if page.affiliated %}
   {% include affiliate-disclosure.html %}

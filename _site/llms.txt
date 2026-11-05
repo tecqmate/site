@@ -1,0 +1,144 @@
+# Tecqmate
+
+> Tech tutorials, backend development, and web engineering.
+
+## Topics & Tags Covered
+
+- [Cloud-architecture](http://localhost:4000/site/tags/#cloud-architecture): 13 guide(s) published under this topic.
+
+- [Devops](http://localhost:4000/site/tags/#devops): 8 guide(s) published under this topic.
+
+- [Serverless](http://localhost:4000/site/tags/#serverless): 1 guide(s) published under this topic.
+
+- [Architecture](http://localhost:4000/site/tags/#architecture): 4 guide(s) published under this topic.
+
+- [Tenders](http://localhost:4000/site/tags/#tenders): 1 guide(s) published under this topic.
+
+- [Government](http://localhost:4000/site/tags/#government): 1 guide(s) published under this topic.
+
+- [Compliance](http://localhost:4000/site/tags/#compliance): 2 guide(s) published under this topic.
+
+- [Import-export](http://localhost:4000/site/tags/#import-export): 2 guide(s) published under this topic.
+
+- [Trade](http://localhost:4000/site/tags/#trade): 2 guide(s) published under this topic.
+
+- [Guide](http://localhost:4000/site/tags/#guide): 4 guide(s) published under this topic.
+
+- [E-commerce](http://localhost:4000/site/tags/#e-commerce): 1 guide(s) published under this topic.
+
+- [Marketplace](http://localhost:4000/site/tags/#marketplace): 1 guide(s) published under this topic.
+
+- [Telecom](http://localhost:4000/site/tags/#telecom): 1 guide(s) published under this topic.
+
+- [Messaging](http://localhost:4000/site/tags/#messaging): 1 guide(s) published under this topic.
+
+- [Api](http://localhost:4000/site/tags/#api): 1 guide(s) published under this topic.
+
+- [Finance](http://localhost:4000/site/tags/#finance): 1 guide(s) published under this topic.
+
+- [Luxury](http://localhost:4000/site/tags/#luxury): 1 guide(s) published under this topic.
+
+- [Lifestyle](http://localhost:4000/site/tags/#lifestyle): 1 guide(s) published under this topic.
+
+- [Authentication](http://localhost:4000/site/tags/#authentication): 1 guide(s) published under this topic.
+
+- [Fintech-payments](http://localhost:4000/site/tags/#fintech-payments): 1 guide(s) published under this topic.
+
+- [Billing-ledgers](http://localhost:4000/site/tags/#billing-ledgers): 1 guide(s) published under this topic.
+
+- [Api-security](http://localhost:4000/site/tags/#api-security): 12 guide(s) published under this topic.
+
+- [Business-automation](http://localhost:4000/site/tags/#business-automation): 4 guide(s) published under this topic.
+
+- [Data-engineering](http://localhost:4000/site/tags/#data-engineering): 1 guide(s) published under this topic.
+
+- [Database-design](http://localhost:4000/site/tags/#database-design): 2 guide(s) published under this topic.
+
+- [Fintech](http://localhost:4000/site/tags/#fintech): 3 guide(s) published under this topic.
+
+- [Iot](http://localhost:4000/site/tags/#iot): 1 guide(s) published under this topic.
+
+- [Embedded-systems](http://localhost:4000/site/tags/#embedded-systems): 1 guide(s) published under this topic.
+
+- [Edge-computing](http://localhost:4000/site/tags/#edge-computing): 1 guide(s) published under this topic.
+
+- [Distributed-systems](http://localhost:4000/site/tags/#distributed-systems): 3 guide(s) published under this topic.
+
+- [Artificial-intelligence](http://localhost:4000/site/tags/#artificial-intelligence): 1 guide(s) published under this topic.
+
+- [Supply-chain](http://localhost:4000/site/tags/#supply-chain): 4 guide(s) published under this topic.
+
+- [Hardware-logistics](http://localhost:4000/site/tags/#hardware-logistics): 1 guide(s) published under this topic.
+
+- [Retail-commerce](http://localhost:4000/site/tags/#retail-commerce): 15 guide(s) published under this topic.
+
+- [Business-operations](http://localhost:4000/site/tags/#business-operations): 7 guide(s) published under this topic.
+
+- [Fmcg](http://localhost:4000/site/tags/#fmcg): 1 guide(s) published under this topic.
+
+- [Education](http://localhost:4000/site/tags/#education): 1 guide(s) published under this topic.
+
+- [Luxury-lifestyle](http://localhost:4000/site/tags/#luxury-lifestyle): 10 guide(s) published under this topic.
+
+- [Luxury-watches](http://localhost:4000/site/tags/#luxury-watches): 6 guide(s) published under this topic.
+
+- [Luxury-handbags](http://localhost:4000/site/tags/#luxury-handbags): 4 guide(s) published under this topic.
+
+- [Wooden-furniture](http://localhost:4000/site/tags/#wooden-furniture): 1 guide(s) published under this topic.
+
+- [Home-decor](http://localhost:4000/site/tags/#home-decor): 2 guide(s) published under this topic.
+
+- [Carbon-trading](http://localhost:4000/site/tags/#carbon-trading): 1 guide(s) published under this topic.
+
+- [Franchise-business](http://localhost:4000/site/tags/#franchise-business): 1 guide(s) published under this topic.
+
+- [Real-estate](http://localhost:4000/site/tags/#real-estate): 1 guide(s) published under this topic.
+
+- [Personal-finance](http://localhost:4000/site/tags/#personal-finance): 1 guide(s) published under this topic.
+
+
+## 20 Latest Buying & Technical Guides
+
+- [How to Buy a Hermès Birkin 30 Without Falling for High-End Super-Fakes and Altered Leathers](http://localhost:4000/site/2026/12/06/how-to-buy-hermes-birkin-30-secondary-market/): A secondary-market luxury handbag buyer's guide to authenticating Hermès Birkin 30 saddle stitching, blind stamps, Togo/Clemence leather grains, and avoiding counterfeit pitfalls.
+
+- [How to Buy a Patek Philippe Nautilus 5711/1A Without Getting Scammed by Counterfeit Cases or Altered Dials](http://localhost:4000/site/2026/12/05/how-to-buy-patek-philippe-nautilus-5711-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the iconic Patek Philippe Nautilus 5711/1A-010 blue dial, inspecting Calibre 324 S C finishing, and evaluating secondary market premiums.
+
+- [How to Buy High-Yield Residential Rental Property Without Getting Trapped by Hidden Title Defects and Bad Lease Agreements](http://localhost:4000/site/2026/12/04/how-to-buy-residential-rental-property-yield-due-diligence-guide/): A definitive buyer's guide for residential real estate investors on calculating net capitalization rates, conducting title verification, auditing tenant leases, and structuring property management workflows.
+
+- [How to Buy a High-Profit QSR Franchise Without Getting Trapped by Hidden Royalty Fees and Bad FDDs](http://localhost:4000/site/2026/12/03/how-to-buy-a-high-profit-qsr-franchise-fdd-audit-guide/): A comprehensive buyer's guide for prospective multi-unit franchisees on evaluating Quick Service Restaurant (QSR) franchise opportunities, auditing Item 19 financial disclosures, and calculating true net ROI.
+
+- [How to Buy B2B Carbon Offset Credits Without Falling for Greenwashing or Invalid Registry Claims](http://localhost:4000/site/2026/12/02/how-to-buy-b2b-carbon-offset-credits-esg-compliance-guide/): A comprehensive buyer's guide for corporate sustainability officers on evaluating voluntary carbon credits, verifying Gold Standard and Verra registry serialization, and navigating ESG compliance.
+
+- [How to Buy a Vintage Rolex Daytona 6263 Paul Newman Without Falling for Altered Dials and Counterfeit Cases](http://localhost:4000/site/2026/12/01/how-to-buy-vintage-rolex-daytona-6263-paul-newman-secondary-market/): A definitive vintage horology buyer's guide to authenticating the legendary Rolex Cosmograph Daytona Reference 6263, evaluating exotic dial typography, Valjoux 727 movement hallmarks, and avoiding six-figure vintage traps.
+
+- [How to Buy an Audemars Piguet Royal Oak Jumbo 16202 ST Without Getting Burned on the Resale Market](http://localhost:4000/site/2026/11/30/how-to-buy-audemars-piguet-royal-oak-jumbo-16202-secondary-market/): A secondary-market buyer's guide to authenticating the iconic Audemars Piguet Royal Oak Jumbo Extra-Thin Reference 16202ST, evaluating Calibre 7121 finishing, and avoiding aftermarket franken-watches.
+
+- [How to Secure a Rare Hermès Birkin 20 Faubourg on the Secondary Market Without Paying Fake Premiums](http://localhost:4000/site/2026/11/29/how-to-buy-rare-hermes-birkin-20-faubourg-secondary-market/): An ultra-luxury buyer's guide to authenticating rare Hermès Birkin 20 House Faubourg editions (Day, Night, Midnight, Snow, Rainy Days), evaluating multi-leather stitching, and navigating 5x retail market valuations.
+
+- [How to Buy a Rare Patek Philippe Nautilus 5711/1R or Rolex Daytona Rainbow Without Getting Burned](http://localhost:4000/site/2026/11/28/how-to-buy-rare-patek-philippe-nautilus-rolex-daytona-secondary-market/): A secondary-market buyer's masterclass on securing ultra-rare grail timepieces like the Patek Philippe 5711/1R, Rolex Daytona 116595RBOW, and Audemars Piguet Royal Oak Jumbo 16202.
+
+- [How to Spot a Fake Designer Handbag Before You Waste Thousands on the Pre-Owned Market](http://localhost:4000/site/2026/11/27/how-to-spot-fake-designer-handbag-resale-guide/): A masterclass for fashion buyers on identifying counterfeit luxury leather handbags, evaluating stitch symmetry, hardware weight, and protecting your investment.
+
+- [How to Spot a Counterfeit Luxury Watch Before You Drop Thousands on the Secondary Market](http://localhost:4000/site/2026/11/26/how-to-spot-counterfeit-luxury-watches-secondary-market-guide/): A masterclass for buyers on identifying high-end Swiss watch counterfeits, evaluating micro-finishing, and protecting your investment in the pre-owned horology market.
+
+- [The Ultimate Buyer’s Guide to Smart Architectural Lighting & Luxury Home Decor Integration](http://localhost:4000/site/2026/11/25/ultimate-buyers-guide-smart-architectural-lighting-home-decor/): A comprehensive consumer guide and technical engineering blueprint for selecting automated architectural lighting, securing IoT smart home gateways, and integrating wireless mesh protocols.
+
+- [Artisanal Wooden Furniture Supply Chain: Sustainable Timber Sourcing and Kiln-Drying Analytics](http://localhost:4000/site/2026/11/24/artisanal-wooden-furniture-supply-chain-sustainable-timber/): An operational blueprint for tracking sustainable timber provenance, managing kiln-drying moisture telemetry, and scaling custom handcrafted furniture and home decor fulfillment.
+
+- [Horological Precision & Leathercraft Provenance: Authenticating Luxury Watches and Designer Handbags](http://localhost:4000/site/2026/11/23/crafting-authenticated-provenance-for-luxury-horology-and-leather/): An engineering perspective on serial tracking, microscopic hallmark inspection, and secure cryptographic handover protocols for high-end timepieces and atelier leather goods.
+
+- [Luxury Goods Provenance & Supply Chain: Anti-Counterfeiting Tracking for High-End Watches and Handbags](http://localhost:4000/site/2026/11/22/luxury-goods-authentication-supply-chain-watches-handbags/): An architectural engineering blueprint for securing luxury retail inventory, implementing NFC/RFID product serialization, and tracking immutable ownership ledgers for high-end watches and designer handbags.
+
+- [High-Throughput CPaaS SMS & SMPP Routing Engines: Multi-Tier Hierarchy and Credit Ledgers](http://localhost:4000/site/2026/11/21/high-throughput-cpaas-sms-smpp-routing-engines/): An architectural engineering blueprint for building scalable Communications Platform as a Service (CPaaS) engines handling SMPP bindings, multi-tenant billing ledgers, and dynamic route failover.
+
+- [School Admissions & Student Information Systems (SIS): Handling High-Concurrency Enrollment Surges](http://localhost:4000/site/2026/11/20/school-admissions-and-sis-architecture-high-concurrency-enrollment/): An architectural blueprint for scaling school admissions portals, handling fee payment gateway transaction spikes, and securing multi-tier role-based access for educational institutions.
+
+- [FMCG Distribution Networks: Optimizing Primary-to-Secondary Sales and Retail Channel Inventories](http://localhost:4000/site/2026/11/19/fmcg-supply-chain-distribution-and-retail-channel-management/): An operational blueprint for managing Fast-Moving Consumer Goods (FMCG) distribution tiers, distributor stockist ledgers, and retail shelf-space replenishment.
+
+- [Hardware Supply Chain Logistics: Optimizing Warehouse Inventory Tracking and Point-of-Sale Integration](http://localhost:4000/site/2026/11/18/hardware-supply-chain-and-warehouse-inventory-optimization/): An operational blueprint for managing brick-and-mortar hardware inventory, tracking multi-tier distribution channels, and automating stock replenishment cycles.
+
+- [Securing LLM and Generative AI APIs: Prompt Injection Defense and Token-Bucket Rate Limiting](http://localhost:4000/site/2026/11/17/securing-llm-apis-prompt-injection-defense-and-rate-limiting/): An architectural blueprint for protecting enterprise AI endpoints against indirect prompt injection, token exhaustion attacks, and high-latency LLM gateway bottlenecks.
+
+
+## Full Site Index
+- [All Posts](http://localhost:4000/site/archive.html): Complete historical archive of technical blueprints and consumer guides.
