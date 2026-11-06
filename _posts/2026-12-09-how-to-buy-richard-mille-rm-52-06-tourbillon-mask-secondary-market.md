@@ -13,8 +13,6 @@ affiliated: true
 
 When Richard Mille released the **RM 52-06 Tourbillon Mask**, limited to extremely low production quantities worldwide, it solidified the brand's reputation for fusing high-technology material science with micro-sculptural art. Featuring an intricate skull/mask motif integrated directly into the hand-wound tourbillon movement, the RM 52-06 in **Blue and White Quartz TPT** paired with grade 5 titanium bridges represents one of the most visually arresting timepieces in modern independent horology.
 
-{% include fashluxee-sponsored.md %}
-
 Because this reference trades well into seven-figure territory on the secondary market, acquiring one requires navigating a landscape fraught with hyper-realistic high-clone cases, aftermarket Quartz TPT wraps, and non-tourbillon optical illusions.
 
 ---

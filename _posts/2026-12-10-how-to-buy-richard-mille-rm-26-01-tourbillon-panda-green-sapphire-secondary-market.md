@@ -13,8 +13,6 @@ affiliated: true
 
 The **Richard Mille RM 26-01 Tourbillon Panda** in **Green Sapphire Crystal** is one of the most exclusive, high-concept artisanal timepieces ever created. Combining haute horlogerie, high-jewelry gem-setting, and micro-sculptural art, the dial features a hand-sculpted 18k white gold Giant Panda set with round-cut diamonds and black sapphires, munching on bamboo shoots crafted from hand-painted 18k yellow gold. Enclosed in an ultra-rare green sapphire crystal case, this reference stands as a true *Piece Unique* (1-of-1).
 
-{% include fashluxee-sponsored.md %}
-
 Because single-piece ultra-luxury assets command multi-million dollar valuations on the private secondary market, acquiring an RM 26-01 requires rigorous provenance verification to avoid synthetic green mineral cases, aftermarket gem-setting, or replica movement assemblies.
 
 ---
