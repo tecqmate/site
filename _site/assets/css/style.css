@@ -71,3 +71,222 @@
   top: 45%;
   z-index:100;
 }
+/* Hero & General Layout */
+.hero-section {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: #fdfdfd;
+  border-bottom: 1px solid #eaeaea;
+}
+.hero-eyebrow {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888;
+  font-weight: 600;
+}
+.hero-title {
+  font-size: 36px;
+  margin: 12px 0;
+  font-weight: 700;
+  color: #111;
+}
+.hero-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Search Box Section */
+.search-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.search-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.search-heading {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #111;
+}
+.search-subheading {
+  color: #666;
+  font-size: 15px;
+}
+.search-container {
+  position: relative;
+}
+#search-input {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.search-tags-quick {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #777;
+}
+.search-tags-quick a {
+  margin-left: 8px;
+  color: #111;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.search-results-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.search-results-list li {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.search-results-list li:last-child {
+  border-bottom: none;
+}
+.search-results-list li a {
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
+.search-results-list li p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Concierge Box */
+.concierge-banner {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.concierge-box {
+  background: #fafafa;
+  border: 1px dashed #bbb;
+  padding: 24px;
+  text-align: center;
+  border-radius: 8px;
+}
+.concierge-box h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+/* Pillars Section */
+.pillars-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.pillar-card {
+  border: 1px solid #eee;
+  padding: 24px;
+  border-radius: 8px;
+  background: #fff;
+}
+.pillar-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+/* Post Previews */
+.latest-posts-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.post-preview {
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+}
+.post-meta {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+/* Generic Categories Grid */
+.categories-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.category-card {
+  border: 1px solid #e5e5e5;
+  padding: 24px;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.category-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.category-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #111;
+}
+.category-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.category-link {
+  font-weight: 600;
+  font-size: 13px;
+  color: #000;
+  text-decoration: none;
+  margin-top: auto;
+}
