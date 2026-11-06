@@ -4,6 +4,12 @@
 - name: Sitemap
   url: /sitemap
 
+- name: Archive
+  url: /archive.html
+
+- name: LLMs
+  url: /llms.txt
+
 - name: Donate
   url: upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation
   external: true
