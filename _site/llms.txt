@@ -96,8 +96,20 @@
 
 - [Personal-finance](http://localhost:4000/site/tags/#personal-finance): 1 guide(s) published under this topic.
 
+- [Wordpress](http://localhost:4000/site/tags/#wordpress): 2 guide(s) published under this topic.
+
+- [Web-security](http://localhost:4000/site/tags/#web-security): 2 guide(s) published under this topic.
+
+- [Php](http://localhost:4000/site/tags/#php): 1 guide(s) published under this topic.
+
+- [Database](http://localhost:4000/site/tags/#database): 1 guide(s) published under this topic.
+
 
 ## 20 Latest Buying & Technical Guides
+
+- [How to Reset Your WordPress Admin Password via phpMyAdmin and password_hash()](http://localhost:4000/site/2027/01/06/how-to-reset-wordpress-admin-password-via-phpmyadmin/): A developer and site administrator guide to manually resetting a locked WordPress wp-admin password directly in MySQL/MariaDB using phpMyAdmin and password_hash() replacement.
+
+- [How to Reset Your WordPress Admin Password via PHP Script When Locked Out](http://localhost:4000/site/2027/01/05/how-to-reset-wordpress-wp-admin-login-password-php-script/): A developer and site administrator guide to emergency-resetting a locked WordPress wp-admin account using a custom PHP script, wp-load bootstrapping, and secure session clearing.
 
 - [How to Buy the Hermès Birkin 25 Matte Himalayan Niloticus Crocodile Secondary Market Without Getting Scammed](http://localhost:4000/site/2027/01/04/how-to-buy-hermes-birkin-25-himalayan-crocodile-secondary-market/): A secondary-market luxury handbag buyer's guide to authenticating the Hermès Birkin 25 Matte Himalayan Niloticus Crocodile, inspecting smoke-to-pearl gradient hand-dyeing, pore structures, CITES certificates, and 18k white gold diamond hardware.
 
@@ -134,10 +146,6 @@
 - [How to Buy the Rolex Oyster Perpetual Cosmograph Daytona Autumn Ref. 126598 TML Mookaite Dial Piece Unique Without Getting Scammed](http://localhost:4000/site/2026/12/19/how-to-buy-rolex-daytona-autumn-126598-tml-mookaite-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the piece unique Rolex Daytona Autumn Reference 126598 TML in 18k yellow gold, evaluating natural Mookaite jasper stone dials, and checking Calibre 4131 movement finishing.
 
 - [How to Buy the Audemars Piguet Royal Oak Offshore 42mm Ref. 26238ST Stainless Steel & Orange Accents Without Getting Scammed](http://localhost:4000/site/2026/12/18/how-to-buy-audemars-piguet-royal-oak-offshore-26238st-orange-accents-secondary-market/): A secondary-market buyer's guide to authenticating the Audemars Piguet Royal Oak Offshore Selfwinding Chronograph 42mm Ref. 26238ST in stainless steel, evaluating high-contrast orange dial accents, and verifying Calibre 4404 movement finishing.
-
-- [How to Buy the Audemars Piguet Royal Oak Offshore 42mm Ref. 26238ST Stainless Steel & Neon Pink Accents Without Getting Scammed](http://localhost:4000/site/2026/12/17/how-to-buy-audemars-piguet-royal-oak-offshore-26238st-neon-pink-secondary-market/): A secondary-market buyer's guide to authenticating the Audemars Piguet Royal Oak Offshore Selfwinding Chronograph 42mm Ref. 26238ST in stainless steel, evaluating vibrant neon pink dial accents, and checking Calibre 4404 integrated movement finishing.
-
-- [How to Buy the Audemars Piguet Royal Oak Offshore 42mm Ref. 26238TI Titanium Turquoise & Yellow Accents Without Getting Scammed](http://localhost:4000/site/2026/12/16/how-to-buy-audemars-piguet-royal-oak-offshore-26238ti-secondary-market/): A secondary-market buyer's guide to authenticating the Audemars Piguet Royal Oak Offshore Selfwinding Chronograph 42mm Ref. 26238TI in titanium, evaluating turquoise dial accents, and verifying Calibre 4404 movement finishing.
 
 
 ## Full Site Index
