@@ -44,9 +44,9 @@ echo password_hash($new_password, PASSWORD_BCRYPT); // step 1, prints password h
 
 ```sql
 -- Direct SQL Password Update for WordPress Administrator, assuming your username is `admin`
--- hash generated from step 1, `$2y$10$xqLeKrCh7cJ0ytEuHnE6IOP30IFwqOA7PNJCYDBEWFdSzV.l5QlPu`
+-- hash generated from step 1, `$2y$10$Nb2Dwdhl/C9bTR77WwvMrOIaFc8ia2/OPXS9WPhIn6auhuEsEWrl.`
 UPDATE `wp_users` 
-SET `user_pass` =  '$2y$10$xqLeKrCh7cJ0ytEuHnE6IOP30IFwqOA7PNJCYDBEWFdSzV.l5QlPu'
+SET `user_pass` =  '$2y$10$Nb2Dwdhl/C9bTR77WwvMrOIaFc8ia2/OPXS9WPhIn6auhuEsEWrl.'
 WHERE `user_login` = 'admin' and `ID` = 1 limit 1;
 ```
 ## A 4-Step phpMyAdmin Recovery Protocol
