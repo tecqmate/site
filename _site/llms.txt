@@ -104,8 +104,16 @@
 
 - [Database](http://localhost:4000/site/tags/#database): 1 guide(s) published under this topic.
 
+- [Patek-philippe](http://localhost:4000/site/tags/#patek-philippe): 1 guide(s) published under this topic.
+
+- [Haute-horlogerie](http://localhost:4000/site/tags/#haute-horlogerie): 1 guide(s) published under this topic.
+
+- [Watch-authentication](http://localhost:4000/site/tags/#watch-authentication): 1 guide(s) published under this topic.
+
 
 ## 20 Latest Buying & Technical Guides
+
+- [Patek Philippe Grand Complications Ref. 5304/301R-001: The Ultimate Horological Masterpiece](http://localhost:4000/site/2027/01/09/patek-philippe-grand-complications-5304-301r-001-authentication-guide/): A definitive collector and authentication guide to the ultra-rare Patek Philippe Grand Complications Minute Repeater Retrograde Perpetual Calendar Ref. 5304/301R-001 in rose gold with baguette diamonds.
 
 - [How to Buy the Chanel Classic Small Double Flap Iridescent Lambskin Without Getting Scammed](http://localhost:4000/site/2027/01/08/how-to-buy-chanel-classic-small-double-flap-iridescent-lambskin/): A secondary-market luxury handbag buyer's guide to authenticating iridescent lambskin Chanel Classic Flap bags, inspecting pearlescent color shifts, leather-woven chain hardware, interior zipper fonts, and NFC microchips.
 
@@ -144,8 +152,6 @@
 - [How to Buy the Rolex Cosmograph Daytona Rainbow Ref. 126595RBOW 18k Everose Gold Without Getting Scammed by Aftermarket Setters](http://localhost:4000/site/2026/12/22/how-to-buy-rolex-daytona-rainbow-126595rbow-everose-gold-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the factory Rolex Daytona Rainbow Ref. 126595RBOW in 18k Everose gold, evaluating baguette gem-set gradient quality, and verifying Calibre 4131 movement provenance.
 
 - [How to Buy the Rolex Oyster Perpetual Cosmograph Daytona Winter Ref. 126599 TML Blue Opal Dial Piece Unique Without Getting Scammed](http://localhost:4000/site/2026/12/21/how-to-buy-rolex-daytona-winter-126599-tml-blue-opal-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the piece unique Rolex Daytona Winter Reference 126599 TML in 18k white gold, evaluating natural blue opal dial iridescence, and checking Calibre 4131 movement finishing.
-
-- [How to Buy the Rolex Cosmograph Daytona Summer Ref. 126518LN Yellow Gold Turquoise Blue Dial Without Getting Scammed](http://localhost:4000/site/2026/12/20/how-to-buy-rolex-daytona-summer-turquoise-126518ln-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the off-catalog Rolex Daytona Summer Ref. 126518LN in 18k yellow gold with turquoise blue dial, evaluating Oysterflex blade integrity, and checking Calibre 4131 movement finishing.
 
 
 ## Full Site Index

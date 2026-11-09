@@ -95,16 +95,22 @@
 
 <!-- Dynamic External Script Files Injection -->
 {% if page.scripts %}
-{% for script in page.scripts %}
-<script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
-{% endfor %}
+    {% for script in page.scripts %}
+        <script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
+    {% endfor %}
+{% endif %}
+
+{% if page.modules %}
+    {% for script in page.modules %}
+        <script type="module" src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
+    {% endfor %}
 {% endif %}
 
 <!-- Dynamic Inline Script Code Block Injection -->
 {% if page.inline_scripts %}
-<script>
     {% for code_block in page.inline_scripts %}
-    { { code_block } }
+    <script>
+        {{ code_block }}
+    </script>
     {% endfor %}
-</script>
 {% endif %}
