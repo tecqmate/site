@@ -79,7 +79,8 @@ lang: en
   <script  type="module" >
     import Sentiment from 'https://esm.sh/sentiment@5.0.2';
     const sentiment = new Sentiment();
-
+  </script>
+  <script>
     function fetchRedditJSONP(subreddit) {
       return new Promise((resolve, reject) => {
         const callbackName = 'redditCallback_' + Math.random().toString(36).substring(2, 15);
