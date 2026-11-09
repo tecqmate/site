@@ -14,6 +14,8 @@
   url: /embeded-url
 - name: SMS Count
   url: /sms-count
+- name: Sentiment Analysis
+  url: /sentiment-analysis
 - name: Softwares
   url: https://github.com/sdksmate?tab=repositories
   external: true
