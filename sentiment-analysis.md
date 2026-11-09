@@ -5,6 +5,8 @@ description: "The Subreddit Vibe Check"
 date: "Sept 09, 2026"
 tags: ["sentiment", "analysis", "subreddit", "vibe"]
 lang: en
+inline_scripts:
+ - $(pageInit)
 ---
 
 <style>
@@ -62,7 +64,7 @@ lang: en
 
   <div class="controls">
     <input type="text" id="subredditInput" value="webdev" placeholder="Enter subreddit..." />
-    <button id="checkBtn" onclick="checkBtn();" class="btn btn-primary">Check Vibe</button>
+    <button id="checkBtn" class="btn btn-primary">Check Vibe</button>
   </div>
   <div id="errorText" class="error-msg"></div>
 
@@ -79,8 +81,6 @@ lang: en
   <script  type="module" >
     import Sentiment from 'https://esm.sh/sentiment@5.0.2';
     const sentiment = new Sentiment();
-  </script>
-  <script>
     function fetchRedditJSONP(subreddit) {
       return new Promise((resolve, reject) => {
         const callbackName = 'redditCallback_' + Math.random().toString(36).substring(2, 15);
@@ -100,7 +100,7 @@ lang: en
           delete window[callbackName];
           document.body.removeChild(script);
           const msg = 'Failed to load Reddit data';
-          errorEl.innerText = msg;
+            $('#errorText').text(msg);
           reject(new Error(msg));
         };
     
@@ -109,20 +109,17 @@ lang: en
     }
 
     async function checkVibe() {
-      const checkBtn = document.getElementById('checkBtn');
-      const inputEl = document.getElementById('subredditInput');
-      const errorEl = document.getElementById('errorText');
-      const subreddit = inputEl.value.trim();
-      errorEl.innerText = '';
+      const subreddit = $('#subredditInput').val().trim();
+        $('#errorText').text('');
     
       const subredditPattern = /^[a-zA-Z0-9_]{3,21}$/;
       if (!subredditPattern.test(subreddit)) {
-        errorEl.innerText = 'Please enter a valid subreddit name (3-21 characters).';
+          $('#errorText').text('Please enter a valid subreddit name (3-21 characters).');
         return;
       }
     
       try {
-        checkBtn.setAttribute('disabled', true);
+        $('#checkBtn').prop('disabled', true);
         const data = await fetchRedditJSONP(subreddit);
         console.info(data);
     
@@ -154,10 +151,13 @@ lang: en
         document.getElementById('negCount').innerText = neg;
         document.getElementById('postsList').innerHTML = postsHTML;
         document.getElementById('results').style.display = 'block';
-        checkBtn.removeAttribute('disabled');
+        $('#checkBtn').prop('disabled', false);
       } catch (err) {
-        errorEl.innerText = 'Failed to fetch data. Ensure the subreddit exists.';
+          $('#errorText').text('Failed to fetch data. Ensure the subreddit exists.');
         console.error(err);
       }
     }
+      function pageInit(){
+          $('#checkBtn').on('click',checkVibe);
+      }
   </script>
