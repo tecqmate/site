@@ -118,8 +118,22 @@
 
 - [Sms-tools](http://localhost:4000/site/tags/#sms-tools): 1 guide(s) published under this topic.
 
+- [Disc assessment](http://localhost:4000/site/tags/#disc-assessment): 1 guide(s) published under this topic.
+
+- [Personality test](http://localhost:4000/site/tags/#personality-test): 1 guide(s) published under this topic.
+
+- [Workplace communication](http://localhost:4000/site/tags/#workplace-communication): 1 guide(s) published under this topic.
+
+- [Professional development](http://localhost:4000/site/tags/#professional-development): 1 guide(s) published under this topic.
+
+- [Team building](http://localhost:4000/site/tags/#team-building): 1 guide(s) published under this topic.
+
+- [Self awareness](http://localhost:4000/site/tags/#self-awareness): 1 guide(s) published under this topic.
+
 
 ## 20 Latest Buying & Technical Guides
+
+- [Demystifying the DISC Personality Test: Understand Your Workplace Communication Style](http://localhost:4000/site/2027/01/12/disc-personality-test-guide/): Discover how the DISC personality assessment works, what your results mean for your career, and how to leverage Dominance, Influence, Steadiness, and Conscientiousness to improve workplace collaboration.
 
 - [How to Calculate SMS Character Count and Message Segments in Web Applications](http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/): A developer guide on building SMS character counters, handling GSM-7 vs. Unicode encoding rules, and preventing unexpected multi-segment delivery costs.
 
@@ -158,8 +172,6 @@
 - [How to Buy the Richard Mille RM 50-03 Tourbillon Split-Seconds Chronograph McLaren F1 Graph TPT Without Getting Scammed](http://localhost:4000/site/2026/12/25/how-to-buy-richard-mille-rm-50-03-tourbillon-split-seconds-mclaren-f1-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the record-breaking Richard Mille RM 50-03 McLaren F1, evaluating Graph TPT composite structure, 7-gram movement, and split-seconds chronograph torque performance.
 
 - [How to Buy the Richard Mille RM 52-05 Tourbillon Pharrell Williams Brown Cermet Without Getting Scammed](http://localhost:4000/site/2026/12/24/how-to-buy-richard-mille-rm-52-05-pharrell-williams-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the limited-edition Richard Mille RM 52-05 Tourbillon Pharrell Williams, inspecting its hand-painted astronaut helmet dial, brown Cermet case, and grade 5 titanium movement.
-
-- [How to Buy the Patek Philippe Grandmaster Chime Ref. 6300G White Gold Dual-Dial Masterpiece Without Getting Scammed](http://localhost:4000/site/2026/12/23/how-to-buy-patek-philippe-grandmaster-chime-6300g-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the Patek Philippe Grandmaster Chime Ref. 6300G, inspecting its patented reversible case mechanism, 20 complications, and Calibre 300 GS AL 36-750 QIS FUS IRM.
 
 
 ## Full Site Index

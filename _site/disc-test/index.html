@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Client-Side DISC Engine - Tecqmate</title>
+  <link rel="canonical" href="http://localhost:4000/site/disc-test/" />
+  <!-- Prevents browser caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta name="build-version" content="1794353752">
+  <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
+  <meta name="description" content="Discover Your Behavioral Profile" />
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/site/favicon.ico" sizes="75x75" />
+  
+  <!-- Bootstrap & Custom Styles -->
+  <link href="/site/assets/css/lumen.min.css" rel="stylesheet" id="theme-style">
+  <link href="/site/assets/css/style.css?_=1794353752" rel="stylesheet">
+  
+  <style>
+    textarea#txt, textarea#esc {
+      resize: none;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+
+<body oncontextmenu="return false">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/site/">Tecqmate</a>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/contact">Contact</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/blog">Blog</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/site/partnerships">Partnerships</a>
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Grid Wrapper -->
+  <div class="container my-4">
+    <div class="row">
+      
+      <!-- Main Content Area (col-lg-8) -->
+      <div class="col-lg-8">
+        <article>
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1">Client-Side DISC Engine</h1>
+            
+              <div class="text-muted fst-italic mb-2">Published on November 11, 2026</div>
+            
+            
+              <span class="badge bg-secondary text-decoration-none link-light">DISC Assessment</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">Personality Test</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">Workplace Communication</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">Professional Development</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">Team Building</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">Self Awareness</span>
+            
+              <span class="badge bg-secondary text-decoration-none link-light">Professional Behavioral Analysis</span>
+            
+          </header>
+
+          <!-- Dynamic Markdown Body Content -->
+          <div class="col-12 mt-4 px-0">
+            <style>
+/* Custom Bootstrap Enhancements */
+.bg-disc-d { background-color: #dc3545 !important; }
+.text-disc-d { color: #dc3545 !important; }
+.border-disc-d { border-color: #dc3545 !important; }
+
+.bg-disc-i { background-color: #ffc107 !important; }
+.text-disc-i { color: #d39e00 !important; }
+.border-disc-i { border-color: #ffc107 !important; }
+
+.bg-disc-s { background-color: #198754 !important; }
+.text-disc-s { color: #198754 !important; }
+.border-disc-s { border-color: #198754 !important; }
+
+.bg-disc-c { background-color: #0dcaf0 !important; }
+.text-disc-c { color: #0aa2c0 !important; }
+.border-disc-c { border-color: #0dcaf0 !important; }
+
+.hero-banner {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Print formatting rules */
+@media print {
+  /* Hide all top-level direct children of body */
+  body > * {
+    display: none !important;
+  }
+
+  /* Force display of the main container holding the report */
+  .container, 
+  #report-container, 
+  #report-container * {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure card grids and flex layouts retain structure */
+  .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .col-md-6, .col-md-3, .col-12 {
+    display: block !important;
+  }
+
+  .card {
+    border: 1px solid #dee2e6 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  /* Specifically hide form inputs, navigation, and print buttons */
+  .d-print-none,
+  #assessment-form,
+  button, .sidebar, header {
+    display: none !important;
+  }
+}
+</style>
+
+<!-- Intro Screen -->
+<div id="intro-view" class="card border-1 shadow-sm rounded-4">
+    <div class="card-body p-5 rounded-4">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold mb-3">Discover Your DISC Profile</h2>
+                <p class="opacity-75 mb-4">
+                    Understand your primary communication style, behavioral motivators, and decision-making habits. Complete this quick 8-question assessment to generate your personalized behavioral report.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <button onclick="startAssessment()" class="btn btn-primary px-4 shadow">
+                        <i class="bi bi-play-circle me-2"></i> Start Assessment
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center d-none d-lg-block">
+                <i class="bi bi-person-badge text-info opacity-50" style="font-size: 8rem;"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Questionnaire View -->
+<div id="quiz-view" class="card border-0 shadow-sm rounded-4 d-none">
+    <div class="card-header bg-white border-bottom p-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <span id="question-step" class="fw-bold text-primary text-uppercase small tracking-wide">Question 1 of 8</span>
+            <span id="question-percent" class="badge bg-primary-subtle text-primary fw-semibold">12.5% Complete</span>
+        </div>
+        <div class="progress" style="height: 8px;">
+            <div id="quiz-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 12.5%;"></div>
+        </div>
+    </div>
+    <div class="card-body p-4 p-md-5">
+        <h4 id="question-title" class="fw-bold mb-4"></h4>
+        <p class="text-muted small mb-3"><i class="bi bi-info-circle me-1"></i> Select the statement that best describes your natural behavioral tendency in a professional context:</p>
+
+        <!-- Options Radio Group -->
+        <div id="options-group" class="vstack gap-3">
+            <!-- Dynamic Radio Card Options -->
+        </div>
+    </div>
+    <div class="card-footer bg-white border-top p-4 d-flex justify-content-between">
+        <button id="btn-prev" onclick="prevQuestion()" class="btn btn-outline-secondary px-4 d-none">
+            <i class="bi bi-arrow-left me-1"></i> Back
+        </button>
+        <button id="btn-next" onclick="nextQuestion()" disabled="" class="btn btn-primary px-4 ms-auto">
+            Next <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Executive Report View -->
+<div id="report-view" class="d-none space-y-4">
+
+    <!-- Print Actions Bar -->
+    <div class="d-flex justify-content-between align-items-center mb-3 d-print-none">
+        <button onclick="resetAssessment()" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-counterclockwise me-1"></i> Retake Test
+        </button>
+        <button onclick="window.print()" class="btn btn-primary shadow-sm">
+            <i class="bi bi-printer me-1"></i> Print / Save Report
+        </button>
+    </div>
+
+    <!-- Header Summary Card -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4 p-md-5">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <span class="badge bg-secondary mb-2">Behavioral Profile Output</span>
+                    <h2 id="dominant-style-name" class="display-6 fw-bold mb-2">Dominance (The Driver)</h2>
+                    <p id="dominant-style-tagline" class="lead text-muted mb-3"></p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span id="badge-primary" class="badge rounded-pill bg-primary fs-6 px-3 py-2">Primary: Dominant</span>
+                        <span id="badge-secondary" class="badge rounded-pill bg-secondary fs-6 px-3 py-2">Secondary: Steadiness</span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-3 bg-light rounded-4 border">
+                        <h6 class="text-uppercase text-muted fw-bold small">Score Radar</h6>
+                        <div style="height: 180px;" class="d-flex align-items-center justify-content-center">
+                            <canvas id="discChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dimension Score Metrics Grid -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm rounded-3 border-start border-4 border-disc-d">
+                <div class="card-body">
+                    <div class="text-disc-d fw-bold small text-uppercase">Dominance (D)</div>
+                    <h3 id="score-val-d" class="fw-bold my-1">0%</h3>
+                    <div class="progress" style="height: 6px;">
+                        <div id="bar-d" class="progress-bar bg-disc-d" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm rounded-3 border-start border-4 border-disc-i">
+                <div class="card-body">
+                    <div class="text-disc-i fw-bold small text-uppercase">Influence (I)</div>
+                    <h3 id="score-val-i" class="fw-bold my-1">0%</h3>
+                    <div class="progress" style="height: 6px;">
+                        <div id="bar-i" class="progress-bar bg-disc-i" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm rounded-3 border-start border-4 border-disc-s">
+                <div class="card-body">
+                    <div class="text-disc-s fw-bold small text-uppercase">Steadiness (S)</div>
+                    <h3 id="score-val-s" class="fw-bold my-1">0%</h3>
+                    <div class="progress" style="height: 6px;">
+                        <div id="bar-s" class="progress-bar bg-disc-s" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm rounded-3 border-start border-4 border-disc-c">
+                <div class="card-body">
+                    <div class="text-disc-c fw-bold small text-uppercase">Conscientiousness (C)</div>
+                    <h3 id="score-val-c" class="fw-bold my-1">0%</h3>
+                    <div class="progress" style="height: 6px;">
+                        <div id="bar-c" class="progress-bar bg-disc-c" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Tabs & Content -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-header bg-white border-bottom p-3">
+            <ul class="nav nav-pills card-header-pills" id="reportTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-pane" type="button" role="tab"><i class="bi bi-star me-1"></i> Core Strengths</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="comm-tab" data-bs-toggle="tab" data-bs-target="#comm-pane" type="button" role="tab"><i class="bi bi-chat-quote me-1"></i> Communication Style</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="environment-tab" data-bs-toggle="tab" data-bs-target="#environment-pane" type="button" role="tab"><i class="bi bi-building me-1"></i> Work Environment</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tips-tab" data-bs-toggle="tab" data-bs-target="#tips-pane" type="button" role="tab"><i class="bi bi-lightbulb me-1"></i> How Others Should Adapt</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body p-4">
+            <div class="tab-content" id="reportTabsContent">
+                <!-- Strengths -->
+                <div class="tab-pane fade show active" id="overview-pane" role="tabpanel">
+                    <h5 class="fw-bold mb-3 text-primary">Core Characteristics &amp; Key Strengths</h5>
+                    <div id="strengths-list" class="row g-3">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                <!-- Communication -->
+                <div class="tab-pane fade" id="comm-pane" role="tabpanel">
+                    <h5 class="fw-bold mb-3 text-primary">Behavioral &amp; Interpersonal Style</h5>
+                    <p id="comm-description" class="text-muted leading-relaxed"></p>
+                </div>
+                <!-- Environment -->
+                <div class="tab-pane fade" id="environment-pane" role="tabpanel">
+                    <h5 class="fw-bold mb-3 text-primary">Ideal Work Environment</h5>
+                    <div id="environment-list" class="vstack gap-2">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                <!-- Tips for Others -->
+                <div class="tab-pane fade" id="tips-pane" role="tabpanel">
+                    <h5 class="fw-bold mb-3 text-primary">How Colleagues Should Communicate With You</h5>
+                    <div class="alert alert-dark border-0 shadow-sm mb-3">
+                        <i class="bi bi-info-circle-fill me-2"></i> Share these points with your team members to improve collaboration.
+                    </div>
+                    <ul id="tips-list" class="list-group list-group-flush">
+                        <!-- Populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Logic & Scoring Script -->
+<script>
+    // Assessment Questions Data
+    const questions = [
+        {
+            text: "When approaching a critical project deadline, your immediate priority is to:",
+            options: [
+                { text: "Take firm charge, make executive decisions, and drive straight for results.", trait: "D" },
+                { text: "Rally the team, generate enthusiasm, and foster creative brainstorming.", trait: "I" },
+                { text: "Maintain a steady pace, keep calm, and support team members directly.", trait: "S" },
+                { text: "Analyze all requirements, verify accuracy, and adhere strictly to quality standards.", trait: "C" }
+            ]
+        },
+        {
+            text: "In group discussions and meetings, you are primarily recognized for:",
+            options: [
+                { text: "Directness, cutting to the chase, and challenging the status quo.", trait: "D" },
+                { text: "High energy, persuasiveness, and expressive storytelling.", trait: "I" },
+                { text: "Active listening, patience, and encouraging harmony among peers.", trait: "S" },
+                { text: "Asking systematic questions, citing facts, and verifying logical consistency.", trait: "C" }
+            ]
+        },
+        {
+            text: "What type of work culture empowers you the most?",
+            options: [
+                { text: "Fast-paced, competitive environments with high autonomy and authority.", trait: "D" },
+                { text: "Collaborative, socially dynamic environments with public recognition.", trait: "I" },
+                { text: "Stable, predictable environments with clear expectations and supportive teams.", trait: "S" },
+                { text: "Structured, orderly environments that prioritize quality, process, and accuracy.", trait: "C" }
+            ]
+        },
+        {
+            text: "Under heavy stress or unexpected pressure, you are most likely to:",
+            options: [
+                { text: "Become forceful, impatient, or overly commanding.", trait: "D" },
+                { text: "Become overly talkative, emotional, or lose focus on administrative detail.", trait: "I" },
+                { text: "Become hesitant, overly accommodating, or resistant to sudden change.", trait: "S" },
+                { text: "Become perfectionistic, overly critical, or retreat into isolation.", trait: "C" }
+            ]
+        },
+        {
+            text: "How do you measure success in your primary role?",
+            options: [
+                { text: "By tangible results achieved and obstacles overcome.", trait: "D" },
+                { text: "By positive relationships built and influence established.", trait: "I" },
+                { text: "By long-term stability, team loyalty, and consistent performance.", trait: "S" },
+                { text: "By error-free outputs, technical mastery, and compliance with standards.", trait: "C" }
+            ]
+        },
+        {
+            text: "When introducing a radical new change, your typical response is to:",
+            options: [
+                { text: "Embrace it boldly and focus immediately on new opportunities.", trait: "D" },
+                { text: "Get excited about the possibilities and talk others into embracing it.", trait: "I" },
+                { text: "Assess how it affects the team and prefer a step-by-step transition.", trait: "S" },
+                { text: "Request detailed documentation, data, and rationale before agreeing.", trait: "C" }
+            ]
+        },
+        {
+            text: "Which statement best describes your natural communication style?",
+            options: [
+                { text: "Brief, direct, and outcome-oriented.", trait: "D" },
+                { text: "Warm, energetic, and inspiring.", trait: "I" },
+                { text: "Gentle, steady, and diplomatic.", trait: "S" },
+                { text: "Formal, precise, and fact-focused.", trait: "C" }
+            ]
+        },
+        {
+            text: "What workplace dynamic causes you the greatest frustration?",
+            options: [
+                { text: "Indecisiveness, slow progress, and micromanagement.", trait: "D" },
+                { text: "Strict routine, isolation, and pessimistic attitudes.", trait: "I" },
+                { text: "Conflict, abrupt changes, and aggressive behavior.", trait: "S" },
+                { text: "Carelessness, lack of standards, and illogical arguments.", trait: "C" }
+            ]
+        }
+    ];
+
+    // Detailed Metadata Dictionary for Profiles
+    const profileDetails = {
+        D: {
+            name: "Dominance (The Driver)",
+            tagline: "High D profiles are direct, decisive, problem-solvers who focus on getting immediate results.",
+            strengths: [
+                "Strong leadership during high-stakes crisis situations",
+                "High drive for goal achievement and rapid execution",
+                "Unafraid to make tough, uncomfortable decisions",
+                "Overcomes obstacles with resilience and determination"
+            ],
+            communication: "High D individuals speak directly, plainly, and forcefully. They prefer brevity, zero fluff, and immediate focus on bottom-line results.",
+            environment: [
+                "High autonomy with minimal micromanagement",
+                "Clear authority to make decisions and direct outcomes",
+                "Challenging assignments with measurable targets"
+            ],
+            tips: [
+                "Be brief, direct, and get straight to the point.",
+                "Focus on results and solutions, not problems or small talk.",
+                "Provide choices and allow them to maintain control over decisions."
+            ]
+        },
+        I: {
+            name: "Influence (The Inspirer)",
+            tagline: "High I profiles are outgoing, enthusiastic, optimistic, and highly relationship-driven.",
+            strengths: [
+                "Exceptional persuasion, networking, and relationship building",
+                "High enthusiasm that boosts team morale and engagement",
+                "Creative problem-solving through collaborative dialogue",
+                "Inspires others toward a shared vision"
+            ],
+            communication: "High I individuals are warm, expressive, and conversational. They communicate with enthusiasm and value personal connections before diving into data.",
+            environment: [
+                "Social, collaborative, and team-oriented workspaces",
+                "Public recognition for contributions and achievements",
+                "Freedom from rigid, monotonous routine"
+            ],
+            tips: [
+                "Be warm, friendly, and allow time for light social interaction.",
+                "Express enthusiasm for their ideas and acknowledge their creative input.",
+                "Put agreement details in writing, as they prefer big-picture discussions over administrative details."
+            ]
+        },
+        S: {
+            name: "Steadiness (The Supporter)",
+            tagline: "High S profiles are patient, reliable, calm, and dedicated team players.",
+            strengths: [
+                "High dependability, loyalty, and steady execution",
+                "Exceptional active listening and conflict mediation skills",
+                "Builds long-term trust and cohesive working relationships",
+                "Methodical approach to complex, multi-step procedures"
+            ],
+            communication: "High S individuals communicate calmly, tactfully, and supportively. They listen attentively and seek consensus before making major shifts.",
+            environment: [
+                "Stable, predictable work environment with minimal sudden disruptions",
+                "Cooperative team culture where harmony is valued",
+                "Clear, step-by-step expectations and advance notice for change"
+            ],
+            tips: [
+                "Approach discussions with a calm, friendly, and patient tone.",
+                "Provide clear, logical steps when introducing new procedures or changes.",
+                "Show genuine appreciation for their steady contributions."
+            ]
+        },
+        C: {
+            name: "Conscientiousness (The Analyst)",
+            tagline: "High C profiles are precise, analytical, systematic, and focused on quality and accuracy.",
+            strengths: [
+                "Rigorous attention to detail and high quality standards",
+                "Systematic analysis of data and risk factors",
+                "Creates clear structure, organization, and documented standards",
+                "Objective, fact-based problem solving"
+            ],
+            communication: "High C individuals communicate formally, precisely, and logically. They rely heavily on data, facts, and structure rather than intuition or emotion.",
+            environment: [
+                "Quiet, structured workspace that permits deep focus",
+                "Clear rules, procedures, and quality benchmarks",
+                "Opportunities to develop specialized expertise"
+            ],
+            tips: [
+                "Come prepared with facts, data, and logical reasoning.",
+                "Avoid emotional appeals; stick to objective standards.",
+                "Give them time to evaluate information thoroughly before requiring a decision."
+            ]
+        }
+    };
+
+    // State variables
+    let currentIdx = 0;
+    let answers = new Array(questions.length).fill(null);
+    let chartObj = null;
+
+    function startAssessment() {
+        document.getElementById('intro-view').classList.add('d-none');
+        document.getElementById('quiz-view').classList.remove('d-none');
+        renderQuizStep();
+    }
+
+    function renderQuizStep() {
+        const q = questions[currentIdx];
+        document.getElementById('question-step').innerText = `Question ${currentIdx + 1} of ${questions.length}`;
+        
+        const pct = Math.round(((currentIdx + 1) / questions.length) * 100);
+        document.getElementById('question-percent').innerText = `${pct}% Complete`;
+        document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+
+        document.getElementById('question-title').innerText = q.text;
+
+        const optsContainer = document.getElementById('options-group');
+        optsContainer.innerHTML = '';
+
+        q.options.forEach((opt, index) => {
+            const isSelected = answers[currentIdx] === opt.trait;
+            const card = document.createElement('div');
+            card.className = `card border p-3 style-option cursor-pointer transition ${isSelected ? 'border-primary bg-primary-subtle text-primary' : 'border-light-subtle bg-white'}`;
+            card.style.cursor = 'pointer';
+            card.onclick = () => selectOption(opt.trait);
+
+            card.innerHTML = `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="discOption" id="opt-${index}" value="${opt.trait}" ${isSelected ? 'checked' : ''}>
+                    <label class="form-check-label w-100 fw-medium" for="opt-${index}" style="cursor: pointer;">
+                        ${opt.text}
+                    </label>
+                </div>
+            `;
+            optsContainer.appendChild(card);
+        });
+
+        // Button controls
+        const btnPrev = document.getElementById('btn-prev');
+        if (currentIdx > 0) {
+            btnPrev.classList.remove('d-none');
+        } else {
+            btnPrev.classList.add('d-none');
+        }
+
+        const btnNext = document.getElementById('btn-next');
+        btnNext.disabled = answers[currentIdx] === null;
+        btnNext.innerHTML = currentIdx === questions.length - 1 ? 'Generate Dashboard <i class="bi bi-check-circle ms-1"></i>' : 'Next <i class="bi bi-arrow-right ms-1"></i>';
+    }
+
+    function selectOption(trait) {
+        answers[currentIdx] = trait;
+        renderQuizStep();
+    }
+
+    function nextQuestion() {
+        if (answers[currentIdx] === null) return;
+        if (currentIdx < questions.length - 1) {
+            currentIdx++;
+            renderQuizStep();
+        } else {
+            buildReport();
+        }
+    }
+
+    function prevQuestion() {
+        if (currentIdx > 0) {
+            currentIdx--;
+            renderQuizStep();
+        }
+    }
+
+    function buildReport() {
+        document.getElementById('quiz-view').classList.add('d-none');
+        document.getElementById('report-view').classList.remove('d-none');
+
+        // Calculate Raw Scores & Percentages
+        const scores = { D: 0, I: 0, S: 0, C: 0 };
+        answers.forEach(t => { if (scores[t] !== undefined) scores[t]++; });
+
+        const total = questions.length;
+        const pD = Math.round((scores.D / total) * 100);
+        const pI = Math.round((scores.I / total) * 100);
+        const pS = Math.round((scores.S / total) * 100);
+        const pC = Math.round((scores.C / total) * 100);
+
+        // Update Progress bars & Metric Labels
+        document.getElementById('score-val-d').innerText = `${pD}%`;
+        document.getElementById('bar-d').style.width = `${pD}%`;
+
+        document.getElementById('score-val-i').innerText = `${pI}%`;
+        document.getElementById('bar-i').style.width = `${pI}%`;
+
+        document.getElementById('score-val-s').innerText = `${pS}%`;
+        document.getElementById('bar-s').style.width = `${pS}%`;
+
+        document.getElementById('score-val-c').innerText = `${pC}%`;
+        document.getElementById('bar-c').style.width = `${pC}%`;
+
+        // Sort traits by highest score
+        const sorted = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+        const primaryKey = sorted[0];
+        const secondaryKey = sorted[1];
+
+        const primaryProfile = profileDetails[primaryKey];
+        const secondaryProfile = profileDetails[secondaryKey];
+
+        document.getElementById('dominant-style-name').innerText = primaryProfile.name;
+        document.getElementById('dominant-style-tagline').innerText = primaryProfile.tagline;
+
+        document.getElementById('badge-primary').innerText = `Primary: ${primaryProfile.name.split(' ')[0]}`;
+        document.getElementById('badge-secondary').innerText = `Secondary: ${secondaryProfile.name.split(' ')[0]}`;
+
+        // Populate Strengths Tab
+        const strengthsList = document.getElementById('strengths-list');
+        strengthsList.innerHTML = '';
+        primaryProfile.strengths.forEach(s => {
+            strengthsList.innerHTML += `
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded-3 border flex items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span>${s}</span>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Populate Communication Tab
+        document.getElementById('comm-description').innerText = primaryProfile.communication;
+
+        // Populate Environment Tab
+        const envList = document.getElementById('environment-list');
+        envList.innerHTML = '';
+        primaryProfile.environment.forEach(e => {
+            envList.innerHTML += `
+                <div class="p-3 bg-light rounded-3 border">
+                    <i class="bi bi-building-check text-primary me-2"></i> ${e}
+                </div>
+            `;
+        });
+
+        // Populate Tips Tab
+        const tipsList = document.getElementById('tips-list');
+        tipsList.innerHTML = '';
+        primaryProfile.tips.forEach(t => {
+            tipsList.innerHTML += `
+                <li class="list-group-item py-3">
+                    <i class="bi bi-lightbulb-fill text-warning me-2"></i> ${t}
+                </li>
+            `;
+        });
+
+        // Render Chart.js
+        const ctx = document.getElementById('discChart').getContext('2d');
+        if (chartObj) chartObj.destroy();
+
+        chartObj = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Dominance (D)', 'Influence (I)', 'Steadiness (S)', 'Conscientiousness (C)'],
+                datasets: [{
+                    data: [scores.D, scores.I, scores.S, scores.C],
+                    backgroundColor: ['#dc3545', '#ffc107', '#198754', '#0dcaf0']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    }
+
+    function resetAssessment() {
+        currentIdx = 0;
+        answers = new Array(questions.length).fill(null);
+        document.getElementById('report-view').classList.add('d-none');
+        document.getElementById('intro-view').classList.remove('d-none');
+    }
+</script>
+
+
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
+      <div class="col-lg-4 sidebar">
+        
+        <!-- Services Include -->
+        
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Disclaimer
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">This site is an independent publisher and
+  does not authenticate, authorize, endorse, or guarantee any third-party seller, merchant, or sponsor, nor shall it be
+  liable for any transaction or dispute between buyers and third parties. All buying advice is provided purely for
+  educational purposes.</p>
+  </div>
+</div>
+
+<!-- Render Ads / Sponsored Content -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Sponsored Ads
+  </div>
+  <div class="card-body text-center">
+    <em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em>
+  </div>
+</div>
+
+<!-- Render Alerts / Announcements -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+     Alert &amp; Updates
+  </div>
+  <div class="card-body">
+      <strong>New Post:</strong> <a href="/site/2027/01/12/disc-personality-test-guide/" class="link">Demystifying the DISC Personality Test: Understand Your Workplace Communication Style</a>
+  </div>
+</div>
+
+<!-- Render Donations / Support -->
+<div class="card mb-4 shadow-sm border-0">
+  <div class="card-header fw-bold small text-uppercase bg-dark text-white">
+    Support Us
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text small text-muted">Fuel open-source guides, enterprise tooling, and architecture blueprints.</p>
+    <a href="upi://pay?pa=7304164348@upi&am=99&cu=INR&tn=Coffee" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm fw-bold mb-2">
+      ☕ Buy Me a Coffee
+    </a>
+  </div>
+</div>
+
+<!-- Services Widget -->
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Tools &amp; Services</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/tiny">Tiny URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/qrcode">QR Code</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/verify-email">Verify Email</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/url-encode">URL Encode</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/whatsapp">WhatsApp Chat</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/html-encode">HTML Escape</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/embeded-url">Embeded URL</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/sms-count">SMS Count</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="/site/disc-test">DISC Test</a>
+                
+            </div>
+            
+            <div class="col-sm-6">
+                
+                <a href="https://github.com/sdksmate?tab=repositories" target="_blank" rel="noopener">Softwares</a>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-dark text-white">Site Theme</div>
+    <div class="card-body">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/yeti.min.css')">Yeti</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/united.min.css')">United</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/lumen.min.css')">Lumen</a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="#!"
+                    onclick="changeTheme('/site/assets/css/sketchy.min.css')">Sketchy</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+      
+        
+      </div><!-- /col-lg-4 -->
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+  
+  <footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
+    <div class="container">
+        <div class="legal-disclaimer-box my-4 p-3 text-muted small">
+            <p class="mb-2">
+                <strong>Legal & Affiliate Disclaimer:</strong> This website contains affiliate links and sponsored
+                recommendations. If you purchase products or services through these links, we may earn a commission at
+                no additional cost to you.
+            </p>
+            <p class="mb-0">
+                <strong>Third-Party Liability & Authenticity Notice:</strong> All content published on this platform is
+                for informational, educational, and buying-guide purposes only. This website, its owners, and its
+                authors do not sell, authenticate, verify, warrant, or guarantee any third-party products, services,
+                sellers, merchants, platforms, or sponsors mentioned herein. We do not act as an authorized dealer,
+                broker, escrow agent, or guarantor for any entity, nor shall we be held liable for any financial loss,
+                counterfeit goods, deceptive seller practices, or damages resulting from third-party transactions.
+                Readers are strictly advised to perform their own independent due diligence before engaging in
+                high-value or secondary-market transactions.
+            </p>
+        </div>
+        <div class="row align-items-center">
+
+            <!-- Column 1: Copyright & Brand -->
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <h5 class="text-white h6 mb-1">Tecqmate</h5>
+                <p class="text-white-50 small mb-0">Copyright &copy; 2011. All rights reserved.</p>
+            </div>
+
+            <!-- Column 2: Main Navigation Links -->
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Navigation</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a href=" /site/ "
+                            class="text-white-50 text-decoration-none" >Home</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" /site/contact "
+                            class="text-white-50 text-decoration-none" >Contact</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" /site/blog "
+                            class="text-white-50 text-decoration-none" >Blog</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" /site/partnerships "
+                            class="text-white-50 text-decoration-none" >Partnerships</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Tools & Resources Links -->
+            <div class="col-md-4 text-center text-md-end">
+                <h6 class="text-uppercase text-white small fw-bold mb-2">Others</h6>
+                <ul class="list-unstyled mb-0 small">
+                    
+                    <li class="mb-1">
+                        <a href=" /site/disclaimer "
+                            class="text-white-50 text-decoration-none" >Disclaimer</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" /site/sitemap "
+                            class="text-white-50 text-decoration-none" >Sitemap</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" /site/archive.html "
+                            class="text-white-50 text-decoration-none" >Archive</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" /site/llms.txt "
+                            class="text-white-50 text-decoration-none" >LLMs</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation "
+                            class="text-white-50 text-decoration-none"  target="_blank"
+                            rel="noopener" >Donate</a>
+                    </li>
+                    
+                    <li class="mb-1">
+                        <a href=" https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1 "
+                            class="text-white-50 text-decoration-none"  target="_blank"
+                            rel="noopener" >Youtube</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic External styles Files Injection -->
+
+
+<!-- Scripts -->
+<script src="/site/assets/js/jquery-3.5.0.min.js"></script>
+<script src="/site/assets/js/bootstrap.min.js"></script>
+<script src="/site/assets/js/bootbox.min.js"></script>
+<script src="/site/assets/js/script.js?_=1794353752"></script>
+<script>
+    function changeTheme(themeUrl) {
+        $('#theme-style').attr('href', themeUrl);
+        localStorage.setItem('selected-theme', themeUrl);
+    }
+
+    function toggleTheme() {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('mode', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('mode', 'dark');
+        }
+    }
+
+    $(function () {
+        const savedTheme = localStorage.getItem('selected-theme');
+        if (savedTheme) $('#theme-style').attr('href', savedTheme);
+
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    });
+</script>
+
+<!-- Dynamic External Script Files Injection -->
+
+    
+        <script src="https://cdn.jsdelivr.net/npm/chart.js?_=1794353752"></script>
+    
+
+
+
+
+<!-- Dynamic Inline Script Code Block Injection -->
+
+
+</body>
+
+</html>

@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/site/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-10T12:09:27+05:30</updated><id>http://localhost:4000/site/feed.xml</id><title type="html">Tecqmate</title><subtitle>Tech tutorials, backend development, and web engineering.</subtitle><author><name>Arvind Sharma</name></author><entry><title type="html">How to Calculate SMS Character Count and Message Segments in Web Applications</title><link href="http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/" rel="alternate" type="text/html" title="How to Calculate SMS Character Count and Message Segments in Web Applications" /><published>2027-01-11T00:00:00+05:30</published><updated>2027-01-11T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments</id><content type="html" xml:base="http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/"><![CDATA[<h2 id="preventing-surprise-sms-billing-overages">Preventing Surprise SMS Billing Overages</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/site/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-11T05:05:52+05:30</updated><id>http://localhost:4000/site/feed.xml</id><title type="html">Tecqmate</title><subtitle>Tech tutorials, backend development, and web engineering.</subtitle><author><name>Arvind Sharma</name></author><entry><title type="html">Demystifying the DISC Personality Test: Understand Your Workplace Communication Style</title><link href="http://localhost:4000/site/2027/01/12/disc-personality-test-guide/" rel="alternate" type="text/html" title="Demystifying the DISC Personality Test: Understand Your Workplace Communication Style" /><published>2027-01-12T00:00:00+05:30</published><updated>2027-01-12T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/12/disc-personality-test-guide</id><content type="html" xml:base="http://localhost:4000/site/2027/01/12/disc-personality-test-guide/"><![CDATA[<h2 id="unlocking-your-potential-a-deep-dive-into-the-disc-personality-test">Unlocking Your Potential: A Deep Dive into the DISC Personality Test</h2>
+
+<p>Ever wondered why certain colleagues thrive on fast-paced chaos while others prefer methodical planning? Or why some leaders command the room with bold directives, while others build consensus through deep empathy?</p>
+
+<p>The answer often lies in understanding human behavior frameworks. Among the most popular and enduring of these frameworks is the <strong>DISC personality test</strong>. Whether you are looking to improve workplace communication, enhance team collaboration, or boost your self-awareness, understanding DISC can be a game-changer.</p>
+
+<hr />
+
+<h2 id="what-is-the-disc-assessment">What is the DISC Assessment?</h2>
+
+<p>Rooted in the psychological theories of Dr. William Moulton Marston (introduced in his 1928 book <em>Emotions of Normal People</em>), the DISC model categorizes human behavior into four primary traits:</p>
+
+<ol>
+  <li><strong>D – Dominance:</strong> Direct, results-oriented, firm, strong-willed, and forceful. People high in ‘D’ focus on bottom lines and conquering challenges.</li>
+  <li><strong>I – Influence:</strong> Outgoing, enthusiastic, optimistic, high-spirited, and lively. People high in ‘I’ focus on shaping the environment through persuasion and networking.</li>
+  <li><strong>S – Steadiness:</strong> Even-tempered, accommodating, patient, humble, and tactful. People high in ‘S’ focus on cooperation, dependability, and maintaining stability.</li>
+  <li><strong>C – Conscientiousness:</strong> Analytical, reserved, precise, systematic, and cautious. People high in ‘C’ focus on quality, accuracy, expertise, and competence.</li>
+</ol>
+
+<p>Most individuals possess a blend of all four styles, but typically one or two traits stand out as primary behavioral drivers.</p>
+
+<hr />
+
+<h2 id="why-you-should-take-a-disc-test">Why You Should Take a DISC Test</h2>
+
+<p>Taking a free DISC assessment—like the one offered on platforms like <a href="https://discpersonalitytesting.com/free-disc-test/" target="_blank" rel="noopener noreferrer">DISC Personality Testing</a>—offers several powerful benefits:</p>
+
+<ul>
+  <li><strong>Improved Communication:</strong> When you know your communication style and can recognize others’, you can tailor your message to reduce friction and misunderstandings.</li>
+  <li><strong>Enhanced Team Dynamics:</strong> Managers can leverage DISC reports to assign tasks that align with natural strengths, preventing burnout and increasing engagement.</li>
+  <li><strong>Conflict Resolution:</strong> Knowing that a colleague’s directness (High D) isn’t a personal attack, but rather a results-driven communication style, helps de-escalate tension quickly.</li>
+</ul>
+
+<hr />
+
+<h2 id="how-to-build-your-own-disc-assessment-app">How to Build Your Own DISC Assessment App</h2>
+
+<p>If you are a developer looking to integrate DISC scoring logic into your own web app, you don’t need a heavy backend! You can calculate scores, determine primary behavioral styles, and render dynamic reports entirely on the client side using vanilla JavaScript.</p>
+
+<p>Here is an interactive, <a href="/site/disc-test">all-in-one web application</a> that features a fully functional DISC questionnaire, real-time client-side scoring logic, and an automated report generator.</p>]]></content><author><name>Arvind Sharma</name></author><category term="DISC Assessment" /><category term="Personality Test" /><category term="Workplace Communication" /><category term="Professional Development" /><category term="Team Building" /><category term="Self Awareness" /><summary type="html"><![CDATA[Discover how the DISC personality assessment works, what your results mean for your career, and how to leverage Dominance, Influence, Steadiness, and Conscientiousness to improve workplace collaboration.]]></summary></entry><entry><title type="html">How to Calculate SMS Character Count and Message Segments in Web Applications</title><link href="http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/" rel="alternate" type="text/html" title="How to Calculate SMS Character Count and Message Segments in Web Applications" /><published>2027-01-11T00:00:00+05:30</published><updated>2027-01-11T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments</id><content type="html" xml:base="http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/"><![CDATA[<h2 id="preventing-surprise-sms-billing-overages">Preventing Surprise SMS Billing Overages</h2>
 
 <p>When building web-based texting platforms, customer notification systems, or SMS marketing tools, a seemingly harmless message can easily double or triple in carrier cost if it crosses character thresholds. Understanding how telecommunication gateways segment text messages is essential for accurate budgeting and UI feedback.</p>
 
@@ -598,70 +637,4 @@
 
 <p>The Hermès Birkin 25 Faubourg is an extraordinary masterpiece of leather craft and architectural heritage. By demanding CITES exotic certification, auditing multi-leather paneled construction under magnification, and securing independent escrow authentication, you protect your capital and acquire a true grail asset.</p>
 
-<p><em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em></p>]]></content><author><name>Arvind Sharma</name></author><category term="luxury-handbags" /><category term="retail-commerce" /><category term="luxury-lifestyle" /><summary type="html"><![CDATA[A secondary-market luxury handbag buyer's guide to authenticating the ultra-rare Hermès Birkin 25 Faubourg, evaluating Sellier stitching, Madame/Epsom leather panels, matte alligator awnings, and blind stamp date codes.]]></summary></entry><entry><title type="html">How to Buy the Patek Philippe Celestial Ref. 6102P Platinum Sky Moon Dial Without Getting Scammed</title><link href="http://localhost:4000/site/2027/01/02/how-to-buy-patek-philippe-celestial-6102p-secondary-market/" rel="alternate" type="text/html" title="How to Buy the Patek Philippe Celestial Ref. 6102P Platinum Sky Moon Dial Without Getting Scammed" /><published>2027-01-02T00:00:00+05:30</published><updated>2027-01-02T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/02/how-to-buy-patek-philippe-celestial-6102p-secondary-market</id><content type="html" xml:base="http://localhost:4000/site/2027/01/02/how-to-buy-patek-philippe-celestial-6102p-secondary-market/"><![CDATA[<h2 id="the-night-sky-of-geneva-on-your-wrist">The Night Sky of Geneva on Your Wrist</h2>
-
-<p>The <strong>Patek Philippe Celestial Reference 6102P-001</strong> in solid platinum is one of the most poetically complex timepieces ever developed by the legendary Geneva manufacture. Featuring a deep blue dial composed of three sapphire crystal discs sliding above one another, the 6102P displays an accurate sky chart of the Northern Hemisphere, tracking the nocturnal sky, the phases and orbit of the moon, and the meridian transit times of Sirius and the moon.</p>
-
-<p>Housed in a substantial 44mm platinum case decorated with hand-engraved Calatrava cross motifs along the case flanks, the 6102P is powered by the ultra-thin automatic Calibre 240 LU CL C featuring an off-center 22k gold micro-rotor. Commanding mid-six-figure to seven-figure valuations on the private secondary market, acquiring a Ref. 6102P requires strict forensic auditing to guard against counterfeit printed dials, damaged sapphire discs, and missing archive documentation.</p>
-
-<hr />
-
-<h2 id="printed-fake-discs-misaligned-chart-discs-and-missing-provenance">Printed Fake Discs, Misaligned Chart Discs, and Missing Provenance</h2>
-<ul>
-  <li><strong>What is the problem?</strong> Private secondary-market buyers encounter counterfeit models utilizing static printed plastic dials instead of multi-layered metallized sapphire crystal discs, as well as genuine examples with jammed moon phase gearing or altered case back serial numbers.</li>
-  <li><strong>Why does it happen?</strong> The multi-layered sapphire disc system requires microscopic precision and specialized optical coatings to function. Replica factories substitute printed film or acrylic to simulate the celestial chart at a tiny fraction of the cost.</li>
-</ul>
-
-<hr />
-
-<h2 id="the-ref-6102p-001-authentication-matrix">The Ref. 6102P-001 Authentication Matrix</h2>
-
-<p>Before transferring funds or signing a private escrow contract for a <strong>Patek Philippe Celestial Ref. 6102P</strong>, inspect these key physical attributes:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Inspection Area</th>
-      <th style="text-align: left">Authentic Factory Original Benchmark</th>
-      <th style="text-align: left">Secondary Market Defect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Sapphire Sky Chart Discs</strong></td>
-      <td style="text-align: left">3 stacked sapphire discs with metallized micro-coatings showing the Milky Way, star field depth, and a crescent horizon outline.</td>
-      <td style="text-align: left">Flat printed pattern on dial plate, missing 3D astronomical depth, or scratched sapphire layers under 10x magnification.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Platinum Case &amp; Top Wesselton Diamond</strong></td>
-      <td style="text-align: left">Heavy solid platinum case featuring a Top Wesselton diamond embedded at 6 o’clock between the lower lugs.</td>
-      <td style="text-align: left">Missing diamond setting, cubic zirconia substitution, or incorrect stainless steel / plated case weight.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Calibre 240 LU CL C Micro-Rotor</strong></td>
-      <td style="text-align: left">Ultra-thin automatic movement with 22k gold micro-rotor stamped with the Patek Philippe Seal and hand-engraved Geneva striping.</td>
-      <td style="text-align: left">Full-sized central rotor, unpolished bridge chamfers, or missing individual movement serials.</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h2 id="a-4-step-secondary-market-buying-protocol">A 4-Step Secondary Market Buying Protocol</h2>
-
-<p>If you are committing six-figure capital to acquire a Patek Philippe Celestial 6102P, enforce this strict buyer-protection workflow:</p>
-
-<ul>
-  <li><strong>Step 1: Require Official Certificate of Origin &amp; Archive Extraction:</strong> Ensure the serial-matched Certificate of Origin explicitly states reference code <code class="language-plaintext highlighter-rouge">6102P-001</code> and matches Patek Philippe Geneva manufacture records.</li>
-  <li><strong>Step 2: Mandate Astronomical Function Testing in an Escrow Vault:</strong> Send the watch to an independent vault equipped for high complications. Verify that turning the crowns rotates the star chart disc and adjusts the moon phase indicator without gear resistance.</li>
-  <li><strong>Step 3: Inspect 6 O’Clock Case Diamond &amp; Calatrava Cross Engravings:</strong> Audit the single diamond set into the platinum bezel edge at 6 o’clock and inspect the crispness of the hand-engraved Calatrava cross motifs along the case sides.</li>
-  <li><strong>Step 4: Verify Complete Presentation Ecosystem:</strong> Confirm inclusion of the large macassar ebony presentation box, winding box mechanism, physical Certificate of Origin, setting stylus, and original alligator strap with platinum fold-over clasp.</li>
-</ul>
-
-<hr />
-
-<h2 id="final-verdict">Final Verdict</h2>
-
-<p>The Patek Philippe Celestial Ref. 6102P-001 is a triumph of astronomical calculation and high horological art. By demanding official Certificate of Origin verification, inspecting multi-layered sapphire star discs in escrow, and auditing platinum case hallmarks under high magnification, you safeguard your financial allocation and acquire a legendary horological treasure.</p>
-
-<p><em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em></p>]]></content><author><name>Arvind Sharma</name></author><category term="luxury-watches" /><category term="retail-commerce" /><category term="luxury-lifestyle" /><summary type="html"><![CDATA[A secondary-market luxury watch buyer's guide to authenticating the Patek Philippe Celestial Grand Complication Ref. 6102P-001 in platinum, evaluating sapphire crystal star chart discs, Sirius meridian mechanics, and Calibre 240 LU CL C.]]></summary></entry></feed>
+<p><em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em></p>]]></content><author><name>Arvind Sharma</name></author><category term="luxury-handbags" /><category term="retail-commerce" /><category term="luxury-lifestyle" /><summary type="html"><![CDATA[A secondary-market luxury handbag buyer's guide to authenticating the ultra-rare Hermès Birkin 25 Faubourg, evaluating Sellier stitching, Madame/Epsom leather panels, matte alligator awnings, and blind stamp date codes.]]></summary></entry></feed>
