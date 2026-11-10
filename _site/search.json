@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "How to Calculate SMS Character Count and Message Segments in Web Applications",
+      "tags"     : "development, sms-tools, web-tools",
+      "url"      : "http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/",
+      "date"     : "January 11, 2027",
+      "snippet"  : "A developer guide on building SMS character counters, handling GSM-7 vs. Unicode encoding rules, and preventing unexpected multi-segment delivery costs."
+    },
+  
+    {
+      "title"    : "How to Verify Email Addresses and Prevent Hard Bounces in Your Application",
+      "tags"     : "development, email-verification, web-tools",
+      "url"      : "http://localhost:4000/site/2027/01/10/how-to-verify-email-addresses-and-prevent-bounces/",
+      "date"     : "January 10, 2027",
+      "snippet"  : "A developer guide on implementing email verification logic, distinguishing between hard and soft bounces, and maintaining high sender reputation in transacti..."
+    },
+  
+    {
       "title"    : "Patek Philippe Grand Complications Ref. 5304/301R-001: The Ultimate Horological Masterpiece",
       "tags"     : "patek-philippe, haute-horlogerie, watch-authentication",
       "url"      : "http://localhost:4000/site/2027/01/09/patek-philippe-grand-complications-5304-301r-001-authentication-guide/",

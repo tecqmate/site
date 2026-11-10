@@ -110,8 +110,20 @@
 
 - [Watch-authentication](http://localhost:4000/site/tags/#watch-authentication): 1 guide(s) published under this topic.
 
+- [Development](http://localhost:4000/site/tags/#development): 2 guide(s) published under this topic.
+
+- [Email-verification](http://localhost:4000/site/tags/#email-verification): 1 guide(s) published under this topic.
+
+- [Web-tools](http://localhost:4000/site/tags/#web-tools): 2 guide(s) published under this topic.
+
+- [Sms-tools](http://localhost:4000/site/tags/#sms-tools): 1 guide(s) published under this topic.
+
 
 ## 20 Latest Buying & Technical Guides
+
+- [How to Calculate SMS Character Count and Message Segments in Web Applications](http://localhost:4000/site/2027/01/11/how-to-calculate-sms-character-count-and-segments/): A developer guide on building SMS character counters, handling GSM-7 vs. Unicode encoding rules, and preventing unexpected multi-segment delivery costs.
+
+- [How to Verify Email Addresses and Prevent Hard Bounces in Your Application](http://localhost:4000/site/2027/01/10/how-to-verify-email-addresses-and-prevent-bounces/): A developer guide on implementing email verification logic, distinguishing between hard and soft bounces, and maintaining high sender reputation in transactional mailing systems.
 
 - [Patek Philippe Grand Complications Ref. 5304/301R-001: The Ultimate Horological Masterpiece](http://localhost:4000/site/2027/01/09/patek-philippe-grand-complications-5304-301r-001-authentication-guide/): A definitive collector and authentication guide to the ultra-rare Patek Philippe Grand Complications Minute Repeater Retrograde Perpetual Calendar Ref. 5304/301R-001 in rose gold with baguette diamonds.
 
@@ -148,10 +160,6 @@
 - [How to Buy the Richard Mille RM 52-05 Tourbillon Pharrell Williams Brown Cermet Without Getting Scammed](http://localhost:4000/site/2026/12/24/how-to-buy-richard-mille-rm-52-05-pharrell-williams-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the limited-edition Richard Mille RM 52-05 Tourbillon Pharrell Williams, inspecting its hand-painted astronaut helmet dial, brown Cermet case, and grade 5 titanium movement.
 
 - [How to Buy the Patek Philippe Grandmaster Chime Ref. 6300G White Gold Dual-Dial Masterpiece Without Getting Scammed](http://localhost:4000/site/2026/12/23/how-to-buy-patek-philippe-grandmaster-chime-6300g-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the Patek Philippe Grandmaster Chime Ref. 6300G, inspecting its patented reversible case mechanism, 20 complications, and Calibre 300 GS AL 36-750 QIS FUS IRM.
-
-- [How to Buy the Rolex Cosmograph Daytona Rainbow Ref. 126595RBOW 18k Everose Gold Without Getting Scammed by Aftermarket Setters](http://localhost:4000/site/2026/12/22/how-to-buy-rolex-daytona-rainbow-126595rbow-everose-gold-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the factory Rolex Daytona Rainbow Ref. 126595RBOW in 18k Everose gold, evaluating baguette gem-set gradient quality, and verifying Calibre 4131 movement provenance.
-
-- [How to Buy the Rolex Oyster Perpetual Cosmograph Daytona Winter Ref. 126599 TML Blue Opal Dial Piece Unique Without Getting Scammed](http://localhost:4000/site/2026/12/21/how-to-buy-rolex-daytona-winter-126599-tml-blue-opal-secondary-market/): A secondary-market luxury watch buyer's guide to authenticating the piece unique Rolex Daytona Winter Reference 126599 TML in 18k white gold, evaluating natural blue opal dial iridescence, and checking Calibre 4131 movement finishing.
 
 
 ## Full Site Index
