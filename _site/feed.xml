@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/site/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-11T05:05:52+05:30</updated><id>http://localhost:4000/site/feed.xml</id><title type="html">Tecqmate</title><subtitle>Tech tutorials, backend development, and web engineering.</subtitle><author><name>Arvind Sharma</name></author><entry><title type="html">Demystifying the DISC Personality Test: Understand Your Workplace Communication Style</title><link href="http://localhost:4000/site/2027/01/12/disc-personality-test-guide/" rel="alternate" type="text/html" title="Demystifying the DISC Personality Test: Understand Your Workplace Communication Style" /><published>2027-01-12T00:00:00+05:30</published><updated>2027-01-12T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/12/disc-personality-test-guide</id><content type="html" xml:base="http://localhost:4000/site/2027/01/12/disc-personality-test-guide/"><![CDATA[<h2 id="unlocking-your-potential-a-deep-dive-into-the-disc-personality-test">Unlocking Your Potential: A Deep Dive into the DISC Personality Test</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/site/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/site/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-12T05:26:47+05:30</updated><id>http://localhost:4000/site/feed.xml</id><title type="html">Tecqmate</title><subtitle>Tech tutorials, backend development, and web engineering.</subtitle><author><name>Arvind Sharma</name></author><entry><title type="html">How to Run Native Docker on Windows Without Docker Desktop (Using Skrog &amp;amp; WSL 2)</title><link href="http://localhost:4000/site/2027/01/13/run-native-docker-windows-without-docker-desktop-skrog-wsl2/" rel="alternate" type="text/html" title="How to Run Native Docker on Windows Without Docker Desktop (Using Skrog &amp;amp; WSL 2)" /><published>2027-01-13T00:00:00+05:30</published><updated>2027-01-13T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/13/run-native-docker-windows-without-docker-desktop-skrog-wsl2</id><content type="html" xml:base="http://localhost:4000/site/2027/01/13/run-native-docker-windows-without-docker-desktop-skrog-wsl2/"><![CDATA[<p>If you love containerized workflows but want to bypass Docker Desktop’s heavyweight footprint, memory overhead, or licensing boundaries, you aren’t out of luck.</p>
+
+<p>Using Windows Subsystem for Linux (WSL 2) combined with Skrog, the Docker CLI, and Docker Compose, you can set up a native, lightweight, and performant developer environment. Skrog acts as an open-source bridge, running the upstream Docker Engine (<code class="language-plaintext highlighter-rouge">dockerd</code>) seamlessly inside a WSL 2 distribution while exposing the genuine Docker API over a named pipe to Windows. This means tools like VS Code Dev Containers, Testcontainers, and Compose work seamlessly out of the box.</p>
+
+<p>This guide walks you through setting up a complete, native Docker stack on Windows using WinGet packages without ever installing Docker Desktop.</p>
+
+<hr />
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>Windows 10 (Build 19041+) or Windows 11</li>
+  <li>WSL 2 installed and enabled with a Linux distribution (such as Ubuntu)</li>
+  <li>Administrator privileges on your Windows machine to run package installations</li>
+</ul>
+
+<h2 id="do-you-need-to-install-wsl-2-first">Do you need to install WSL 2 first?</h2>
+<p>Because Docker relies on Linux kernel features (such as namespaces and cgroups), Windows cannot run the upstream Docker Engine natively on its own kernel. WSL 2 is mandatory because Skrog runs <code class="language-plaintext highlighter-rouge">dockerd</code> inside your WSL 2 Linux distro behind the scenes.</p>
+<ul>
+  <li>If you already use WSL 2 (e.g., you already have Ubuntu installed): Skip this step and move directly to Step 1. You do not need to run <code class="language-plaintext highlighter-rouge">wsl --install</code> or manually enable Windows optional features via DISM/PowerShell.</li>
+  <li>If you do not have WSL 2 installed yet: Open PowerShell as Administrator and run the modern single-command installer (which replaces the older <code class="language-plaintext highlighter-rouge">Enable-WindowsOptionalFeature</code> commands):</li>
+</ul>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="n">wsl</span><span class="w"> </span><span class="nt">--install</span><span class="w">
+</span></code></pre></div></div>
+<p>(Restart your computer once the installation finishes).
+—</p>
+
+<h2 id="step-by-step-installation-guide">Step-by-Step Installation Guide</h2>
+<p>You can install all required components cleanly from your terminal using WinGet (or via their respective winstall.app links: Skrog, Docker Compose, and Docker CLI).</p>
+
+<p>Step 1: Install the Docker CLI
+The Docker client allows you to run <code class="language-plaintext highlighter-rouge">docker</code> commands from your Windows PowerShell or Command Prompt, communicating directly with the backend engine.
+Run the following command in an administrator terminal:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">winget</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nt">-e</span><span class="w"> </span><span class="nt">--id</span><span class="w"> </span><span class="nx">Docker.DockerCLI</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Step 2: Install Docker Compose
+To run multi-container setups using <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> files directly on Windows, install the Docker Compose CLI plugin:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">winget</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nt">-e</span><span class="w"> </span><span class="nt">--id</span><span class="w"> </span><span class="nx">Docker.DockerCompose</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Step 3: Install Skrog (Docker Engine on WSL 2)
+Skrog sets up and manages the upstream Docker Engine inside WSL 2, bridging it to your Windows host environment.</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">winget</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nt">-e</span><span class="w"> </span><span class="nt">--id</span><span class="w"> </span><span class="nx">wslkit.skrog</span><span class="w">
+</span></code></pre></div></div>
+<hr />
+
+<p>Initializing and Starting Skrog
+Once the WinGet packages are installed, open a new terminal window so your updated <code class="language-plaintext highlighter-rouge">PATH</code> variables load properly, then initialize and start the Skrog backend:</p>
+
+<p>Initialize / Install the Engine Service:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="n">skrog</span><span class="w"> </span><span class="nx">install</span><span class="w">
+</span></code></pre></div></div>
+<p>(This sets up the upstream Docker Engine backend inside your default WSL 2 distribution).</p>
+
+<p>Start the Docker Engine Daemon:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="n">skrog</span><span class="w"> </span><span class="nx">start</span><span class="w">
+</span></code></pre></div></div>
+<p>(This boots up <code class="language-plaintext highlighter-rouge">dockerd</code> inside WSL 2 and establishes the named pipe bridge back to your Windows host).</p>
+
+<hr />
+
+<h2 id="how-to-verify-the-entire-stack-is-working">How to Verify the Entire Stack is Working?</h2>
+<p>To confirm that your Windows CLI, the Skrog bridge, and the WSL 2 Docker Engine are communicating properly, run these three verification checks:</p>
+<ol>
+  <li>Check the Client and Server Connection
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">docker</span><span class="w"> </span><span class="nx">version</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>Expected Result: Both the Client and Server (Docker Engine) version details print cleanly without connection timeouts or named pipe errors.</p>
+  </li>
+  <li>Verify Docker Compose
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">docker-compose</span><span class="w"> </span><span class="nx">version</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>Expected Result: Outputs the installed Docker Compose version without dependency or path errors.</p>
+  </li>
+  <li>Run a Test Container
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">docker</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nt">--rm</span><span class="w"> </span><span class="nx">hello-world</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>Expected Result: Docker pulls the lightweight <code class="language-plaintext highlighter-rouge">hello-world</code> image and prints the <code class="language-plaintext highlighter-rouge">"Hello from Docker!"</code> confirmation message, proving containers execute properly through the WSL 2 backend.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>With this setup complete, your Windows terminal can natively spin up containers, build images via BuildKit, and orchestrate multi-container apps using Docker Compose—all powered by a genuine Linux kernel backend via WSL 2, completely free of Docker Desktop.</p>]]></content><author><name>Arvind Sharma</name></author><category term="Docker" /><category term="WSL2" /><category term="Windows" /><category term="DevOps" /><category term="Containers" /><category term="Skrog" /><summary type="html"><![CDATA[Learn how to set up upstream Docker Engine on Windows using Skrog, Docker CLI, and Docker Compose via WSL 2, completely bypassing Docker Desktop's resource overhead and licensing constraints.]]></summary></entry><entry><title type="html">Demystifying the DISC Personality Test: Understand Your Workplace Communication Style</title><link href="http://localhost:4000/site/2027/01/12/disc-personality-test-guide/" rel="alternate" type="text/html" title="Demystifying the DISC Personality Test: Understand Your Workplace Communication Style" /><published>2027-01-12T00:00:00+05:30</published><updated>2027-01-12T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/12/disc-personality-test-guide</id><content type="html" xml:base="http://localhost:4000/site/2027/01/12/disc-personality-test-guide/"><![CDATA[<h2 id="unlocking-your-potential-a-deep-dive-into-the-disc-personality-test">Unlocking Your Potential: A Deep Dive into the DISC Personality Test</h2>
 
 <p>Ever wondered why certain colleagues thrive on fast-paced chaos while others prefer methodical planning? Or why some leaders command the room with bold directives, while others build consensus through deep empathy?</p>
 
@@ -571,70 +656,4 @@
 
 <p>The Hermès Birkin 25 Matte Himalayan Niloticus Crocodile is the undisputed crown jewel of luxury handbag collecting. By demanding CITES export passport matching, auditing gradient hand-dyeing under magnification, and securing independent escrow authentication, you protect your capital and acquire a world-class trophy asset.</p>
 
-<p><em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em></p>]]></content><author><name>Arvind Sharma</name></author><category term="luxury-handbags" /><category term="retail-commerce" /><category term="luxury-lifestyle" /><summary type="html"><![CDATA[A secondary-market luxury handbag buyer's guide to authenticating the Hermès Birkin 25 Matte Himalayan Niloticus Crocodile, inspecting smoke-to-pearl gradient hand-dyeing, pore structures, CITES certificates, and 18k white gold diamond hardware.]]></summary></entry><entry><title type="html">How to Buy the Hermès Birkin 25 Faubourg Without Getting Scammed by Counterfeit Architectural Leather Builds</title><link href="http://localhost:4000/site/2027/01/03/how-to-buy-hermes-birkin-25-faubourg-secondary-market/" rel="alternate" type="text/html" title="How to Buy the Hermès Birkin 25 Faubourg Without Getting Scammed by Counterfeit Architectural Leather Builds" /><published>2027-01-03T00:00:00+05:30</published><updated>2027-01-03T00:00:00+05:30</updated><id>http://localhost:4000/site/2027/01/03/how-to-buy-hermes-birkin-25-faubourg-secondary-market</id><content type="html" xml:base="http://localhost:4000/site/2027/01/03/how-to-buy-hermes-birkin-25-faubourg-secondary-market/"><![CDATA[<h2 id="the-holy-grail-architectural-birkin">The Holy Grail Architectural Birkin</h2>
-
-<p>First released in 2019 as an homage to the historic Hermès flagship boutique at 24 Rue du Faubourg Saint-Honoré in Paris, the <strong>Hermès Birkin 25 Faubourg</strong> (available in Day, Night, Midnight, and Neige variations) is one of the most exclusive and valuable handbags ever created. Designed using five distinct leathers and exotic materials—including Madame leather, Epsom, Swift, Sombrero, and Matte Mississippiensis Alligator for the window awnings—it recreates the iconic architectural façade of the Paris boutique.</p>
-
-<p>Trading at six-figure secondary-market valuations (often exceeding $150,000–$250,000+ depending on colorway and condition), the Faubourg Birkin requires exhaustive forensic examination. Counterfeit operations produce convincing composite leather copies with synthetic exotic awnings, improper blind stamp fonts, and non-authentic hardware plating.</p>
-
-<hr />
-
-<h2 id="synthetic-exotic-awnings-incorrect-sellier-stitching-and-stamp-fraud">Synthetic Exotic Awnings, Incorrect Sellier Stitching, and Stamp Fraud</h2>
-<ul>
-  <li><strong>What is the problem?</strong> Fraudulent secondary sellers offer high-grade counterfeit Faubourg Birkins constructed with imitation crocodile window awnings, machine-sewn saddle stitching, and misaligned blind stamp date codes.</li>
-  <li><strong>Why does it happen?</strong> The immense price delta between a standard Birkin 25 and an architectural Faubourg Edition tempts replica factories into creating sophisticated super-fakes using mixed leather panels.</li>
-</ul>
-
-<hr />
-
-<h2 id="the-birkin-25-faubourg-authentication-matrix">The Birkin 25 Faubourg Authentication Matrix</h2>
-
-<p>Before executing a wire transfer or signing a private escrow contract for an <strong>Hermès Birkin 25 Faubourg</strong>, inspect these physical attributes:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Inspection Area</th>
-      <th style="text-align: left">Authentic Factory Original Benchmark</th>
-      <th style="text-align: left">Secondary Market Defect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Alligator Window Awnings</strong></td>
-      <td style="text-align: left">Genuine Matte Mississippiensis Alligator with defined pore structures, square scale symmetry, and CITES certificate validation.</td>
-      <td style="text-align: left">Stamped embossed calfskin, flat uniform scales, or missing CITES exotic export documentation.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Sellier Saddle Stitching</strong></td>
-      <td style="text-align: left">Hand-stitched slanted linen thread (<em>couture sellier</em>) with characteristic slight angle variations and waxed edge perimeters.</td>
-      <td style="text-align: left">Straight machine stitching, plastic edge paint overlap, or synthetic thread sheen under 10x magnification.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Orange Shopping Bag Clochette</strong></td>
-      <td style="text-align: left">Custom leather clochette designed as an iconic Hermès orange shopping bag with hand-folded leather handles.</td>
-      <td style="text-align: left">Standard key clochette, stiff glued leather panels, or fuzzy foil stamp edges on the orange bag silhouette.</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h2 id="a-4-step-secondary-market-buying-protocol">A 4-Step Secondary Market Buying Protocol</h2>
-
-<p>If you are committing six-figure capital to acquire a Birkin 25 Faubourg, enforce this strict buyer-protection workflow:</p>
-
-<ul>
-  <li><strong>Step 1: Perform CITES &amp; Blind Stamp Audit:</strong> Verify that the CITES exotic certificate matches the alligator awning species (<code class="language-plaintext highlighter-rouge">Square</code> symbol stamp for Mississippiensis Alligator) and blind date stamp matches factory production years (<code class="language-plaintext highlighter-rouge">D</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">U</code>, or later).</li>
-  <li><strong>Step 2: Mandate Entomological &amp; Material Escrow Inspection:</strong> Ship the bag to an independent vault where leather specialists inspect the 5 distinct leather panel grains (Madame, Swift, Epsom, Sombrero, Alligator) under 20x magnification.</li>
-  <li><strong>Step 3: Audit Hardware Pearling &amp; Sanguine Engraving:</strong> Inspect the touret, pontets, and sangles hardware under high magnification. Verify pristine micro-pearling (<em>perlage</em>) on backplates and laser-etched “HERMÈS-PARIS” fonts.</li>
-  <li><strong>Step 4: Verify Complete Orange Box &amp; Accessories Set:</strong> Confirm inclusion of the orange box, dust bags, felt protector, lock and 2 keys matching the padlock serial, leather clochette, and original Hermès purchase receipt.</li>
-</ul>
-
-<hr />
-
-<h2 id="final-verdict">Final Verdict</h2>
-
-<p>The Hermès Birkin 25 Faubourg is an extraordinary masterpiece of leather craft and architectural heritage. By demanding CITES exotic certification, auditing multi-leather paneled construction under magnification, and securing independent escrow authentication, you protect your capital and acquire a true grail asset.</p>
-
-<p><em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em></p>]]></content><author><name>Arvind Sharma</name></author><category term="luxury-handbags" /><category term="retail-commerce" /><category term="luxury-lifestyle" /><summary type="html"><![CDATA[A secondary-market luxury handbag buyer's guide to authenticating the ultra-rare Hermès Birkin 25 Faubourg, evaluating Sellier stitching, Madame/Epsom leather panels, matte alligator awnings, and blind stamp date codes.]]></summary></entry></feed>
+<p><em>Looking for verified, high-value luxury assets? Explore authenticated pre-owned luxury items, rare collectibles, and verified secondary-market offerings by connecting directly via <a href="https://wa.me/919503021689?text=Hi%2C%0A%0AI%20got%20your%20reference%20from%20Arvind%20Sharma%20%28%2B91%207304164348%29.%0A%0AI%20would%20like%20to%20know%20more%20about%20luxury%20lifestyle%20products.%0A%0AThanks%2C%0A______" target="_blank" rel="noopener sponsored" title="opens WhatsApp chat" aria-label="opens WhatsApp chat">Trusted Secondary-Market Partners</a> <strong>(opens WhatsApp chat)</strong>. Or you can connect on call <a href="tel:+91 9503021689" target="_blank" rel="noopener sponsored" title="opens phone dailer" aria-label="opens phone dailer">+91 9503021689</a> <strong>(opens phone dailer)</strong></em></p>]]></content><author><name>Arvind Sharma</name></author><category term="luxury-handbags" /><category term="retail-commerce" /><category term="luxury-lifestyle" /><summary type="html"><![CDATA[A secondary-market luxury handbag buyer's guide to authenticating the Hermès Birkin 25 Matte Himalayan Niloticus Crocodile, inspecting smoke-to-pearl gradient hand-dyeing, pore structures, CITES certificates, and 18k white gold diamond hardware.]]></summary></entry></feed>
