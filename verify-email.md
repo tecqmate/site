@@ -40,10 +40,10 @@ inline_scripts:
         btn.removeClass('json-done disabled'); // ensures button unlocks on early return
         return;
       }
-      $.get('https://email-verifier-lovat.vercel.app/api/verify', {
+      $.getJSON('https://email-verifier-lovat.vercel.app/api/verify', {
         'email': email
       }, function(resp) {
-        $.alert(resp);
+        $.alert(JSON.stringify(resp));
       }).always(function() {
         btn.removeClass('disabled');
       });
