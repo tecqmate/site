@@ -43,7 +43,9 @@ inline_scripts:
       $.getJSON('https://email-verifier-lovat.vercel.app/api/verify', {
         'email': email
       }, function(resp) {
-        $.alert(JSON.stringify(resp));
+        if(resp.message){
+          $.alert(resp.message);
+        }
       }).always(function() {
         btn.removeClass('disabled');
       });
