@@ -40,12 +40,10 @@ inline_scripts:
         btn.removeClass('json-done disabled'); // ensures button unlocks on early return
         return;
       }
-      $.getJSON('https://pingme.pythonanywhere.com/email-exists', {
+      $.get('https://email-verifier-lovat.vercel.app/api/verify', {
         'email': email
       }, function(resp) {
-        if ('msg' in resp) {
-          $.alert(resp.msg);
-        }
+        $.alert(resp);
       }).always(function() {
         btn.removeClass('disabled');
       });
