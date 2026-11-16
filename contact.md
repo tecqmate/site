@@ -19,8 +19,8 @@ permalink: /contact/
     <div class="card h-100 shadow-sm">
       <div class="card-body">
         <h2 class="card-title h5 text-primary mb-3">Direct Contact</h2>
-        <p class="card-text mb-2"><strong>Email:</strong> <a href="mailto:tecqmat@gmail.com">tecqmat@gmail.com</a></p>
-        <p class="card-text mb-0"><strong>Phone:</strong> <a href="tel:+917304164348">+91 7304164348</a></p>
+        <p class="card-text mb-2"><strong>Email:</strong> <a href="mailto:{{site.email}}">{{site.email}}</a></p>
+        <p class="card-text mb-0"><strong>Phone:</strong> <a href="tel:{{site.phone}}">{{site.phone}}</a></p>
       </div>
     </div>
   </div>
@@ -30,8 +30,8 @@ permalink: /contact/
     <div class="card h-100 shadow-sm">
       <div class="card-body">
         <h2 class="card-title h5 text-primary mb-3">Location &amp; Timing</h2>
-        <p class="card-text mb-2"><strong>Address:</strong> Mira Road, Thane, Maharashtra, 401107, India</p>
-        <p class="card-text mb-0"><strong>Working Hours:</strong> Monday to Sunday, 10:00 AM to 07:00 PM IST</p>
+        <p class="card-text mb-2"><strong>Address:</strong> {{site.location}}</p>
+        <p class="card-text mb-0"><strong>Working Hours:</strong> {{site.timings}}</p>
       </div>
     </div>
   </div>
@@ -60,8 +60,8 @@ permalink: /contact/
     "@type": "Organization",
     "name": "{{ site.title }}",
     "url": "{{ '/' | absolute_url }}",
-    "email": "tecqmat@gmail.com",
-    "telephone": "+917304164348",
+    "email": "{{site.email}}",
+    "telephone": "{{site.phone}}",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Mira Road, Thane",
@@ -72,8 +72,8 @@ permalink: /contact/
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "telephone": "+917304164348",
-      "email": "tecqmat@gmail.com",
+      "telephone": "{{site.phone}}",
+      "email": "{{site.email}}",
       "areaServed": "IN"
     }
   }

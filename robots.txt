@@ -1,4 +1,10 @@
+---
+layout: null
+sitemap: false
+permalink: /robots.txt
+---
 User-agent: *
 Allow: /
+Disallow: {{ '/search.json' | relative_url }}
 
-Sitemap: https://tecqmate.github.io/site/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

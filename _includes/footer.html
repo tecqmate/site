@@ -28,13 +28,15 @@
             <!-- Column 2: Main Navigation Links -->
             <div class="col-md-4 text-center mb-3 mb-md-0">
                 <h6 class="text-uppercase text-white small fw-bold mb-2">Navigation</h6>
-                <ul class="list-unstyled mb-0 small">
-                    {% for menu in site.data.menus %}
-                    <li class="mb-1">
+                <ul class="list-unstyled d-flex flex-wrap gap-3 mb-0 small">
+                    {% for menu in site.data.links %}
+                    {% if menu.nav %}
+                    <li>
                         <a href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}"
                             class="text-white-50 text-decoration-none" {% if menu.external %} target="_blank"
                             rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </div>
@@ -42,13 +44,15 @@
             <!-- Column 3: Tools & Resources Links -->
             <div class="col-md-4 text-center text-md-end">
                 <h6 class="text-uppercase text-white small fw-bold mb-2">Others</h6>
-                <ul class="list-unstyled mb-0 small">
+                <ul class="list-unstyled d-flex flex-wrap gap-3 mb-0 small">
                     {% for menu in site.data.links %}
-                    <li class="mb-1">
-                        <a href="{% if menu.external %} {{ menu.url }} {% else %} {{ menu.url | relative_url }} {% endif %}"
+                    {% unless menu.nav %}
+                    <li>
+                        <a href="{% if menu.external %}{{ menu.url }}{% else %}{{ menu.url | relative_url }}{% endif %}"
                             class="text-white-50 text-decoration-none" {% if menu.external %} target="_blank"
                             rel="noopener" {% endif %}>{{ menu.name }}</a>
                     </li>
+                    {% endunless %}
                     {% endfor %}
                 </ul>
             </div>
@@ -95,22 +99,22 @@
 
 <!-- Dynamic External Script Files Injection -->
 {% if page.scripts %}
-    {% for script in page.scripts %}
-        <script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
-    {% endfor %}
+{% for script in page.scripts %}
+<script src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
+{% endfor %}
 {% endif %}
 
 {% if page.modules %}
-    {% for script in page.modules %}
-        <script type="module" src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
-    {% endfor %}
+{% for script in page.modules %}
+<script type="module" src="{{ script | relative_url }}?_={{ global_build_hash}}"></script>
+{% endfor %}
 {% endif %}
 
 <!-- Dynamic Inline Script Code Block Injection -->
 {% if page.inline_scripts %}
-    {% for code_block in page.inline_scripts %}
-    <script>
-        {{ code_block }}
-    </script>
-    {% endfor %}
+{% for code_block in page.inline_scripts %}
+<script>
+    { { code_block } }
+</script>
+{% endfor %}
 {% endif %}

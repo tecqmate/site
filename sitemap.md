@@ -23,10 +23,12 @@ permalink: /sitemap/
       <div class="card-header bg-dark text-white fw-bold">Main Navigation &amp; Utilities</div>
       <div class="card-body">
         <ul class="list-unstyled mb-0">
-          {% for menu in site.data.menus %}
-            <li class="mb-2">&rsaquo;
-              <a href="{{ menu.url | relative_url }}" class="text-decoration-none fw-bold">{{ menu.name }}</a>
-            </li>
+          {% for menu in site.data.links %}
+            {% if menu.nav %}
+              <li class="mb-2">&rsaquo;
+                <a href="{{ menu.url | relative_url }}" class="text-decoration-none fw-bold">{{ menu.name }}</a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>

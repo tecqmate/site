@@ -1,22 +1,44 @@
-- name: Disclaimer
-  url: /disclaimer
+# nav: true      -> shown in the top navbar (keep this short, 4-6 items)
+# external: true -> opens as-is (no baseurl added), new tab with rel="noopener"
+# Every item (nav or not) is listed in the footer and on the /sitemap/ page.
 
-- name: Sitemap
-  url: /sitemap
+- name: Topics
+  url: /tags/
 
 - name: Archive
   url: /archive.html
 
-- name: LLMs
+- name: Home
+  url: /
+  nav: true
+
+- name: Blog
+  url: /blog
+  nav: true
+
+- name: About
+  url: /about/
+  nav: true
+
+- name: Contact
+  url: /contact/
+  nav: true
+
+- name: Partnerships
+  url: /partnerships/
+
+- name: Disclaimer
+  url: /disclaimer/
+
+- name: Privacy Policy
+  url: /privacy/
+
+- name: Sitemap
+  url: /sitemap/
+
+- name: llms.txt
   url: /llms.txt
 
-- name: Tags
-  url: /tags
-
-- name: Donate
-  url: upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation
-  external: true
-
-- name: Youtube
+- name: YouTube
   url: https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1
   external: true

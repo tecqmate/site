@@ -1,6 +1,11 @@
 title: Tecqmate
-author: Arvind Sharma
+author: "Arvind Sharma"
 email: tecqmat@gmail.com
+phone: "+917304164348"
+location: "Mira Road, Thane, Maharashtra, 401107, India"
+timings: "Monday to Friday, 10:00 AM to 07:00 PM IST"
+upi: "upi://pay?pa=7304164348@upi&cu=INR"
+
 # Description is used by jekyll-seo-tag (meta description fallback) and by llms.txt
 description: >-
   Step-by-step how-to guides: developer and DevOps tutorials, free web tools,
