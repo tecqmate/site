@@ -1,0 +1,43 @@
+---
+layout: home
+---
+{%- assign cfg = site.data.topics | where: "slug", page.topic | first -%}
+
+{% if cfg.short %}<p class="lead">{{ cfg.short }}</p>{% endif %}
+
+{{ content }}
+
+{%- assign shown = 0 -%}
+{%- capture topic_list -%}
+  {%- for p in site.posts -%}
+    {%- assign match = false -%}
+    {%- if p.topic -%}
+      {%- if p.topic == page.topic -%}{%- assign match = true -%}{%- endif -%}
+    {%- else -%}
+      {%- for t in p.tags -%}
+        {%- assign tk = t | downcase | strip -%}
+        {%- if cfg.legacy_tags contains tk -%}{%- assign match = true -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if match -%}
+      {%- assign shown = shown | plus: 1 %}
+      <li class="mb-3">
+        <a href="{{ p.url | relative_url }}" class="fw-semibold fs-5 text-decoration-none">{{ p.title }}</a>
+        <p class="text-muted small mb-0">{{ p.date | date: "%b %d, %Y" }} &middot; {{ p.description | default: p.excerpt | strip_html | normalize_whitespace | strip | truncate: 140 }}</p>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{% if cfg.lead and shown > 0 %}
+  {% include lead-form.html topic=page.topic title=cfg.cta_title text=cfg.cta_text %}
+{% endif %}
+
+{% if shown > 0 %}
+<h2 class="h4 mt-4">{{ shown }} guide{% if shown != 1 %}s{% endif %}</h2>
+<ul class="list-unstyled">
+  {{ topic_list }}
+</ul>
+{% else %}
+<p class="text-muted">New guides in this topic are coming soon.</p>
+{% endif %}

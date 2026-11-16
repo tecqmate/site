@@ -6,21 +6,21 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Contact Us - Tecqmate</title>
-  <link rel="canonical" href="http://localhost:4000/site/contact" />
+  <link rel="canonical" href="http://localhost:4000/site/contact/" />
   <!-- Prevents browser caching -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
   <meta http-equiv="Pragma" content="no-cache"/>
   <meta http-equiv="Expires" content="0"/>
-  <meta name="build-version" content="1794441407">
+  <meta name="build-version" content="1794817069">
   <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
-  <meta name="description" content="Get in touch with Tecqmate for support, inquiries, or tech solutions." />
+  <meta name="description" content="Contact Tecqmate for questions, corrections, partnership enquiries, or help with a guide. Email, phone, and a message form." />
   <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="/site/favicon.ico" sizes="75x75" />
   
   <!-- Bootstrap & Custom Styles -->
   <link href="/site/assets/css/lumen.min.css" rel="stylesheet" id="theme-style">
-  <link href="/site/assets/css/style.css?_=1794441407" rel="stylesheet">
+  <link href="/site/assets/css/style.css?_=1794817069" rel="stylesheet">
   
   <style>
     textarea#txt, textarea#esc {
@@ -31,8 +31,10 @@
 </head>
 
 
-<body oncontextmenu="return false">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+  <a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="/site/">Tecqmate</a>
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
@@ -68,21 +70,23 @@
   <!-- Main Grid Wrapper -->
   <div class="container my-4">
     <div class="row">
-      
+
       <!-- Main Content Area (col-lg-8) -->
-      <div class="col-lg-8">
+      <main class="col-lg-8" id="main-content">
         <article>
+          
           <header class="mb-4">
             <h1 class="fw-bolder mb-1">Contact Us</h1>
             
             
           </header>
+          
 
           <!-- Dynamic Markdown Body Content -->
           <div class="col-12 mt-4 px-0">
             <div class="row mb-4">
   <div class="col-12">
-    <p class="lead">Have questions, feedback, or need assistance? Feel free to reach out to us through any of the channels below.</p>
+    <p class="lead">Have a question, a correction, or need help with one of our guides? Write to us using any option below.</p>
   </div>
 </div>
 
@@ -91,7 +95,7 @@
   <div class="col-md-6 mb-4">
     <div class="card h-100 shadow-sm">
       <div class="card-body">
-        <h3 class="card-title h5 text-primary mb-3">Direct Contact</h3>
+        <h2 class="card-title h5 text-primary mb-3">Direct Contact</h2>
         <p class="card-text mb-2"><strong>Email:</strong> <a href="mailto:tecqmat@gmail.com">tecqmat@gmail.com</a></p>
         <p class="card-text mb-0"><strong>Phone:</strong> <a href="tel:+917304164348">+91 7304164348</a></p>
       </div>
@@ -102,22 +106,62 @@
   <div class="col-md-6 mb-4">
     <div class="card h-100 shadow-sm">
       <div class="card-body">
-        <h3 class="card-title h5 text-primary mb-3">Location &amp; Timing</h3>
+        <h2 class="card-title h5 text-primary mb-3">Location &amp; Timing</h2>
         <p class="card-text mb-2"><strong>Address:</strong> Mira Road, Thane, Maharashtra, 401107, India</p>
-        <p class="card-text mb-0"><strong>Working Hours:</strong> Monday - Sunday (10:00 AM - 07:00 PM)</p>
+        <p class="card-text mb-0"><strong>Working Hours:</strong> Monday to Sunday, 10:00 AM to 07:00 PM IST</p>
       </div>
     </div>
   </div>
 </div>
 
+<div class="row mb-4">
+  <div class="col-12">
+    <h2 class="h5 text-primary mb-3">What can we help with?</h2>
+    <ul>
+      <li><strong>Questions about a guide:</strong> mention the guide's title or link so we can reply faster.</li>
+      <li><strong>Corrections and takedown requests:</strong> tell us the page and what should change. See also our <a href="/site/disclaimer/">disclaimer</a>.</li>
+      <li><strong>Partnerships and sponsorships:</strong> see our <a href="/site/partnerships/">partnerships page</a>.</li>
+    </ul>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Tecqmate",
+  "url": "http://localhost:4000/site/contact/",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Tecqmate",
+    "url": "http://localhost:4000/site/",
+    "email": "tecqmat@gmail.com",
+    "telephone": "+917304164348",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mira Road, Thane",
+      "addressRegion": "Maharashtra",
+      "postalCode": "401107",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "telephone": "+917304164348",
+      "email": "tecqmat@gmail.com",
+      "areaServed": "IN"
+    }
+  }
+}
+</script>
+
+
           </div>
         </article>
-      </div>
+      </main>
 
-      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
-      <div class="col-lg-4 sidebar">
-        
-        <!-- Services Include -->
+      <!-- Sidebar Area (col-lg-4) -->
+      <aside class="col-lg-4 sidebar" aria-label="Sidebar">
         
 <div class="card mb-4 shadow-sm border-0">
   <div class="card-header fw-bold small text-uppercase bg-dark text-white">
@@ -263,13 +307,11 @@
     </div>
 </div>
 
-      
-        
-      </div><!-- /col-lg-4 -->
+      </aside><!-- /col-lg-4 -->
 
     </div><!-- /row -->
   </div><!-- /container -->
-  
+
   <footer class="footer mt-auto py-4 bg-dark text-white border-top border-secondary">
     <div class="container">
         <div class="legal-disclaimer-box my-4 p-3 text-muted small">
@@ -351,6 +393,11 @@
                     </li>
                     
                     <li class="mb-1">
+                        <a href=" /site/tags "
+                            class="text-white-50 text-decoration-none" >Tags</a>
+                    </li>
+                    
+                    <li class="mb-1">
                         <a href=" upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation "
                             class="text-white-50 text-decoration-none"  target="_blank"
                             rel="noopener" >Donate</a>
@@ -375,7 +422,7 @@
 <script src="/site/assets/js/jquery-3.5.0.min.js"></script>
 <script src="/site/assets/js/bootstrap.min.js"></script>
 <script src="/site/assets/js/bootbox.min.js"></script>
-<script src="/site/assets/js/script.js?_=1794441407"></script>
+<script src="/site/assets/js/script.js?_=1794817069"></script>
 <script>
     function changeTheme(themeUrl) {
         $('#theme-style').attr('href', themeUrl);

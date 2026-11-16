@@ -3,8 +3,10 @@
 
 {% include header.html %}
 
-<body oncontextmenu="return false">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+  <a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
@@ -28,39 +30,44 @@
   <!-- Main Grid Wrapper -->
   <div class="container my-4">
     <div class="row">
-      
+
       <!-- Main Content Area (col-lg-8) -->
-      <div class="col-lg-8">
+      <main class="col-lg-8" id="main-content">
         <article>
+          {% unless page.hide_title %}
           <header class="mb-4">
             <h1 class="fw-bolder mb-1">{{ page.title | default: site.title | default: "Page" }}</h1>
             {% if page.date %}
-              <div class="text-muted fst-italic mb-2">Published on {{ page.date | date: '%B %d, %Y' }}</div>
+              <div class="text-muted fst-italic mb-2">
+                Published on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time>
+                {% if page.collection == "posts" %}
+                  {% assign word_count = content | strip_html | number_of_words %}
+                  {% assign read_mins = word_count | divided_by: 200 | plus: 1 %}
+                  &middot; {{ read_mins }} min read
+                {% endif %}
+              </div>
             {% endif %}
             {% for tag in page.tags %}
-              <span class="badge bg-secondary text-decoration-none link-light">{{ tag }}</span>
+              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="badge bg-secondary text-decoration-none link-light">{{ tag }}</a>
             {% endfor %}
           </header>
+          {% endunless %}
 
           <!-- Dynamic Markdown Body Content -->
           <div class="col-12 mt-4 px-0">
             {{ content }}
           </div>
         </article>
-      </div>
+      </main>
 
-      <!-- Sidebar Area (col-lg-4) - ALL CARDS PROPERLY CONTAINED HERE -->
-      <div class="col-lg-4 sidebar">
-        
-        <!-- Services Include -->
+      <!-- Sidebar Area (col-lg-4) -->
+      <aside class="col-lg-4 sidebar" aria-label="Sidebar">
         {% include sidebar.html %}
-      
-        
-      </div><!-- /col-lg-4 -->
+      </aside><!-- /col-lg-4 -->
 
     </div><!-- /row -->
   </div><!-- /container -->
-  
+
   {% include footer.html %}
 
 </body>

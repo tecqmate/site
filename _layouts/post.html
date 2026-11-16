@@ -27,13 +27,38 @@ layout: home
   {% include affiliate-disclosure.html %}
 {% endif %}
 
+<!-- Related Guides: up to 4 posts that share at least 2 tags with this one -->
+{% assign related_count = 0 %}
+{% capture related_html %}
+  {% for p in site.posts %}
+    {% if related_count >= 4 %}{% break %}{% endif %}
+    {% if p.url == page.url %}{% continue %}{% endif %}
+    {% assign shared = 0 %}
+    {% for t in p.tags %}
+      {% if page.tags contains t %}{% assign shared = shared | plus: 1 %}{% endif %}
+    {% endfor %}
+    {% if shared >= 2 %}
+      {% assign related_count = related_count | plus: 1 %}
+      <li class="list-group-item px-0"><a href="{{ p.url | relative_url }}" class="text-decoration-none">{{ p.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% if related_count > 0 %}
+<section class="my-4" aria-labelledby="related-guides">
+  <h2 class="h5 mb-3" id="related-guides">Related Guides</h2>
+  <ul class="list-group list-group-flush">
+    {{ related_html }}
+  </ul>
+</section>
+{% endif %}
+
 <!-- Previous & Next Post Navigation Links -->
-  <nav class="blog-pagination py-4 border-top border-bottom my-4">
+  <nav class="blog-pagination py-4 border-top border-bottom my-4" aria-label="Post navigation">
     <div class="row align-items-center">
       <div class="col-6 text-start">
         {% if page.next %}
           <div class="small text-muted mb-1">&larr; Newer Post</div>
-          <a href="{{ page.next.url | relative_url }}" class="text-decoration-none fw-bold text-dark">
+          <a href="{{ page.next.url | relative_url }}" rel="next" class="text-decoration-none fw-bold text-dark">
             {{ page.next.title | truncate: 45 }}
           </a>
         {% endif %}
@@ -41,11 +66,10 @@ layout: home
       <div class="col-6 text-end">
         {% if page.previous %}
           <div class="small text-muted mb-1">Older Post &rarr;</div>
-          <a href="{{ page.previous.url | relative_url }}" class="text-decoration-none fw-bold text-dark">
+          <a href="{{ page.previous.url | relative_url }}" rel="prev" class="text-decoration-none fw-bold text-dark">
             {{ page.previous.title | truncate: 45 }}
           </a>
         {% endif %}
       </div>
     </div>
   </nav>
-  

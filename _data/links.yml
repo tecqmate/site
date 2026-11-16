@@ -10,6 +10,9 @@
 - name: LLMs
   url: /llms.txt
 
+- name: Tags
+  url: /tags
+
 - name: Donate
   url: upi://pay?pa=7304164348@upi&am=5000&cu=INR&tn=Donation
   external: true
