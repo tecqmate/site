@@ -5,7 +5,7 @@ description: "Compare SMS, WhatsApp Business and RCS for Indian businesses: cost
 date: 2026-11-16 09:00:00 +0530
 tags: ["cpaas", "messaging", "sms", "whatsapp", "rcs", "telecom", "dlt"]
 topic: telecom
-read_mins: 5
+read_mins: 7
 audience: Full-Stack Developers, Mobile Messaging Engineers, SMS Marketing Platform Builders
 ---
 
@@ -106,14 +106,3 @@ No. DLT applies to commercial SMS. WhatsApp has its own template approval and op
 
 **Can I send OTPs on WhatsApp instead of SMS?**
 Yes, through authentication templates, but keep SMS as a fallback for customers without WhatsApp or data.
-
-*This guide is for general education and is not legal or compliance advice. See our [disclaimer]({{ '/disclaimer/' | relative_url }}).*
-
-{% include lead-form.html topic="telecom" title="Need help choosing a messaging setup?" text="Tell us your use case and monthly message volume. We will suggest suitable options." %}
-
-## Sources
-
-* [WhatsApp Business pricing changes from today: What Indian firms should know](https://www.business-standard.com/world-news/whatsapp-business-pricing-changes-from-today-what-indian-firms-should-know-126100100165_1.html) (Business Standard, October 1, 2026)
-* [Jio brings RCS Business Messaging to iPhones in India](https://mobileecosystemforum.com/2026/09/14/jio-bring-rcs-business-messaging-to-iphones-in-india/) (Mobile Ecosystem Forum, September 14, 2026)
-* [Reliance Jio helps Apple bring RCS messaging in India](https://telecomtalk.info/reliance-jio-helps-apple-bring-rcs-messaging/1011712/) (TelecomTalk)
-* [Meta: Pricing on the WhatsApp Business Platform](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing.md)

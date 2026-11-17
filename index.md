@@ -40,13 +40,6 @@ hide_title: true
   </div>
 </section>
 
-<section class="concierge-banner">
-  <div class="concierge-box">
-    <small class="text-muted d-block mb-1">Sponsored</small>
-    {% include fashluxee-sponsored.md %}
-  </div>
-</section>
-
 <section class="categories-section">
   <h2 class="section-title">Browse by Topic</h2>
 

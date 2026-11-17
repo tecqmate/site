@@ -39,16 +39,6 @@
           {% unless page.hide_title %}
           <header class="mb-4">
             <h1 class="fw-bolder mb-1">{{ page.title | default: site.title | default: "Page" }}</h1>
-            {% if page.date %}
-              <div class="text-muted fst-italic mb-2">
-                Published on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time>
-                {% if page.collection == "posts" %}
-                  {% assign word_count = content | strip_html | number_of_words %}
-                  {% assign read_mins = word_count | divided_by: 200 | plus: 1 %}
-                  &middot; {{ read_mins }} min read
-                {% endif %}
-              </div>
-            {% endif %}
             {% for tag in page.tags %}
               <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="badge bg-secondary text-decoration-none link-light">{{ tag }}</a>
             {% endfor %}
