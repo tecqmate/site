@@ -21,6 +21,15 @@
   cta_text: "Tell us your volume and use case. We will suggest suitable providers."
   legacy_tags: [telecom, messaging, sms-tools]
 
+- slug: software
+  name: "Software & Website Services"
+  short: "How to hire developers, scope projects, and manage software and website work."
+  enabled: true
+  lead: true
+  cta_title: "Planning a software or website project?"
+  cta_text: "Tell us what you need, your timeline, and budget range. We will suggest suitable options."
+  legacy_tags: [software-development, outsourcing, website-development, hiring]
+
 - slug: luxury
   name: "Luxury Watches & Bags"
   short: "Buyer's checklists for pre-owned luxury watches and handbags."
