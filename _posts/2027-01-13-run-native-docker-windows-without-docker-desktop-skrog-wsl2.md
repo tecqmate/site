@@ -27,8 +27,9 @@ Because Docker relies on Linux kernel features (such as namespaces and cgroups),
 - If you do not have WSL 2 installed yet: Open PowerShell as Administrator and run the modern single-command installer (which replaces the older `Enable-WindowsOptionalFeature` commands):
 
 ```powershell
-  wsl --install
-  ```
+wsl --install
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
 (Restart your computer once the installation finishes).
 ---
 
