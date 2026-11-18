@@ -72,6 +72,36 @@ Start the Docker Engine Daemon:
 (This boots up `dockerd` inside WSL 2 and establishes the named pipe bridge back to your Windows host).
 
 ---
+## In case if `skrog` command fails throwing error such as:
+```Failed to detect nested virtualization support, error: HCS_E_SERVICE_NOT_AVAILABLE```
+
+The failure is from **WSL/Windows**, not the rootfs download. `HCS_E_SERVICE_NOT_AVAILABLE` means the Windows Host Compute Service (HCS), which WSL2 relies on, isn’t available. The “nested virtualization” warning may also matter if Windows itself is running inside a VM.
+
+Try these steps in **Administrator PowerShell**:
+
+1. Enable the required Windows features:
+   ```powershell
+   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+   dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+   ```
+2. Restart Windows.
+3. After reboot, run:
+   ```powershell
+   wsl --update
+   wsl --status
+   Get-Service vmcompute
+   ```
+   If `vmcompute` is stopped, try:
+   ```powershell
+   Start-Service vmcompute
+   ```
+4. Retry `skrog install`.
+
+Also check that hardware virtualization is enabled in BIOS/UEFI. If Windows is a guest VM, enable **nested virtualization** in the hypervisor. If you can’t enable virtualization, Skrog’s WSL2-based setup may not work in that environment.
+
+If it still fails, share the output of `wsl --status` and `Get-Service vmcompute`.
+
+---
 
 ## How to Verify the Entire Stack is Working?
 To confirm that your Windows CLI, the Skrog bridge, and the WSL 2 Docker Engine are communicating properly, run these three verification checks:
