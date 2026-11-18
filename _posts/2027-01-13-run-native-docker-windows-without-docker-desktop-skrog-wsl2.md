@@ -99,8 +99,6 @@ Try these steps in **Administrator PowerShell**:
 
 Also check that hardware virtualization is enabled in BIOS/UEFI. If Windows is a guest VM, enable **nested virtualization** in the hypervisor. If you can’t enable virtualization, Skrog’s WSL2-based setup may not work in that environment.
 
-If it still fails, share the output of `wsl --status` and `Get-Service vmcompute`.
-
 ---
 
 ## How to Verify the Entire Stack is Working?
