@@ -55,6 +55,7 @@ Group features by priority rather than writing one long list.
 | Must-have | Launch is not possible without it | User login, booking form |
 | Should-have | Important, but launch can survive without it | Email notifications |
 | Later | Good idea for a future version | Mobile app |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 A clear "must-have" list is the main protection against scope growth.
 

@@ -102,6 +102,7 @@ The seller delivers to your door with import clearance and duties paid.
 | Any transport mode, insurance included | CIP | Better cover than CIF |
 | Small parcel, you want it handled | DAP or DDP | Convenient, check what is included |
 | You have a trusted forwarder in India | EXW | Maximum control, more work |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 This table is a starting point, not a rule. Your product, route and volume matter.
 

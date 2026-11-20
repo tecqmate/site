@@ -98,6 +98,7 @@ You hire a team (developers, QA, designer, project manager) from the vendor who 
 | Best for | Clear, small scope | Evolving scope | Long-term product work |
 | Main risk | Scope disputes | Cost drift | Paying for idle capacity |
 | Typical start | Needs a detailed brief | Can start with a rough plan | Needs a roadmap and product owner |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 ## A hybrid that often works: discovery first
 

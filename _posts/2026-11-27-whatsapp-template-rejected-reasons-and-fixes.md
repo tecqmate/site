@@ -26,6 +26,7 @@ Every template must be assigned one of three categories:
 | Marketing | Promotion, offers, re-engagement | "Our sale starts tomorrow" |
 | Utility | Transactional updates about something the customer already did | Order shipped, appointment reminder |
 | Authentication | Verification codes only | "Your code is {{1}}" |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 Meta checks the category you chose against the content. If they do not match, the template may be reclassified (usually to Marketing) or rejected with a reason such as an incorrect category. Meta's review rules and policies change, so always confirm details in the current official documentation.
 

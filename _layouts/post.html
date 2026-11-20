@@ -21,9 +21,7 @@ layout: home
 
 <!-- Main Markdown Body Content -->
 <div class="post-content fs-6">
-  {{ content
-  | replace: '<table>', '<div class="table-responsive"><table class="table table-bordered table-striped align-top">'
-  | replace: '</table>', '</table></div>' }}
+  {{ content }}
 </div>
 
 {% if page.affiliated %}

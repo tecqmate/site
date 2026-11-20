@@ -99,6 +99,7 @@ If you pay through a bank, such as with a letter of credit or a documentary coll
 | Certificate of origin | Authorised body in India | Import rules, duty benefits |
 | Quality, health, fumigation certificates | Labs, authorities, specialist firms | Regulated products |
 | Insurance certificate | Insurer or broker | Claims and bank requirements |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 ## What a mismatch looks like
 

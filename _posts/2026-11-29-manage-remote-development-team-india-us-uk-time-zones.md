@@ -67,6 +67,7 @@ Break work into one- to two-week cycles with a clear goal for each. At the end, 
 | Demo | End of each cycle | Show working features and get feedback |
 | Planning | Start of each cycle | Agree priorities and scope |
 | Retrospective | Every few cycles | Discuss what to improve |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 Written daily updates in a shared channel can replace a live stand-up when time zones are tight.
 

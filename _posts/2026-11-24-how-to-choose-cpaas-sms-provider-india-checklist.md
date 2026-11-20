@@ -124,6 +124,7 @@ Keep a simple scorecard.
 | Reliability | 10% | | | |
 | Security and data | 10% | | | |
 | Exit terms | 5% | | | |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 Adjust the weights to your own priorities.
 
