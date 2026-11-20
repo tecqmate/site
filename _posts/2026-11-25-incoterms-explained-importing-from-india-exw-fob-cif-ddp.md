@@ -136,13 +136,13 @@ Under many terms, risk passes to you before the shipment reaches your warehouse.
 
 ## A short checklist before you accept a quote
 
-- [ ] The quote states the Incoterm, the named place and "Incoterms 2020"
-- [ ] You know who clears export and who clears import
-- [ ] You know where risk passes to you
-- [ ] Insurance is arranged, and the cover is clear
-- [ ] Freight, port, documentation and inland charges are itemised
-- [ ] Payment terms are written separately in the contract
-- [ ] You have compared all quotes on the same term
+- ✅ The quote states the Incoterm, the named place and "Incoterms 2020"
+- ✅ You know who clears export and who clears import
+- ✅ You know where risk passes to you
+- ✅ Insurance is arranged, and the cover is clear
+- ✅ Freight, port, documentation and inland charges are itemised
+- ✅ Payment terms are written separately in the contract
+- ✅ You have compared all quotes on the same term
 
 ## FAQ
 

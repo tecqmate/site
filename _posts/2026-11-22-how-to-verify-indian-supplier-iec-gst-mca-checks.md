@@ -112,16 +112,16 @@ Portals confirm that a business is registered. They do not confirm quality, capa
 
 ## A 15-minute verification checklist
 
-- [ ] Collected legal name, IEC, GSTIN and CIN in writing
-- [ ] IEC verified and active
-- [ ] GST verified and active
-- [ ] MCA record verified (if a company)
-- [ ] Names and addresses match across records
-- [ ] Bank account name matches the legal name
-- [ ] Product-specific certificates verified at the source
-- [ ] Sample tested, and a retained sample kept
-- [ ] Factory or warehouse check planned for larger orders
-- [ ] Payment terms agreed in writing
+- ✅ Collected legal name, IEC, GSTIN and CIN in writing
+- ✅ IEC verified and active
+- ✅ GST verified and active
+- ✅ MCA record verified (if a company)
+- ✅ Names and addresses match across records
+- ✅ Bank account name matches the legal name
+- ✅ Product-specific certificates verified at the source
+- ✅ Sample tested, and a retained sample kept
+- ✅ Factory or warehouse check planned for larger orders
+- ✅ Payment terms agreed in writing
 
 ## FAQ
 

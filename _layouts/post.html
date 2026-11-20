@@ -1,6 +1,7 @@
 ---
 layout: home
 ---
+
 <!-- Editorial Note Partial -->
 {% include editorial-note.html %}
 
@@ -20,7 +21,9 @@ layout: home
 
 <!-- Main Markdown Body Content -->
 <div class="post-content fs-6">
-  {{ content }}
+  {{ content
+  | replace: '<table>', '<div class="table-responsive"><table class="table table-bordered table-striped align-top">'
+  | replace: '</table>', '</table></div>' }}
 </div>
 
 {% if page.affiliated %}

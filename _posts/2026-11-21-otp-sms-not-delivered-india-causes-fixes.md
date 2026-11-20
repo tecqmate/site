@@ -89,15 +89,15 @@ Even a perfect setup will sometimes fail: the phone is out of coverage, roaming,
 
 Before you change anything, collect three things for one failed message: the exact text sent, the Template ID used and the sender header. Then compare them against your DLT panel.
 
-- [ ] The text is identical to the approved template, apart from the variables
-- [ ] The Template ID is correct for this message type
-- [ ] The header is active and linked to that template
-- [ ] Your SMS provider is linked to your entity and approved
-- [ ] No unregistered link or number is in the message
-- [ ] The OTP contains no promotional wording
-- [ ] Delivery reports show a clear status, not just "submitted"
-- [ ] Resend and expiry rules are sensible
-- [ ] A fallback route exists
+- ✅ The text is identical to the approved template, apart from the variables
+- ✅ The Template ID is correct for this message type
+- ✅ The header is active and linked to that template
+- ✅ Your SMS provider is linked to your entity and approved
+- ✅ No unregistered link or number is in the message
+- ✅ The OTP contains no promotional wording
+- ✅ Delivery reports show a clear status, not just "submitted"
+- ✅ Resend and expiry rules are sensible
+- ✅ A fallback route exists
 
 If all nine pass and messages still fail, the issue may be on a specific operator route, so ask for delivery logs by operator.
 
