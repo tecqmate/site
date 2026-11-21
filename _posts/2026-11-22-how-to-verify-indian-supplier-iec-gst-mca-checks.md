@@ -78,6 +78,7 @@ Proprietorships and partnerships do not appear in MCA company records, so for th
 | Status | IEC, GST, MCA | Active on all three |
 | Business type | GST, MCA | Fits the product they sell |
 | Bank account | Invoice or proforma | In the same legal name |
+{: .table .table-sm .table-bordered .table-striped .align-top }
 
 If the account name on the proforma invoice differs from the legal name, stop and ask why.
 
