@@ -1,0 +1,21 @@
+- name: Tiny URL
+  url: /tiny
+- name: QR Code
+  url: /qrcode
+- name: Verify Email
+  url: /verify-email
+- name: URL Encode
+  url: /url-encode
+- name: WhatsApp Chat
+  url: /whatsapp
+- name: HTML Escape
+  url: /html-encode
+- name: Embeded URL
+  url: /embeded-url
+- name: SMS Count
+  url: /sms-count
+- name: DISC Test
+  url: /disc-test
+- name: Softwares
+  url: https://github.com/sdksmate?tab=repositories
+  external: true

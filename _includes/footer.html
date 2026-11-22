@@ -1,0 +1,106 @@
+<footer class="mt-20 border-t border-slate-800 bg-slate-900 text-slate-300 dark:border-slate-800 dark:bg-black/40">
+  <div class="site-container py-14 sm:py-16">
+    <div class="mb-10 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-xs leading-relaxed text-slate-400">
+      <p class="mb-2">
+        <strong class="text-slate-200">Legal &amp; Affiliate Disclaimer:</strong> This website contains affiliate links and sponsored
+        recommendations. If you purchase products or services through these links, we may earn a commission at
+        no additional cost to you.
+      </p>
+      <p class="mb-0">
+        <strong class="text-slate-200">Third-Party Liability &amp; Authenticity Notice:</strong> All content published on this platform is
+        for informational, educational, and buying-guide purposes only. This website, its owners, and its
+        authors do not sell, authenticate, verify, warrant, or guarantee any third-party products, services,
+        sellers, merchants, platforms, or sponsors mentioned herein. We do not act as an authorized dealer,
+        broker, escrow agent, or guarantor for any entity, nor shall we be held liable for any financial loss,
+        counterfeit goods, deceptive seller practices, or damages resulting from third-party transactions.
+        Readers are strictly advised to perform their own independent due diligence before engaging in
+        high-value or secondary-market transactions.
+      </p>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <a href="{{ '/' | relative_url }}" class="inline-flex items-center gap-2 text-lg font-bold tracking-tight text-white">
+          <span class="grid size-9 place-items-center rounded-xl bg-brand-600 text-sm font-black text-white">T</span>
+          {{ site.title }}
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+          Independent how-to guides for developers, businesses, and careful buyers.
+        </p>
+        <p class="mt-4 text-xs text-slate-400">Copyright &copy; 2011. All rights reserved.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-white">Navigation</h2>
+        <ul class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          {% for menu in site.data.links %}
+          {% if menu.nav %}
+          <li>
+            <a href="{% if menu.external %}{{ menu.url }}{% else %}{{ menu.url | relative_url }}{% endif %}"
+               class="text-slate-400 transition hover:text-brand-300" {% if menu.external %}target="_blank" rel="noopener"{% endif %}>{{ menu.name }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-white">Others</h2>
+        <ul class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          {% for menu in site.data.links %}
+          {% unless menu.nav %}
+          <li>
+            <a href="{% if menu.external %}{{ menu.url }}{% else %}{{ menu.url | relative_url }}{% endif %}"
+               class="text-slate-400 transition hover:text-brand-300" {% if menu.external %}target="_blank" rel="noopener"{% endif %}>{{ menu.name }}</a>
+          </li>
+          {% endunless %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex border-t border-white/10 pt-6 text-xs text-slate-400 sm:justify-end">
+      <a href="#main-content" class="transition hover:text-brand-300">Back to top &uarr;</a>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" type="button" aria-label="Back to top"
+  class="no-print fixed bottom-6 right-6 z-40 hidden size-11 place-items-center rounded-full border border-slate-200 bg-white/90 text-slate-600 shadow-lg backdrop-blur transition hover:-translate-y-1 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-300">
+  <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<!-- Dynamic external styles injection -->
+{% if page.styles %}
+{% for style in page.styles %}
+<link rel="stylesheet" href="{{ style | relative_url }}?_={{ global_build_hash }}">
+{% endfor %}
+{% endif %}
+
+<!-- Scripts -->
+<script src="{{ '/assets/js/jquery-3.5.0.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/script.js' | relative_url }}?_={{ global_build_hash }}"></script>
+
+<!-- Dynamic external script files injection -->
+{% if page.scripts %}
+{% for script in page.scripts %}
+<script src="{{ script | relative_url }}?_={{ global_build_hash }}"></script>
+{% endfor %}
+{% endif %}
+
+{% if page.modules %}
+{% for script in page.modules %}
+<script type="module" src="{{ script | relative_url }}?_={{ global_build_hash }}"></script>
+{% endfor %}
+{% endif %}
+
+<!-- Dynamic inline script code block injection -->
+{% if page.inline_scripts %}
+{% for code_block in page.inline_scripts %}
+<script>
+  {{ code_block }}
+</script>
+{% endfor %}
+{% endif %}

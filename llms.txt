@@ -1,0 +1,106 @@
+---
+layout: null
+permalink: /llms.txt
+---
+{%- comment -%}
+  Auto-generated llms.txt. Reads only title / description / tags / url of existing posts,
+  so nothing inside _posts/ needs to change.
+
+  To tweak:
+  - dev_tags: posts with any of these tags go under "Developer & DevOps Guides".
+  - Section size limits: n_dev, n_watch, n_bag, n_other (see the "<" checks in the loop).
+  - tool_files / info_files: page paths (as in the repo root) to list as tools / site info.
+{%- endcomment -%}
+
+{%- assign dev_tags = "devops,cloud-architecture,api-security,api,serverless,docker,wsl2,wordpress,php,web-security,web-tools,sms-tools,email-verification,development,database,database-design,data-engineering,authentication,fintech-payments,billing-ledgers,iot,embedded-systems,edge-computing,distributed-systems,architecture,containers,skrog,messaging,telecom" | split: "," -%}
+{%- assign tool_files = "sms-count.md,verify-email.md,qrcode.md,url-encode.md,html-encode.md,whatsapp.md,tiny.md,embeded-url.md,disc-test.md" | split: "," -%}
+{%- assign info_files = "archive.html,tags.md,contact.md,disclaimer.md,partnerships.md" | split: "," -%}
+
+{%- capture nl %}
+{% endcapture -%}
+
+{%- assign dev_list = "" -%}
+{%- assign watch_list = "" -%}
+{%- assign bag_list = "" -%}
+{%- assign other_list = "" -%}
+{%- assign n_dev = 0 -%}
+{%- assign n_watch = 0 -%}
+{%- assign n_bag = 0 -%}
+{%- assign n_other = 0 -%}
+
+{%- for post in site.posts -%}
+  {%- assign bucket = "other" -%}
+  {%- if post.tags contains "luxury-watches" -%}
+    {%- assign bucket = "watch" -%}
+  {%- elsif post.tags contains "luxury-handbags" -%}
+    {%- assign bucket = "bag" -%}
+  {%- else -%}
+    {%- for t in post.tags -%}
+      {%- assign tk = t | downcase | strip -%}
+      {%- if dev_tags contains tk -%}
+        {%- assign bucket = "dev" -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- assign desc = post.description | default: post.excerpt | strip_html | normalize_whitespace | strip | truncate: 200 -%}
+  {%- capture line -%}
+    - [{{ post.title | strip }}]({{ post.url | absolute_url }}){% if desc != "" %}: {{ desc }}{% endif %}
+  {%- endcapture -%}
+
+  {%- if bucket == "dev" and n_dev < 15 -%}
+    {%- assign dev_list = dev_list | append: line | append: nl -%}
+    {%- assign n_dev = n_dev | plus: 1 -%}
+  {%- elsif bucket == "watch" and n_watch < 12 -%}
+    {%- assign watch_list = watch_list | append: line | append: nl -%}
+    {%- assign n_watch = n_watch | plus: 1 -%}
+  {%- elsif bucket == "bag" and n_bag < 10 -%}
+    {%- assign bag_list = bag_list | append: line | append: nl -%}
+    {%- assign n_bag = n_bag | plus: 1 -%}
+  {%- elsif bucket == "other" and n_other < 10 -%}
+    {%- assign other_list = other_list | append: line | append: nl -%}
+    {%- assign n_other = n_other | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign tool_list = "" -%}
+{%- assign info_list = "" -%}
+{%- for p in site.pages -%}
+  {%- capture pline -%}
+    - [{{ p.title | default: p.basename | capitalize }}]({{ p.url | absolute_url }}){% if p.description %}: {{ p.description | strip_newlines | strip }}{% endif %}
+  {%- endcapture -%}
+  {%- if tool_files contains p.path -%}
+    {%- assign tool_list = tool_list | append: pline | append: nl -%}
+  {%- elsif info_files contains p.path -%}
+    {%- assign info_list = info_list | append: pline | append: nl -%}
+  {%- endif -%}
+{%- endfor -%}
+
+# {{ site.title | default: "Tecqmate" }}
+
+> {{ site.description | default: "Step-by-step how-to guides: developer and DevOps tutorials, free web tools, and luxury watch and handbag buying guides." }}
+
+Tecqmate publishes practical, step-by-step guides. Each guide states the problem, walks through the solution or checklist, and points out common mistakes. Sections below are grouped by topic, newest guides first. Please read the site disclaimer before relying on any guide.
+
+{% if dev_list != "" -%}
+## Developer & DevOps Guides
+{{ dev_list }}
+{% endif -%}
+{% if tool_list != "" -%}
+## Free Web Tools
+{{ tool_list }}
+{% endif -%}
+{% if watch_list != "" -%}
+## Luxury Watch Buying Guides
+{{ watch_list }}
+{% endif -%}
+{% if bag_list != "" -%}
+## Luxury Handbag Buying Guides
+{{ bag_list }}
+{% endif -%}
+{% if other_list != "" -%}
+## More Guides
+{{ other_list }}
+{% endif -%}
+## Optional
+{{ info_list -}}

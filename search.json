@@ -1,0 +1,48 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Search index for simple-jekyll-search. Reads only title / tags / description of existing posts,
+  so no post needs to be edited. Fields: title, url, snippet (shown in results),
+  tags, topic, series, type (searchable), keywords (accent-free, so "hermes birkin" finds "Hermès Birkin").
+  The old "date" field was removed: simple-jekyll-search matches a query against EVERY field,
+  so "jan" or "2027" matched all posts.
+{%- endcomment -%}
+{%- assign tool_files = "sms-count.md,verify-email.md,qrcode.md,url-encode.md,html-encode.md,whatsapp.md,tiny.md,embeded-url.md,disc-test.md" | split: "," -%}
+{%- assign first = true -%}
+[
+{%- for post in site.posts -%}
+  {%- unless first -%},{%- endunless -%}
+  {%- assign first = false -%}
+  {%- assign tag_text = post.tags | join: " " -%}
+  {%- assign kw = post.title | append: " " | append: tag_text | slugify: "latin" | replace: "-", " " %}
+  {
+    "title": {{ post.title | strip | jsonify }},
+    "type": "guide",
+    "tags": {{ post.tags | join: ", " | jsonify }},
+    "topic": {{ post.topic | default: "" | jsonify }},
+    "series": {{ post.series | default: "" | jsonify }},
+    "keywords": {{ kw | jsonify }},
+    "url": {{ post.url | absolute_url | jsonify }},
+    "snippet": {{ post.description | default: post.excerpt | strip_html | normalize_whitespace | strip | truncate: 160 | jsonify }}
+  }
+{%- endfor -%}
+{%- for p in site.pages -%}
+  {%- if tool_files contains p.path -%}
+    {%- unless first -%},{%- endunless -%}
+    {%- assign first = false -%}
+    {%- assign pkw = p.title | default: p.basename | append: " tool" | slugify: "latin" | replace: "-", " " %}
+  {
+    "title": {{ p.title | default: p.basename | strip | jsonify }},
+    "type": "tool",
+    "tags": "tool",
+    "topic": "",
+    "series": "",
+    "keywords": {{ pkw | jsonify }},
+    "url": {{ p.url | absolute_url | jsonify }},
+    "snippet": {{ p.description | default: "" | strip_html | normalize_whitespace | strip | truncate: 160 | jsonify }}
+  }
+  {%- endif -%}
+{%- endfor %}
+]

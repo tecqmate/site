@@ -1,0 +1,56 @@
+title: Tecqmate
+author: "Arvind Sharma"
+email: tecqmat@gmail.com
+phone: "+917304164348"
+location: "Mira Road, Thane, Maharashtra, 401107, India"
+timings: "Monday to Friday, 10:00 AM to 07:00 PM IST"
+upi: "upi://pay?pa=7304164348@upi&cu=INR"
+
+# Description is used by jekyll-seo-tag (meta description fallback) and by llms.txt
+description: >-
+  Step-by-step how-to guides: developer and DevOps tutorials, free web tools,
+  and luxury watch and handbag buying guides.
+image: "/assets/images/topics/software-card.png"
+url: "https://tecqmate.github.io"
+baseurl: "/site"
+
+# DO NOT CHANGE: keeps every existing post URL exactly the same
+permalink: pretty
+
+# Default Language
+lang: en
+
+# Lead form backend URL (Formspree / Web3Forms / Apps Script / Worker). Leave empty to hide all lead forms.
+lead_endpoint: ""
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed   # new: generates /feed.xml (add {% feed_meta %} in header.html <head>)
+
+keep_files: []
+
+# Kept as-is. Note: posts dated in the future are published immediately, and
+# jekyll-seo-tag will output that future date as datePublished.
+future: true
+
+# New posts get layout "post" automatically. Existing posts keep whatever
+# layout they already set in their own front matter (defaults never override it).
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images/topics/software-card.png"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor/
+  - .github

@@ -1,0 +1,145 @@
+---
+layout: home
+---
+
+{% include editorial-note.html %}
+
+<div class="mb-6 flex flex-wrap items-center gap-3">
+  <a href="{{ '/blog/' | relative_url }}" class="btn-secondary text-xs">
+    <span aria-hidden="true">&larr;</span> Back to Blog Archive
+  </a>
+  <span class="meta-text">{{ page.date | date: "%B %d, %Y" }}</span>
+</div>
+
+<div class="mb-6 flex flex-wrap gap-x-6 gap-y-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+  {% include reader-hint.html %}
+  <span><span class="mr-1.5" aria-hidden="true">&#128279;</span> Independent guide</span>
+</div>
+
+{% if page.topic %}
+<p class="mb-6 text-xs text-slate-500 dark:text-slate-400">
+  Part of our
+  <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}" class="font-semibold text-brand-700 hover:underline dark:text-brand-300">{{ page.topic | capitalize }}</a>
+  guide series.
+</p>
+{% endif %}
+
+{% if page.image %}
+<div class="mb-8 overflow-hidden rounded-2xl border border-slate-200 shadow-soft dark:border-slate-800">
+  <img src="{{ page.image | relative_url }}" class="h-auto w-full object-cover" alt="{{ page.h1 | default: page.title }}">
+</div>
+{% endif %}
+
+<div class="prose-content">
+  {{ content }}
+</div>
+
+{% include post-sources.html %}
+
+<div class="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 dark:border-slate-800 dark:bg-slate-900/60">
+  <p class="text-sm text-slate-600 dark:text-slate-300">Found this guide useful? Share it with someone who needs it.</p>
+  <button type="button" class="btn-secondary text-xs" data-copy-link data-url="{{ page.url | absolute_url }}">Copy link</button>
+</div>
+
+{% if page.affiliated %}
+  {% include affiliate-disclosure.html %}
+{% endif %}
+
+{% assign related_count = 0 %}
+{% assign related_urls = ',' %}
+{% capture related_html %}
+  {% for p in site.posts %}
+    {% if related_count >= 3 %}{% break %}{% endif %}
+    {% if p.url == page.url %}{% continue %}{% endif %}
+    {% assign shared = 0 %}
+    {% for t in p.tags %}
+      {% if page.tags contains t %}{% assign shared = shared | plus: 1 %}{% endif %}
+    {% endfor %}
+    {% if shared >= 2 %}
+      {% assign related_count = related_count | plus: 1 %}
+      {% assign related_urls = related_urls | append: p.url | append: ',' %}
+      <li>
+        <a href="{{ p.url | relative_url }}" class="group surface-card block h-full p-4 transition hover:-translate-y-0.5 hover:border-brand-300 dark:hover:border-brand-600">
+          <span class="line-clamp-2 text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-300">{{ p.title }}</span>
+          <span class="mt-2 block text-xs text-slate-400">{{ p.date | date: "%b %d, %Y" }}</span>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+  {% for p in site.posts %}
+    {% if related_count >= 3 %}{% break %}{% endif %}
+    {% if p.url == page.url %}{% continue %}{% endif %}
+    {% if related_urls contains p.url %}{% continue %}{% endif %}
+    {% if p.topic == page.topic %}
+      {% assign related_count = related_count | plus: 1 %}
+      {% assign related_urls = related_urls | append: p.url | append: ',' %}
+      <li>
+        <a href="{{ p.url | relative_url }}" class="group surface-card block h-full p-4 transition hover:-translate-y-0.5 hover:border-brand-300 dark:hover:border-brand-600">
+          <span class="line-clamp-2 text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-300">{{ p.title }}</span>
+          <span class="mt-2 block text-xs text-slate-400">{{ p.date | date: "%b %d, %Y" }}</span>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% if related_count > 0 %}
+<section class="mt-12" aria-labelledby="related-guides">
+  <h2 class="section-heading text-xl" id="related-guides">Related Guides</h2>
+  <ul class="mt-5 grid gap-4 sm:grid-cols-2">
+    {{ related_html }}
+  </ul>
+</section>
+{% endif %}
+
+{% assign tool_path = '/qrcode/' %}
+{% assign tool_label = 'QR Code Generator' %}
+{% assign tool_hint = 'Create scan-ready QR codes for listings, catalogue pages and offline campaigns.' %}
+{% case page.topic %}
+  {% when 'telecom' %}
+    {% assign tool_path = '/sms-count/' %}
+    {% assign tool_label = 'SMS Counter' %}
+    {% assign tool_hint = 'Check message length, GSM-7 or UCS-2 encoding and segment cost before you send.' %}
+  {% when 'software' %}
+    {% assign tool_path = '/url-encode/' %}
+    {% assign tool_label = 'URL Encoder' %}
+    {% assign tool_hint = 'Encode query values safely when you build APIs, redirects and shareable links.' %}
+  {% when 'education' %}
+    {% assign tool_path = '/disc-test/' %}
+    {% assign tool_label = 'DISC Assessment' %}
+    {% assign tool_hint = 'Put workplace communication styles into practice with a short interactive assessment.' %}
+  {% when 'trade' %}
+    {% assign tool_path = '/qrcode/' %}
+    {% assign tool_label = 'QR Code Generator' %}
+    {% assign tool_hint = 'Add scannable QR codes to shipment labels, buyer packs and product catalogues.' %}
+  {% when 'business' %}
+    {% assign tool_path = '/tiny/' %}
+    {% assign tool_label = 'URL Shortener' %}
+    {% assign tool_hint = 'Create clean, trackable short links for campaigns, proposals and customer handoffs.' %}
+  {% when 'luxury' %}
+    {% assign tool_path = '/qrcode/' %}
+    {% assign tool_label = 'QR Code Generator' %}
+    {% assign tool_hint = 'Create QR tags that link listings to provenance notes, care guides and authentication records.' %}
+{% endcase %}
+
+<section class="mt-10 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900/60 dark:bg-brand-950/20" aria-labelledby="post-tool">
+  <p class="eyebrow">Free tool</p>
+  <h2 class="section-heading mt-1 text-lg" id="post-tool">Try the {{ tool_label }}</h2>
+  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{{ tool_hint }}</p>
+  <a href="{{ tool_path | relative_url }}" class="btn-primary mt-4 text-xs">Open tool <span aria-hidden="true">&rarr;</span></a>
+</section>
+
+<nav class="mt-12 grid gap-4 border-t border-slate-200 pt-8 sm:grid-cols-2 dark:border-slate-800" aria-label="Post navigation">
+  <div>
+    {% if page.next %}
+    <p class="meta-text">&larr; Newer Post</p>
+    <a href="{{ page.next.url | relative_url }}" rel="next" class="mt-2 block text-sm font-semibold text-brand-700 hover:underline dark:text-brand-300">{{ page.next.title | truncate: 65 }}</a>
+    {% endif %}
+  </div>
+  <div class="sm:text-right">
+    {% if page.previous %}
+    <p class="meta-text">Older Post &rarr;</p>
+    <a href="{{ page.previous.url | relative_url }}" rel="prev" class="mt-2 block text-sm font-semibold text-brand-700 hover:underline dark:text-brand-300">{{ page.previous.title | truncate: 65 }}</a>
+    {% endif %}
+  </div>
+</nav>

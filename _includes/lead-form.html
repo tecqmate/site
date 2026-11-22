@@ -1,0 +1,60 @@
+{%- comment -%}
+  Lead form. The visitor's details go to YOUR endpoint (site.lead_endpoint in _config.yml),
+  never to a partner. No partner phone/email/website is shown anywhere in this component.
+
+  Usage in a post or page:
+    {% include lead-form.html topic="telecom" title="Need an SMS provider?" text="Tell us your volume." %}
+  For a plain contact/message form (no provider sharing, no referral note), add general=true.
+
+  Needs a form backend because GitHub Pages is static (for example Formspree, Web3Forms,
+  a Google Apps Script web app, or a small Cloudflare Worker). Put its URL in _config.yml:
+    lead_endpoint: "https://..."
+  The hidden field "_gotcha" is a spam trap used by Formspree; rename it for other services.
+{%- endcomment -%}
+{%- assign lead_topic = include.topic | default: page.topic -%}
+{%- assign privacy_page = site.pages | where: "path", "privacy.md" | first -%}
+{% if site.lead_endpoint and site.lead_endpoint != "" %}
+<section class="surface-card my-8 overflow-hidden" id="get-help" aria-labelledby="get-help-title">
+  <div class="border-b border-slate-200 bg-gradient-to-r from-brand-50 to-violet-50 px-6 py-5 dark:border-slate-800 dark:from-brand-950/40 dark:to-violet-950/30">
+    <p class="eyebrow">Get in touch</p>
+    <h2 class="mt-1 font-display text-xl font-bold text-slate-900 dark:text-white" id="get-help-title">{{ include.title | default: "Need help with this? Tell us what you need" }}</h2>
+    <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+      {{ include.text | default: "Share your requirement and we will get back to you with suitable options." }}
+      {% unless include.general %}We may earn a referral fee from providers. This never increases your price.{% endunless %}
+    </p>
+  </div>
+
+  <form action="{{ site.lead_endpoint }}" method="POST" class="space-y-4 p-6">
+    <input type="hidden" name="topic" value="{{ lead_topic }}">
+    <input type="hidden" name="source_url" value="{{ page.url | absolute_url }}">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+
+    <div>
+      <label for="lead-name" class="form-label">Your name</label>
+      <input type="text" class="form-input" id="lead-name" name="name" required autocomplete="name">
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for="lead-email" class="form-label">Email</label>
+        <input type="email" class="form-input" id="lead-email" name="email" required autocomplete="email">
+      </div>
+      <div>
+        <label for="lead-phone" class="form-label">Phone / WhatsApp (optional)</label>
+        <input type="tel" class="form-input" id="lead-phone" name="phone" autocomplete="tel">
+      </div>
+    </div>
+    <div>
+      <label for="lead-need" class="form-label">Your requirement</label>
+      <textarea class="form-textarea" id="lead-need" name="requirement" rows="3" required></textarea>
+    </div>
+    <div class="flex items-start gap-3">
+      <input class="mt-1 size-4 shrink-0 accent-brand-600" type="checkbox" id="lead-consent" name="consent" value="yes" required>
+      <label class="text-xs leading-relaxed text-slate-600 dark:text-slate-400" for="lead-consent">
+        {% if include.general %}I agree that Tecqmate may store these details to reply to my message.{% else %}I agree that Tecqmate may store these details and share them with relevant service providers to respond to my requirement.{% endif %}
+        {% if privacy_page %}<a href="{{ privacy_page.url | relative_url }}" class="font-semibold text-brand-700 hover:underline dark:text-brand-300">Privacy Policy</a>{% endif %}
+      </label>
+    </div>
+    <button type="submit" class="btn-primary w-full">Send my requirement <span aria-hidden="true">&rarr;</span></button>
+  </form>
+</section>
+{% endif %}

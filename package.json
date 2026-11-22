@@ -1,0 +1,15 @@
+{
+  "name": "tecqmate-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tailwind CSS build for the Tecqmate Jekyll site",
+  "scripts": {
+    "css:build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify",
+    "css:watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.3.5"
+  }
+}

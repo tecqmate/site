@@ -1,0 +1,33 @@
+{% assign global_build_hash = site.time | date: '%s' %}
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  {% seo title=false %}
+  <meta name="keywords" content="coding, technology, tutorials, programming, development, php, javascript, python, java, web development" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="build-version" content="{{ global_build_hash }}">
+  <meta name="google-site-verification" content="K2uHVNxSlEl-EI9hhq_pysepsylcGy3y2oe5ifn8CaA" />
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="75x75" />
+
+  {% feed_meta %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+
+  <!-- Apply the saved/system theme before first paint to avoid a flash. -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('tecqmate-theme');
+        var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      } catch (e) {}
+    })();
+  </script>
+
+  <link href="{{ '/assets/css/tailwind.css' | relative_url }}?_={{ global_build_hash }}" rel="stylesheet">
+</head>

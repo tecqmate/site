@@ -1,0 +1,51 @@
+---
+layout: home
+---
+{%- assign cfg = site.data.topics | where: "slug", page.topic | first -%}
+
+{% if cfg.short %}<p class="mb-6 text-lg leading-relaxed text-slate-500 dark:text-slate-400">{{ cfg.short }}</p>{% endif %}
+
+{% if page.image %}
+<div class="mb-8 overflow-hidden rounded-2xl border border-slate-200 shadow-soft dark:border-slate-800">
+  <img src="{{ page.image | relative_url }}" class="h-auto w-full object-cover" alt="{{ page.h1 | default: page.title }} guide series illustration">
+</div>
+{% endif %}
+
+{{ content }}
+
+{%- assign shown = 0 -%}
+{%- capture topic_list -%}
+  {%- for p in site.posts -%}
+    {%- assign match = false -%}
+    {%- if p.topic -%}
+      {%- if p.topic == page.topic -%}{%- assign match = true -%}{%- endif -%}
+    {%- else -%}
+      {%- for t in p.tags -%}
+        {%- assign tk = t | downcase | strip -%}
+        {%- if cfg.legacy_tags contains tk -%}{%- assign match = true -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if match -%}
+      {%- assign shown = shown | plus: 1 %}
+      <li class="group">
+        <a href="{{ p.url | relative_url }}" class="text-base font-semibold text-slate-800 transition group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-300">{{ p.title }}</a>
+        <p class="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">{{ p.date | date: "%b %d, %Y" }} &middot; {{ p.description | default: p.excerpt | strip_html | normalize_whitespace | strip | truncate: 140 }}</p>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{% if cfg.lead and shown > 0 %}
+  {% include lead-form.html topic=page.topic title=cfg.cta_title text=cfg.cta_text %}
+{% endif %}
+
+{% if shown > 0 %}
+<section class="mt-10">
+  <h2 class="section-heading text-xl">{{ shown }} guide{% if shown != 1 %}s{% endif %}</h2>
+  <ul class="mt-5 space-y-5 divide-y divide-slate-200 dark:divide-slate-800">
+    {{ topic_list }}
+  </ul>
+</section>
+{% else %}
+<p class="mt-8 text-sm text-slate-500 dark:text-slate-400">New guides in this topic are coming soon.</p>
+{% endif %}

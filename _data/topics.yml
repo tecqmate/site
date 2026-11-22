@@ -1,0 +1,81 @@
+# Topic hubs for Tecqmate.
+#
+# New posts: add   topic: <slug>   (and optionally   series: mistakes | wish   ) to the post's front matter.
+# Old posts: NOT edited. They are matched through legacy_tags (their existing tags, lowercase).
+# enabled: false  -> hub page shows "coming soon" and should not be linked from the menu yet.
+# lead: true      -> hub page shows the lead form (partner contacts are never shown, see _includes/lead-form.html).
+
+- slug: programming
+  name: "Programming & New Tech"
+  short: "Coding tutorials, DevOps, APIs, cloud, and what is new in programming."
+  enabled: true
+  lead: false
+  legacy_tags: [devops, cloud-architecture, serverless, architecture, api, api-security, authentication, docker, wsl2, windows, containers, skrog, development, database, database-design, data-engineering, php, wordpress, web-security, web-tools, distributed-systems, iot, embedded-systems, edge-computing, artificial-intelligence, email-verification]
+
+- slug: telecom
+  name: "CPaaS, SMS, WhatsApp & RCS"
+  short: "Messaging APIs, SMS, WhatsApp Business, Google RCS, and telecom basics."
+  enabled: true
+  lead: true
+  cta_title: "Need an SMS / WhatsApp / RCS provider?"
+  cta_text: "Tell us your volume and use case. We will suggest suitable providers."
+  legacy_tags: [telecom, messaging, sms-tools]
+
+- slug: software
+  name: "Software & Website Services"
+  short: "How to hire developers, scope projects, and manage software and website work."
+  enabled: true
+  lead: true
+  cta_title: "Planning a software or website project?"
+  cta_text: "Tell us what you need, your timeline, and budget range. We will suggest suitable options."
+  legacy_tags: [software-development, outsourcing, website-development, hiring]
+
+- slug: luxury
+  name: "Luxury Watches & Bags"
+  short: "Buyer's checklists for pre-owned luxury watches and handbags."
+  enabled: true
+  lead: false
+  legacy_tags: [luxury-watches, luxury-handbags, luxury-lifestyle, luxury, patek-philippe, haute-horlogerie, watch-authentication, lifestyle]
+
+- slug: business
+  name: "Tenders, Staffing & HRMS"
+  short: "Public and private tenders, staffing, HR software, and compliance."
+  enabled: true
+  lead: true
+  cta_title: "Looking for a tender, staffing, or HRMS partner?"
+  cta_text: "Share your requirement and we will connect you with relevant providers."
+  legacy_tags: [tenders, government, compliance, business-automation, business-operations, franchise-business]
+
+- slug: trade
+  name: "Exporters & Trade (India)"
+  short: "Indian exporters, import-export basics, supply chain, and sourcing."
+  enabled: true
+  lead: true
+  cta_title: "Sourcing from India?"
+  cta_text: "Tell us the product, quantity, and destination. We will share matching supplier options through us."
+  legacy_tags: [import-export, trade, supply-chain, hardware-logistics, fmcg]
+
+- slug: markets
+  name: "Stock Market & Carbon Trading"
+  short: "Educational guides on markets and carbon trading. Not investment advice."
+  enabled: false
+  lead: false
+  legacy_tags: [carbon-trading, personal-finance, finance]
+
+- slug: home
+  name: "Wooden Furniture & Home"
+  short: "Buying guides for wooden furniture sets and home decor."
+  enabled: false
+  lead: true
+  cta_title: "Planning a furniture set for your home?"
+  cta_text: "Share your room size, style, and budget and we will suggest options."
+  legacy_tags: [wooden-furniture, home-decor, real-estate]
+
+- slug: education
+  name: "Education & Coaching"
+  short: "Guides on coaching institutes, courses, and professional development."
+  enabled: false
+  lead: true
+  cta_title: "Looking for a coaching institute or course?"
+  cta_text: "Tell us the exam or skill and your city. We will suggest suitable options."
+  legacy_tags: [education, professional development, disc assessment, personality test, workplace communication, team building, self awareness]
