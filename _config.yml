@@ -32,7 +32,7 @@ keep_files: []
 
 # Kept as-is. Note: posts dated in the future are published immediately, and
 # jekyll-seo-tag will output that future date as datePublished.
-future: true
+future: false
 
 # New posts get layout "post" automatically. Existing posts keep whatever
 # layout they already set in their own front matter (defaults never override it).
