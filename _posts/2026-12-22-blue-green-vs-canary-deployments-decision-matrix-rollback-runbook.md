@@ -11,7 +11,7 @@ audience: "Developers, DevOps engineers and small teams who deploy web services 
 
 Deploying straight onto production and hoping for the best works until the day it does not. Blue/green and canary releases are the two most common ways to reduce that risk. Both let you ship a new version without taking everything down, and both give you a way back if something goes wrong.
 
-They solve the problem differently, and the right choice depends on your traffic, your tooling and how much risk a bad release can cause. This guide compares them, shows a decision matrix and gives you a rollback runbook you can adapt.
+They solve the problem differently, and the right choice depends on your traffic, your tooling and how much risk a bad release can cause. This guide compares them, shows a decision matrix and gives you a rollback runbook you can adapt. For the wider picture of rolling updates and Kubernetes readiness probes, see our guide on [zero-downtime deployments]({{ '/2026/11/16/zero-downtime-deployments-blue-green-and-canary/' | relative_url }}).
 
 ## Quick answer
 

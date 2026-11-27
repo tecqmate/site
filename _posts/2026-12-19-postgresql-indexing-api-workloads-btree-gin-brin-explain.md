@@ -11,7 +11,7 @@ audience: "Backend developers and small teams running APIs on PostgreSQL who wan
 
 An API endpoint is slow, someone suggests "add an index", and a few indexes later the endpoint is still slow and the writes are slower too. Indexing works when you match the index to the **query**, and check the result with **EXPLAIN**.
 
-This guide covers the three index types that handle most API workloads (B-tree, GIN and BRIN), how to read a query plan, and how to create and maintain indexes safely. The plan snippets below are **simplified illustrations of the node types you will see**. Your costs, row counts and timings will differ, so run EXPLAIN on your own data.
+This guide covers the three index types that handle most API workloads (B-tree, GIN and BRIN), how to read a query plan, and how to create and maintain indexes safely. If your workload is mostly log and event data, our guide on [high-throughput log analytics and PostgreSQL indexing strategies]({{ '/2026/11/08/high-throughput-log-analytics-and-postgresql-indexing-strategies/' | relative_url }}) goes deeper on that case. The plan snippets below are **simplified illustrations of the node types you will see**. Your costs, row counts and timings will differ, so run EXPLAIN on your own data.
 
 ## Quick answer
 
