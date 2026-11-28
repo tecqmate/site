@@ -39,6 +39,10 @@
 - name: llms.txt
   url: /llms.txt
 
+- name: Portfolio
+  url: https://tecqmate.github.io/about/
+  external: true
+
 - name: YouTube
   url: https://www.youtube.com/channel/UCVOFs1H3mtohHvRwLFbDQNw?sub_confirmation=1
   external: true
